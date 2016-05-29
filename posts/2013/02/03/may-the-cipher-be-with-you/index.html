@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
+  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
+  <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="useless" />
+<meta name="description" content="NB: I know that implementing cryptographic algorithms yourself is dangerous. There are many implementation problems people won't think about, like memory management. I just wanted to talk about the CipherSaber because I think it's an old, yet neat project. I think it's important to sensitize people about ..." />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="All Your Base Are Belong To Me"/>
+<meta property="og:title" content="May the Cipher be with you"/>
+<meta property="og:description" content="NB: I know that implementing cryptographic algorithms yourself is dangerous. There are many implementation problems people won't think about, like memory management. I just wanted to talk about the CipherSaber because I think it's an old, yet neat project. I think it's important to sensitize people about ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2013/02/03/may-the-cipher-be-with-you/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2013-02-03 01:42:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:section" content="Cryptography"/>
+<meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; May the Cipher be with you</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
+      </a>
+      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <p>You know, if that's alright with you</p>
+      <nav>
+        <ul class="list">
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-envelope-o" href="mailto:yannick at meheut dot org" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/the-useless-one/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="https://allyourbase.utouch.fr/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="../../../../..">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="may-the-cipher-be-with-you">May the Cipher be with you</h1>
+    <p>Posted on dim. 03 février 2013 in <a href="../../../../../category/cryptography.html">Cryptography</a></p>
+  </header>
+  <div>
+    <img alt="ciphersaber-logo.png" class="align-center" src="/images/may-the-cipher-be-with-you/ciphersaber-logo.png" />
+<p>NB: I know that implementing cryptographic algorithms yourself is
+dangerous. There are many implementation problems people won't think
+about, like memory management. I just wanted to talk about the
+CipherSaber because I think it's an old, yet neat project. I think it's
+important to sensitize people about cryptography and the regulations
+around its usage. <strong>If you want to use cryptography to protect your
+privacy, I suggest you look at a more serious project like PGP.</strong></p>
+<p>A few months ago, while checking my RSS feeds, I saw <a class="reference external" href="http://www.reddit.com/r/netsec/comments/10d7zb/are_there_any_inprogress_opensource_cryptography/">this discussion</a>
+on Reddit. Since I love cryptography and FLOSS, I looked at the comment
+section, to see what kind of answers were posted.</p>
+<p>One comment caught my attention:</p>
+<img alt="ciphersaber-comment.png" class="align-center" src="/images/may-the-cipher-be-with-you/ciphersaber-comment.png" />
+<p>What intrigued me was the idea of creating your own &quot;something&quot; (plus,
+the &quot;something&quot; had a really cool name), and I also like the fact that I
+could start right away.</p>
+<p>So, I went to the <a class="reference external" href="http://ciphersaber.gurus.org/">CipherSaber</a> web
+page, to see what's what. And, being the privacy advocate that I am, I
+was not disappointed. The CipherSaber is a form of protest against US
+ban on cryptography.</p>
+<p>It was written after 9/11, when the US government wanted to limit the
+use/publication of cryptography, in order to prevent the terrorists from
+using it. It's, of course, a ridiculous idea, since the crypto is
+<em>already</em> out there, and anybody can use it, even the terrorists: it's
+a little too late to try to prevent cryptography export. Plus, as stated
+in the CipherSaber web page, nothing would prevent terrorists to send
+some of their members to US universities to learn cryptography, as they
+do to learn chemistry, nuclear engineering etc.</p>
+<p>As my good friend (okay, we've never met, but still, he has a point)
+Philip Zimmermann said:</p>
+<blockquote>
+If privacy is outlawed, only outlaws will have privacy.</blockquote>
+<p>The idea behind the CipherSaber, is to have everyone implementing a
+strong crypto algorithm, so that people don't rely on products that can
+be banned. The chosen algorithm is the stream cipher RC4, because it's
+strong, and easy to implement (see CipherSaber-2 in the web page to
+correct a known vulnerability in RC4). The name CipherSaber comes from
+Star Wars, because every Jedi knight has to build its own light saber,
+just like every CipherKnight should implement its own CipherSaber.</p>
+<p>I know I'm not from the US, and I know this web page was written ten
+years ago, but I like the idea of being a part of some community, and
+Internet ban concern everyone. That's why I've decided to revamp the
+CipherKnight's certificate (the old one, in addition to being hard to
+find, is too directed towards Americans).</p>
+<p>All you have to do to get your certificate is to enter your name, click
+the button, and decipher it using your own CipherSaber (the encryption
+key is <em>AlanTuring</em>).</p>
+<form action="/cscertificate/index.php" method="post">
+     <label for="name">Name</label>: <input name="name" type="text"> <input value="Get your certificate!" type="submit">
+</form><p>If you're old school, you can get the former CipherKnight's certificate
+<a class="reference external" href="https://allyourbase.utouch.fr/wp-content/uploads/2014/08/cknight.cs1">here</a>
+(the encryption key is <em>ThomasJefferson</em>).</p>
+<p>So go ahead, forge your own CipherSaber, print out your certificate, and
+spread the word.</p>
+<p>May the Cipher be with you.</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+</article>
+
+    <footer>
+<p>
+  &copy; Yannick Méheut 2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "May the Cipher be with you",
+  "headline": "May the Cipher be with you",
+  "datePublished": "2013-02-03 01:42:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "useless",
+    "url": "../../../../../author/useless.html"
+  },
+  "image": "/images/useless_profile_pic.jpg",
+  "url": "../../../../../posts/2013/02/03/may-the-cipher-be-with-you/",
+  "description": "NB: I know that implementing cryptographic algorithms yourself is dangerous. There are many implementation problems people won't think about, like memory management. I just wanted to talk about the CipherSaber because I think it's an old, yet neat project. I think it's important to sensitize people about ..."
+}
+</script></body>
+</html>

