@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>All Your Base Are Belong To Me</title><link href="https://allyourbase.utouch.fr/" rel="alternate"></link><link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" rel="self"></link><id>https://allyourbase.utouch.fr/</id><updated>2017-01-05T00:00:00+01:00</updated><entry><title>SANS Christmas Challenge 2016</title><link href="https://allyourbase.utouch.fr/posts/2017/01/05/sans-christmas-challenge-2016/" rel="alternate"></link><updated>2017-01-05T00:00:00+01:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2017-01-05:posts/2017/01/05/sans-christmas-challenge-2016/</id><summary type="html">&lt;img alt="sans_christmas_challenge_2016_logo.png" class="align-center" src="/images/sans-christmas-challenge-2016/sans_christmas_challenge_2016_logo.png" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>All Your Base Are Belong To Me</title><link href="https://allyourbase.utouch.fr/" rel="alternate"></link><link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" rel="self"></link><id>https://allyourbase.utouch.fr/</id><updated>2017-03-28T00:00:00+02:00</updated><entry><title>Meet beautiful XSS in your area: a YouPorn bug bounty [SFW]</title><link href="https://allyourbase.utouch.fr/posts/2017/03/28/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/" rel="alternate"></link><updated>2017-03-28T00:00:00+02:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2017-03-28:posts/2017/03/28/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/</id><summary type="html">&lt;img alt="youporn_logo.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/youporn_logo.png" /&gt;
+&lt;p&gt;I don't do bug bounties due to a lack of time. Although I have a &lt;a class="reference external" href="https://hackerone.com/the-useless-one"&gt;HackerOne
+profile&lt;/a&gt;, you can see that I'm not so
+active. However, &lt;a class="reference external" href="https://hackerone.com/myst404"&gt;a coworker of mine&lt;/a&gt; spends
+quite some time on different bug bounty programs.&lt;/p&gt;
+&lt;p&gt;On 2017-02-06 evening, when we were both connected to our work Jabber server,
+he told me that YouPorn had launched their &lt;a class="reference external" href="https://hackerone.com/youporn"&gt;bug bounty program on HackerOne&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;him: youporn bug bounty launched today btw&lt;/p&gt;
+&lt;p&gt;me: on hacker one?&lt;/p&gt;
+&lt;p&gt;him: yes&lt;/p&gt;
+&lt;p&gt;me: no time, i'm migrating my DNS servers&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As I was reading documentation on bind, he wrote me back:&lt;/p&gt;
+&lt;blockquote&gt;
+him: oh shit, exploitable XSS in the search bar, can't believe it&lt;/blockquote&gt;
+&lt;p&gt;Now, things were interesting! I had to hop in. I was also surprised that
+nobody had ever found it before. XSS in the search form is the base case.
+&lt;span class="strike"&gt;I often go to&lt;/span&gt; errr, some of my friends often go to YouPorn, and
+they've never found such a vulnerability on it before.&lt;/p&gt;
+&lt;p&gt;Time was of the essence, because we wanted to have a working exploit and report
+it before someone else did.&lt;/p&gt;
+&lt;div class="section" id="from-lack-of-filtering-to-open-redirect"&gt;
+&lt;h2&gt;From lack of filtering to open redirect&lt;/h2&gt;
+&lt;p&gt;I fired up my browser and Burp, and sent a request on the search form. I
+searched for &lt;code&gt;foobar&amp;quot;&lt;/code&gt;. As you can see in the following screenshot,
+the search term is output, without any filtering (except for the capitalization)
+in a &lt;a class="reference external" href="https://www.w3schools.com/tags/tag_meta.asp"&gt;meta tag&lt;/a&gt;:&lt;/p&gt;
+&lt;img alt="first_payload.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/first_payload.png" /&gt;
+&lt;p&gt;However, when we tried to close the meta tag, and open another one, to put
+our Javascript payload, we couldn't get it to work:&lt;/p&gt;
+&lt;img alt="first_fail.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/first_fail.png" /&gt;
+&lt;p&gt;Disappointed, we still decided to exploit the meta HTML tag. It's a powerful
+tag, because it has the &lt;code&gt;http-equiv&lt;/code&gt; directive. &lt;a class="reference external" href="https://www.w3schools.com/tags/att_meta_http_equiv.asp"&gt;This directive&lt;/a&gt; allows
+you to define the equivalent of an HTTP header in the HTML code.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;http-equiv&lt;/code&gt; directive can take a value of &lt;code&gt;refresh&lt;/code&gt;, which
+can be used to redirect a user to another page. This kind of &lt;a class="reference external" href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet"&gt;open redirect&lt;/a&gt;
+vulnerability can be very useful in case of a phishing attack:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;You send someone a link to &lt;a class="reference external" href="http://youporn.com"&gt;http://youporn.com&lt;/a&gt;, with your payload;&lt;/li&gt;
+&lt;li&gt;Your payload redirects them to a site you control, imitating YouPorn's CSS;&lt;/li&gt;
+&lt;li&gt;You ask them for their credentials, their credit card number, etc.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We put the following payload to test our vulnerability:&lt;/p&gt;
+&lt;img alt="second_fail.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/second_fail.png" /&gt;
+&lt;p&gt;As you can see, there is a slight problem: the dash in &lt;code&gt;http-equiv&lt;/code&gt;
+is not inserted in the source code. I decided to use some XSS voodoo bypass,
+and so, I decided to HTML encode, then URL encode the dash.&lt;/p&gt;
+&lt;p&gt;A dash, &lt;code&gt;-&lt;/code&gt;, HTML-encoded is &lt;code&gt;&amp;amp;#45;&lt;/code&gt;, which, URL-encoded, is
+&lt;code&gt;%26%2345%3b&lt;/code&gt;:&lt;/p&gt;
+&lt;img alt="first_success.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/first_success.png" /&gt;
+&lt;p&gt;Boom, we now had a working payload, and were able to redirect users to a
+URL of our choosing. Sweet!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="marked-as-duplicate"&gt;
+&lt;h2&gt;Marked as duplicate&lt;/h2&gt;
+&lt;p&gt;Just as I had found the correct syntax, my coworker, who had already notified
+YouPorn, got the following answer:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In fact, this was reported already, &lt;strong&gt;but the original reporter did not
+provide a working exploit&lt;/strong&gt;.  What I should do is to close it as duplicate,
+because the original  bug was already reported. However &lt;strong&gt;I will leave it
+open so you have a  chance to provide a working payload&lt;/strong&gt;.  Note that the
+original ticket was triaged. If you find a working  payload, I will triage
+your ticket as well as you managed to go further  in the exploitation.&lt;/p&gt;
+&lt;p&gt;Thanks and happy hacking&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="from-open-redirect-to-full-reflective-xss"&gt;
+&lt;h2&gt;From open redirect to full reflective XSS&lt;/h2&gt;
+&lt;p&gt;So that was it, somebody had already reported the vulnerability. However,
+YouPorn had kindly decided to let the report open, so that we could find a
+working payload, and we already had one with the open redirect payload.&lt;/p&gt;
+&lt;p&gt;But then I thought &amp;quot;Wait a second, maybe I can use the same trick to put
+&lt;code&gt;&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;&lt;/code&gt; instead of a dash!&amp;quot;&lt;/p&gt;
+&lt;p&gt;And indeed, it worked. With the &amp;quot;HTML-encode-then-URL-encode&amp;quot; trick, we could
+insert arbitrary Javascript:&lt;/p&gt;
+&lt;img alt="second_success.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/second_success.png" /&gt;
+&lt;p&gt;Obligatory pop-up:&lt;/p&gt;
+&lt;img alt="w00t.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/w00t.png" /&gt;
+&lt;p&gt;We continued to do some tests afterwards, and we found out something weird
+about YouPorn's HTML rendering: no matter how many recursions of HTML-encoding
+we did on our payloads, they were still fully decoded server-side. This means
+that:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;lt;&lt;/code&gt; became &lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;amp;lt;&lt;/code&gt; also became &lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;amp;amp;lt;&lt;/code&gt; &lt;strong&gt;also&lt;/strong&gt; became &lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Weird behaviour, but very interesting to bypass some filters!&lt;/p&gt;
+&lt;p&gt;Anyway, I still have to migrate my DNS servers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="timeline-yyyy-mm-dd"&gt;
+&lt;h2&gt;Timeline (YYYY-MM-DD)&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;2017-02-06&lt;/strong&gt;: Report sent to YouPorn&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2017-02-06&lt;/strong&gt;: Response from YouPorn saying that this bug was already
+reported, but that we could keep trying to find a working payload&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2017-02-06&lt;/strong&gt;: Working payload sent to YouPorn&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2017-02-06&lt;/strong&gt;: Report triaged&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2017-02-10&lt;/strong&gt;: Bounty paid, $250&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2017-02-03&lt;/strong&gt;: Bug fixed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2017-03-04&lt;/strong&gt;: Request to disclose publicly the report&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2017-03-28&lt;/strong&gt;: Public disclosure of the &lt;a class="reference external" href="https://hackerone.com/reports/203974"&gt;report&lt;/a&gt;
+granted&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>SANS Christmas Challenge 2016</title><link href="https://allyourbase.utouch.fr/posts/2017/01/05/sans-christmas-challenge-2016/" rel="alternate"></link><updated>2017-01-05T00:00:00+01:00</updated><author><name>useless</name></author><id>tag:allyourbase.utouch.fr,2017-01-05:posts/2017/01/05/sans-christmas-challenge-2016/</id><summary type="html">&lt;img alt="sans_christmas_challenge_2016_logo.png" class="align-center" src="/images/sans-christmas-challenge-2016/sans_christmas_challenge_2016_logo.png" /&gt;
 &lt;p&gt;This blog is beginning to look a lot like being exclusively about SANS Christmas
 Challenges write-ups. What can I say, they're so good! Anyway, let's roll for
 the &lt;a class="reference external" href="https://holidayhackchallenge.com/2016/"&gt;2016 edition of this marvelous Christmas Challenge&lt;/a&gt;.&lt;/p&gt;

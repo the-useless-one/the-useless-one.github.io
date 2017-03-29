@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
+  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
+  <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="useless" />
+<meta name="description" content="I don't do bug bounties due to a lack of time. Although I have a HackerOne profile, you can see that I'm not so active. However, a coworker of mine spends quite some time on different bug bounty programs. On 2017-02-06 evening, when we were both connected to ..." />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="All Your Base Are Belong To Me"/>
+<meta property="og:title" content="Meet beautiful XSS in your area: a YouPorn bug bounty [SFW]"/>
+<meta property="og:description" content="I don't do bug bounties due to a lack of time. Although I have a HackerOne profile, you can see that I'm not so active. However, a coworker of mine spends quite some time on different bug bounty programs. On 2017-02-06 evening, when we were both connected to ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2017/03/28/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-28 00:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:section" content="Bug bounty"/>
+<meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; Meet beautiful XSS in your area: a YouPorn bug bounty [SFW]</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
+      </a>
+      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <p>You know, if that's alright with you</p>
+      <nav>
+        <ul class="list">
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-envelope-o" href="mailto:yannick at meheut dot org" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/the-useless-one/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="https://allyourbase.utouch.fr/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="../../../../..">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw">Meet beautiful XSS in your area: a YouPorn bug bounty [SFW]</h1>
+    <p>Posted on mar. 28 mars 2017 in <a href="../../../../../category/bug-bounty.html">Bug bounty</a></p>
+  </header>
+  <div>
+    <img alt="youporn_logo.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/youporn_logo.png" />
+<p>I don't do bug bounties due to a lack of time. Although I have a <a class="reference external" href="https://hackerone.com/the-useless-one">HackerOne
+profile</a>, you can see that I'm not so
+active. However, <a class="reference external" href="https://hackerone.com/myst404">a coworker of mine</a> spends
+quite some time on different bug bounty programs.</p>
+<p>On 2017-02-06 evening, when we were both connected to our work Jabber server,
+he told me that YouPorn had launched their <a class="reference external" href="https://hackerone.com/youporn">bug bounty program on HackerOne</a>:</p>
+<blockquote>
+<p>him: youporn bug bounty launched today btw</p>
+<p>me: on hacker one?</p>
+<p>him: yes</p>
+<p>me: no time, i'm migrating my DNS servers</p>
+</blockquote>
+<p>As I was reading documentation on bind, he wrote me back:</p>
+<blockquote>
+him: oh shit, exploitable XSS in the search bar, can't believe it</blockquote>
+<p>Now, things were interesting! I had to hop in. I was also surprised that
+nobody had ever found it before. XSS in the search form is the base case.
+<span class="strike">I often go to</span> errr, some of my friends often go to YouPorn, and
+they've never found such a vulnerability on it before.</p>
+<p>Time was of the essence, because we wanted to have a working exploit and report
+it before someone else did.</p>
+<div class="section" id="from-lack-of-filtering-to-open-redirect">
+<h2>From lack of filtering to open redirect</h2>
+<p>I fired up my browser and Burp, and sent a request on the search form. I
+searched for <code>foobar&quot;</code>. As you can see in the following screenshot,
+the search term is output, without any filtering (except for the capitalization)
+in a <a class="reference external" href="https://www.w3schools.com/tags/tag_meta.asp">meta tag</a>:</p>
+<img alt="first_payload.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/first_payload.png" />
+<p>However, when we tried to close the meta tag, and open another one, to put
+our Javascript payload, we couldn't get it to work:</p>
+<img alt="first_fail.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/first_fail.png" />
+<p>Disappointed, we still decided to exploit the meta HTML tag. It's a powerful
+tag, because it has the <code>http-equiv</code> directive. <a class="reference external" href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">This directive</a> allows
+you to define the equivalent of an HTTP header in the HTML code.</p>
+<p>The <code>http-equiv</code> directive can take a value of <code>refresh</code>, which
+can be used to redirect a user to another page. This kind of <a class="reference external" href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">open redirect</a>
+vulnerability can be very useful in case of a phishing attack:</p>
+<ol class="arabic simple">
+<li>You send someone a link to <a class="reference external" href="http://youporn.com">http://youporn.com</a>, with your payload;</li>
+<li>Your payload redirects them to a site you control, imitating YouPorn's CSS;</li>
+<li>You ask them for their credentials, their credit card number, etc.</li>
+</ol>
+<p>We put the following payload to test our vulnerability:</p>
+<img alt="second_fail.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/second_fail.png" />
+<p>As you can see, there is a slight problem: the dash in <code>http-equiv</code>
+is not inserted in the source code. I decided to use some XSS voodoo bypass,
+and so, I decided to HTML encode, then URL encode the dash.</p>
+<p>A dash, <code>-</code>, HTML-encoded is <code>&amp;#45;</code>, which, URL-encoded, is
+<code>%26%2345%3b</code>:</p>
+<img alt="first_success.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/first_success.png" />
+<p>Boom, we now had a working payload, and were able to redirect users to a
+URL of our choosing. Sweet!</p>
+</div>
+<div class="section" id="marked-as-duplicate">
+<h2>Marked as duplicate</h2>
+<p>Just as I had found the correct syntax, my coworker, who had already notified
+YouPorn, got the following answer:</p>
+<blockquote>
+<p>In fact, this was reported already, <strong>but the original reporter did not
+provide a working exploit</strong>.  What I should do is to close it as duplicate,
+because the original  bug was already reported. However <strong>I will leave it
+open so you have a  chance to provide a working payload</strong>.  Note that the
+original ticket was triaged. If you find a working  payload, I will triage
+your ticket as well as you managed to go further  in the exploitation.</p>
+<p>Thanks and happy hacking</p>
+</blockquote>
+</div>
+<div class="section" id="from-open-redirect-to-full-reflective-xss">
+<h2>From open redirect to full reflective XSS</h2>
+<p>So that was it, somebody had already reported the vulnerability. However,
+YouPorn had kindly decided to let the report open, so that we could find a
+working payload, and we already had one with the open redirect payload.</p>
+<p>But then I thought &quot;Wait a second, maybe I can use the same trick to put
+<code>&gt;</code> and <code>&lt;</code> instead of a dash!&quot;</p>
+<p>And indeed, it worked. With the &quot;HTML-encode-then-URL-encode&quot; trick, we could
+insert arbitrary Javascript:</p>
+<img alt="second_success.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/second_success.png" />
+<p>Obligatory pop-up:</p>
+<img alt="w00t.png" class="align-center" src="/images/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/w00t.png" />
+<p>We continued to do some tests afterwards, and we found out something weird
+about YouPorn's HTML rendering: no matter how many recursions of HTML-encoding
+we did on our payloads, they were still fully decoded server-side. This means
+that:</p>
+<ul class="simple">
+<li><code>&amp;lt;</code> became <code>&lt;</code></li>
+<li><code>&amp;amp;lt;</code> also became <code>&lt;</code></li>
+<li><code>&amp;amp;amp;lt;</code> <strong>also</strong> became <code>&lt;</code></li>
+<li>etc.</li>
+</ul>
+<p>Weird behaviour, but very interesting to bypass some filters!</p>
+<p>Anyway, I still have to migrate my DNS servers.</p>
+</div>
+<div class="section" id="timeline-yyyy-mm-dd">
+<h2>Timeline (YYYY-MM-DD)</h2>
+<ul class="simple">
+<li><strong>2017-02-06</strong>: Report sent to YouPorn</li>
+<li><strong>2017-02-06</strong>: Response from YouPorn saying that this bug was already
+reported, but that we could keep trying to find a working payload</li>
+<li><strong>2017-02-06</strong>: Working payload sent to YouPorn</li>
+<li><strong>2017-02-06</strong>: Report triaged</li>
+<li><strong>2017-02-10</strong>: Bounty paid, $250</li>
+<li><strong>2017-02-03</strong>: Bug fixed</li>
+<li><strong>2017-03-04</strong>: Request to disclose publicly the report</li>
+<li><strong>2017-03-28</strong>: Public disclosure of the <a class="reference external" href="https://hackerone.com/reports/203974">report</a>
+granted</li>
+</ul>
+</div>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+</article>
+
+    <footer>
+<p>
+  &copy; Yannick Méheut 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Meet beautiful XSS in your area: a YouPorn bug bounty [SFW]",
+  "headline": "Meet beautiful XSS in your area: a YouPorn bug bounty [SFW]",
+  "datePublished": "2017-03-28 00:00:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "useless",
+    "url": "../../../../../author/useless.html"
+  },
+  "image": "/images/useless_profile_pic.jpg",
+  "url": "../../../../../posts/2017/03/28/meet-beautiful-xss-in-your-area-a-youporn-bug-bounty-sfw/",
+  "description": "I don't do bug bounties due to a lack of time. Although I have a HackerOne profile, you can see that I'm not so active. However, a coworker of mine spends quite some time on different bug bounty programs. On 2017-02-06 evening, when we were both connected to ..."
+}
+</script></body>
+</html>
