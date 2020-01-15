@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
-  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/font-awesome.min.css">
+  <link href="https://allyourbase.utouch.fr//extras/style.css" rel="stylesheet">
   <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
   <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
@@ -14,27 +14,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="useless" />
-<meta name="description" content="You can find the code for this level here. (sha256: 8710c082daed1839806addebeda44c6e5496d44a33f7eb3f23a577b6a5fc26d5) The company who built the vault of level 0 learned its lesson: you now have to identify before accessing your guarded secrets. The company kindly tells you that other users have already chosen to use their product, and even ..." />
+<meta name="description" content="You can find the code for this level here. (sha256: 8710c082daed1839806addebeda44c6e5496d44a33f7eb3f23a577b6a5fc26d5) The company who built the vault of level 0 learned its lesson: you now have to identify before accessing your guarded secrets. The company kindly tells you that other users have already chosen to use their product, and even …" />
 <meta name="keywords" content="">
 <meta property="og:site_name" content="All Your Base Are Belong To Me"/>
 <meta property="og:title" content="Stripe CTF: Level #3"/>
-<meta property="og:description" content="You can find the code for this level here. (sha256: 8710c082daed1839806addebeda44c6e5496d44a33f7eb3f23a577b6a5fc26d5) The company who built the vault of level 0 learned its lesson: you now have to identify before accessing your guarded secrets. The company kindly tells you that other users have already chosen to use their product, and even ..."/>
+<meta property="og:description" content="You can find the code for this level here. (sha256: 8710c082daed1839806addebeda44c6e5496d44a33f7eb3f23a577b6a5fc26d5) The company who built the vault of level 0 learned its lesson: you now have to identify before accessing your guarded secrets. The company kindly tells you that other users have already chosen to use their product, and even …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="../../../../../posts/2012/10/26/stripe-ctf-level-3/"/>
+<meta property="og:url" content="https://allyourbase.utouch.fr/posts/2012/10/26/stripe-ctf-level-3/"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2012-10-26 23:34:00+02:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:author" content="https://allyourbase.utouch.fr/author/useless.html">
 <meta property="article:section" content="Write-up"/>
 <meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; Stripe CTF: Level #3</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="../../../../..">
+      <a href="https://allyourbase.utouch.fr">
         <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
       </a>
-      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <h1><a href="https://allyourbase.utouch.fr">All Your Base Are Belong To Me</a></h1>
       <p>You know, if that's alright with you</p>
       <nav>
         <ul class="list">
@@ -49,7 +49,7 @@
   </aside>
   <main>
     <nav>
-      <a href="../../../../..">Home</a>
+      <a href="https://allyourbase.utouch.fr">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
@@ -58,7 +58,7 @@
 <article>
   <header>
     <h1 id="stripe-ctf-level-3">Stripe CTF: Level #3</h1>
-    <p>Posted on ven. 26 octobre 2012 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+    <p>Posted on ven. 26 octobre 2012 in <a href="https://allyourbase.utouch.fr/category/write-up.html">Write-up</a></p>
   </header>
   <div>
     <img alt="level03-logo.png" class="align-center" src="/images/stripe-ctf-level-3/level03-logo.png" />
@@ -72,35 +72,35 @@ use their product, and even what the stored secrets are.</p>
 <img alt="level03-index.png" class="align-center" src="/images/stripe-ctf-level-3/level03-index.png" />
 <p>Sorry for math and physics fan, but we'll focus on bob's secret.</p>
 <p>So, let's look at the code used to identify users:</p>
-<div class="highlight"><pre><span class="c"># File secretvault.py, line 74</span>
+<div class="highlight"><pre><span></span><span class="c1"># File secretvault.py, line 74</span>
 <span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
-    <span class="n">username</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;username&#39;</span><span class="p">)</span>
-    <span class="n">password</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;password&#39;</span><span class="p">)</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">username</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">&quot;Must provide username</span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;Must provide username</span><span class="se">\n</span><span class="s2">&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">password</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">&quot;Must provide password</span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;Must provide password</span><span class="se">\n</span><span class="s2">&quot;</span>
 
-    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s">&#39;users.db&#39;</span><span class="p">))</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;users.db&#39;</span><span class="p">))</span>
     <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 
-    <span class="n">query</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;SELECT id, password_hash, salt FROM users</span>
-<span class="s">            WHERE username = &#39;{0}&#39; LIMIT 1&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT id, password_hash, salt FROM users</span>
+<span class="s2">            WHERE username = &#39;{0}&#39; LIMIT 1&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
     <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 
     <span class="n">res</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">&quot;There&#39;s no such user {0}!</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;There&#39;s no such user {0}!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
     <span class="n">user_id</span><span class="p">,</span> <span class="n">password_hash</span><span class="p">,</span> <span class="n">salt</span> <span class="o">=</span> <span class="n">res</span>
 
     <span class="n">calculated_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">password</span> <span class="o">+</span> <span class="n">salt</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">calculated_hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="o">!=</span> <span class="n">password_hash</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">&quot;That&#39;s not the password for {0}!</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;That&#39;s not the password for {0}!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 
-    <span class="n">flask</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user_id</span>
-    <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">absolute_url</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">))</span>
+    <span class="n">flask</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user_id</span>
+    <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">absolute_url</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span>
 </pre></div>
 <p>Wow. Hashed passwords, and even salt! Seems pretty secure. But the
 statements aren't prepared: they are vulnerable to SQL injection. We are
@@ -113,7 +113,7 @@ suppose here that bob's id is 1.</p>
 <p>So, let's say we put this as a user in the form:</p>
 <p><code>dummy-user' UNION SELECT 1, 'hash', 'salt</code></p>
 <p>The statement will become:</p>
-<div class="highlight"><pre><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">password_hash</span><span class="p">,</span> <span class="n">salt</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;dummy-user&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;hash&#39;</span><span class="p">,</span> <span class="s1">&#39;salt&#39;</span> <span class="k">LIMIT</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">password_hash</span><span class="p">,</span> <span class="n">salt</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;dummy-user&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;hash&#39;</span><span class="p">,</span> <span class="s1">&#39;salt&#39;</span> <span class="k">LIMIT</span> <span class="mi">1</span>
 </pre></div>
 <p>This way, the first part of the statement will yield an empty row, and
 the second part will yield 1, 'hash', 'salt'. If we want to connect with
@@ -141,7 +141,7 @@ c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2</code></p>
 
     <footer>
 <p>
-  &copy; Yannick Méheut 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+  &copy; Yannick Méheut 2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
   <a rel="license"
@@ -167,11 +167,11 @@ c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2</code></p>
   "author": {
     "@type": "Person",
     "name": "useless",
-    "url": "../../../../../author/useless.html"
+    "url": "https://allyourbase.utouch.fr/author/useless.html"
   },
   "image": "/images/useless_profile_pic.jpg",
-  "url": "../../../../../posts/2012/10/26/stripe-ctf-level-3/",
-  "description": "You can find the code for this level here. (sha256: 8710c082daed1839806addebeda44c6e5496d44a33f7eb3f23a577b6a5fc26d5) The company who built the vault of level 0 learned its lesson: you now have to identify before accessing your guarded secrets. The company kindly tells you that other users have already chosen to use their product, and even ..."
+  "url": "https://allyourbase.utouch.fr/posts/2012/10/26/stripe-ctf-level-3/",
+  "description": "You can find the code for this level here. (sha256: 8710c082daed1839806addebeda44c6e5496d44a33f7eb3f23a577b6a5fc26d5) The company who built the vault of level 0 learned its lesson: you now have to identify before accessing your guarded secrets. The company kindly tells you that other users have already chosen to use their product, and even …"
 }
 </script></body>
 </html>

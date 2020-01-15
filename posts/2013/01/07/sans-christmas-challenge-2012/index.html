@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
-  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/font-awesome.min.css">
+  <link href="https://allyourbase.utouch.fr//extras/style.css" rel="stylesheet">
   <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
   <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
@@ -14,27 +14,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="useless" />
-<meta name="description" content="During December, SANS posted a Christmas challenge based on a Christmas story. This year, Santa is sad because he feels that nobody believes in him anymore, so he decides to cancel Christmas. Mrs. Claus wants to cheer her husband up, in order not to let children down, but her reindeer ..." />
+<meta name="description" content="During December, SANS posted a Christmas challenge based on a Christmas story. This year, Santa is sad because he feels that nobody believes in him anymore, so he decides to cancel Christmas. Mrs. Claus wants to cheer her husband up, in order not to let children down, but her reindeer …" />
 <meta name="keywords" content="">
 <meta property="og:site_name" content="All Your Base Are Belong To Me"/>
 <meta property="og:title" content="SANS Christmas Challenge 2012"/>
-<meta property="og:description" content="During December, SANS posted a Christmas challenge based on a Christmas story. This year, Santa is sad because he feels that nobody believes in him anymore, so he decides to cancel Christmas. Mrs. Claus wants to cheer her husband up, in order not to let children down, but her reindeer ..."/>
+<meta property="og:description" content="During December, SANS posted a Christmas challenge based on a Christmas story. This year, Santa is sad because he feels that nobody believes in him anymore, so he decides to cancel Christmas. Mrs. Claus wants to cheer her husband up, in order not to let children down, but her reindeer …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="../../../../../posts/2013/01/07/sans-christmas-challenge-2012/"/>
+<meta property="og:url" content="https://allyourbase.utouch.fr/posts/2013/01/07/sans-christmas-challenge-2012/"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2013-01-07 12:20:00+01:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:author" content="https://allyourbase.utouch.fr/author/useless.html">
 <meta property="article:section" content="Write-up"/>
 <meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; SANS Christmas Challenge 2012</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="../../../../..">
+      <a href="https://allyourbase.utouch.fr">
         <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
       </a>
-      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <h1><a href="https://allyourbase.utouch.fr">All Your Base Are Belong To Me</a></h1>
       <p>You know, if that's alright with you</p>
       <nav>
         <ul class="list">
@@ -49,7 +49,7 @@
   </aside>
   <main>
     <nav>
-      <a href="../../../../..">Home</a>
+      <a href="https://allyourbase.utouch.fr">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
@@ -58,7 +58,7 @@
 <article>
   <header>
     <h1 id="sans-christmas-challenge-2012">SANS Christmas Challenge 2012</h1>
-    <p>Posted on lun. 07 janvier 2013 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+    <p>Posted on lun. 07 janvier 2013 in <a href="https://allyourbase.utouch.fr/category/write-up.html">Write-up</a></p>
   </header>
   <div>
     <img alt="sans_christmas_challenge_2012_logo.jpg" class="align-center" src="/images/sans-christmas-challenge-2012/sans_christmas_challenge_2012_logo.jpg" />
@@ -148,10 +148,10 @@ is hidden in the last image.</p>
 <p>Now, we need to find the key, in order to extract the hidden file. If
 you open the image in a hexadecimal editor, you'll find an ASCII string,
 &quot;IceIceBaby!&quot;. Let's use it as the key:</p>
-<div class="highlight"><pre><span class="nv">$ </span>steghide extract -sf off.jpg
+<div class="highlight"><pre><span></span>$ steghide extract -sf off.jpg
 Enter passphrase: IceIceBaby!
 Extracted data written to tmpfile.txt
-<span class="nv">$ </span>cat tmpfile.txt
+$ cat tmpfile.txt
 zone-2-6D46A633-25D7-42C8-AF94-8E786142A3E3
 </pre></div>
 </div>
@@ -175,9 +175,9 @@ you will not find a vulnerability here. Move along.</p>
 <code>286387c77b533aae4d605d85a5e74c819f3e0ca7ca42b991ddd29abf9ff5a6b4</code>).</p>
 <p>After extracting it, we can use some shell mojo to find files mentioning
 the zone 3 URL:</p>
-<div class="highlight"><pre><span class="nv">$ </span>tar -xzvf android.data.tgz
-<span class="nv">$ </span><span class="nb">cd </span>data
-<span class="nv">$ </span>grep -Rn <span class="s2">&quot;zone-3&quot;</span> . 2&gt; /dev/null
+<div class="highlight"><pre><span></span>$ tar -xzvf android.data.tgz
+$ <span class="nb">cd</span> data
+$ grep -Rn <span class="s2">&quot;zone-3&quot;</span> . <span class="m">2</span>&gt; /dev/null
 Binary file ./data/com.android.browser/cache/browser_state.parcel
 concordant
 Binary file
@@ -221,18 +221,18 @@ by the propriety of the XOR operator (here denoted by <span class="formula">⊕<
 </ul>
 <p>The second &quot;oops&quot; is using the same key twice, because now that we have
 the key, we can decrypt the second cipher text:</p>
-<div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
-<span class="c">#-*- encoding: Utf-8 -*-</span>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1">#-*- encoding: Utf-8 -*-</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&#39;usage: </span><span class="si">%s</span><span class="s"> &#39;</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">print</span> <span class="s1">&#39;usage: </span><span class="si">%s</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
     <span class="n">plain1</span><span class="p">,</span> <span class="n">cipher1</span><span class="p">,</span> <span class="n">cipher2</span><span class="p">,</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-    <span class="n">plain2</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="n">plain2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plain1</span><span class="p">)):</span>
         <span class="n">plain2</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">plain1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">^</span> <span class="nb">int</span><span class="p">(</span><span class="n">cipher1</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="nb">int</span><span class="p">(</span><span class="n">cipher2</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">))</span>
@@ -241,13 +241,13 @@ the key, we can decrypt the second cipher text:</p>
 
     <span class="k">return</span> <span class="mi">0</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 <p>Now let's launch this program:</p>
-<div class="highlight"><pre><span class="nv">$ </span>ls
+<div class="highlight"><pre><span></span>$ ls
 xor_encrypt.py
-<span class="nv">$ </span>./xor_enc.py zone-4-F7677DA8-3D77-11E2-BB65-E4BF6188709B
+$ ./xor_enc.py zone-4-F7677DA8-3D77-11E2-BB65-E4BF6188709B
 20d916c6c29ee53c30ea1effc63b1c72147eb86b998a25c0cf1bf66939e8621b3132d83abb1683df619238
 20d916c6c29ee54343e81ff1b14c1372650cbf19998f51b5c51bf66f49ec62184034a94fc9198fa9179849
 zone-4-9D469367-B60E-4E08-BDF1-FED7CC74AF33
@@ -270,7 +270,7 @@ noaccess.php. With this tweet, Heat Miser gives us a big hint:</p>
 <p>By looking at <a class="reference external" href="http://pen-testing.sans.org/blog/pen-testing/2012/12/06/all-your-svn-are-belong-to-us">the tutorial he
 gives</a>
 (see, this meme doesn't get old!) we can get the index page source code:</p>
-<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
     <span class="k">function</span> <span class="nf">generate_otp</span><span class="p">(</span><span class="nv">$time</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$pass</span> <span class="o">=</span> <span class="nb">sha1</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">$time</span><span class="s2"> 7998f77a7dc74f182a76219d7ee58db38be3841c&quot;</span><span class="p">);</span>
         <span class="k">return</span><span class="p">(</span><span class="nv">$pass</span><span class="p">);</span>
@@ -387,8 +387,8 @@ forgets to use the <code>exit</code> function. It
 means that the rest of the page is executed, then sent to our browser,
 with a Location header, which our browser follows. But if we use a
 client which does not follow redirection, we can recover the first page.</p>
-<div class="highlight"><pre><span class="nv">$ </span>curl <span class="s2">&quot;http://heatmiser.counterhack.com/zone-4-0F2EA639-19BF-40DD-A38D-635E1344C02B/&quot;</span> <span class="p">|</span> grep <span class="s2">&quot;zone-5&quot;</span>
-Link to &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;/zone-5-15614E3A-CEA7-4A28-A85A-D688CC418287/&quot;</span>&gt;Zone 5&lt;/a&gt;
+<div class="highlight"><pre><span></span>$ curl <span class="s2">&quot;http://heatmiser.counterhack.com/zone-4-0F2EA639-19BF-40DD-A38D-635E1344C02B/&quot;</span> <span class="p">|</span> grep <span class="s2">&quot;zone-5&quot;</span>
+Link to &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;/zone-5-15614E3A-CEA7-4A28-A85A-D688CC418287/&quot;</span>&gt;Zone <span class="m">5</span>&lt;/a&gt;
 </pre></div>
 </div>
 <div class="section" id="id5">
@@ -420,7 +420,7 @@ value, and we reload the page to access zone 5.</p>
 <div class="section" id="conclusion">
 <h2>Conclusion</h2>
 <p>I'll give it to you: this challenge wasn't really complicated. Mostly
-because the first zones of both controllers where kinda easy, but also
+because the first zones of both controllers were kinda easy, but also
 because of all the hints in the tweets. Yet, I'm still glad I did it
 because:</p>
 <ul class="simple">
@@ -445,7 +445,7 @@ wish you a merry Christmas, a happy new year, and lots of pentesting ;)</p>
 
     <footer>
 <p>
-  &copy; Yannick Méheut 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+  &copy; Yannick Méheut 2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
   <a rel="license"
@@ -471,11 +471,11 @@ wish you a merry Christmas, a happy new year, and lots of pentesting ;)</p>
   "author": {
     "@type": "Person",
     "name": "useless",
-    "url": "../../../../../author/useless.html"
+    "url": "https://allyourbase.utouch.fr/author/useless.html"
   },
   "image": "/images/useless_profile_pic.jpg",
-  "url": "../../../../../posts/2013/01/07/sans-christmas-challenge-2012/",
-  "description": "During December, SANS posted a Christmas challenge based on a Christmas story. This year, Santa is sad because he feels that nobody believes in him anymore, so he decides to cancel Christmas. Mrs. Claus wants to cheer her husband up, in order not to let children down, but her reindeer ..."
+  "url": "https://allyourbase.utouch.fr/posts/2013/01/07/sans-christmas-challenge-2012/",
+  "description": "During December, SANS posted a Christmas challenge based on a Christmas story. This year, Santa is sad because he feels that nobody believes in him anymore, so he decides to cancel Christmas. Mrs. Claus wants to cheer her husband up, in order not to let children down, but her reindeer …"
 }
 </script></body>
 </html>

